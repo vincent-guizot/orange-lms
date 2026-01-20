@@ -108,38 +108,55 @@ src/
 │   │   └── Dashboard.jsx
 │
 │   ├── classes/
-│   │   ├── ClassesList.jsx
-│   │   ├── ClassCreate.jsx
-│   │   ├── ClassEdit.jsx
-│   │   └── ClassDetail.jsx
+│   │   ├── List.jsx
+│   │   ├── Create.jsx
+│   │   ├── Update.jsx
+│   │   └── Detail.jsx
 │
 │   ├── meetings/
-│   │   ├── MeetingsList.jsx
-│   │   └── MeetingDetail.jsx
+│   │    ├── List.jsx
+│   │   ├── Create.jsx
+│   │   ├── Update.jsx
+│   │   └── Detail.jsx
 │
 │   ├── notes/
-│   │   ├── NotesList.jsx
-│   │   └── NoteDetail.jsx
+│   │    ├── List.jsx
+│   │   ├── Create.jsx
+│   │   ├── Update.jsx
+│   │   └── Detail.jsx
 │
 │   ├── tasks/
-│   │   ├── TasksList.jsx
-│   │   └── TaskDetail.jsx
-│
+│   │    ├── List.jsx
+│   │   ├── Create.jsx
+│   │   ├── Update.jsx
+│   │   └── Detail.jsx
 │   ├── materials/
-│   │   ├── MaterialsList.jsx
-│   │   └── MaterialDetail.jsx
+│   │   ├── List.jsx
+│   │   ├── Create.jsx
+│   │   ├── Update.jsx
+│   │   └── Detail.jsx
 │
 │   ├── mentors/        # ADMIN ONLY
-│   │   ├── MentorsList.jsx
-│   │   └── MentorDetail.jsx
+│   │    ├── List.jsx
+│   │   ├── Create.jsx
+│   │   ├── Update.jsx
+│   │   └── Detail.jsx
 │
 │   ├── mentees/        # ADMIN ONLY
-│   │   ├── MenteesList.jsx
-│   │   └── MenteeDetail.jsx
+│   │   ├── List.jsx
+│   │   ├── Create.jsx
+│   │   ├── Update.jsx
+│   │   └── Detail.jsx
 │
 │   └── profile/
 │       └── Profile.jsx
-│
+   └── setting/
+│       └── Setting.jsx
+
+│   └── auth/
+│       └── Login.jsx
+|       |-- Register.jsx
+
 ├── routes/
 │   ├── index.jsx
 │   └── ProtectedRoute.jsx
