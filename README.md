@@ -70,48 +70,94 @@ SweetAlert2
 ```
 src/
 ├── app/
-│ ├── store.ts
-│ └── hooks.ts
-│
-├── layouts/
-│ ├── MainLayout.tsx
-│ ├── AuthLayout.tsx
-│
-├── pages/
-│ ├── dashboard/
-│ ├── classes/
-│ ├── meetings/
-│ ├── tasks/
-│ ├── notes/
-│ ├── materials/
-│ ├── progress/
-│ ├── profile/
-│
-├── components/
-│ ├── ui/ # shadcn components
-│ ├── common/ # reusable components
+│   ├── store/
+│   │   ├── index.js
+│   │   └── rootReducer.js
+│   │
+│   └── hooks.js
 │
 ├── features/
-│ ├── auth/
-│ ├── classes/
-│ ├── tasks/
-│ ├── meetings/
-│
+│   └── auth/
+│       ├── authSlice.js
+│       └── authAPI.js
+│   └── classesSlice.js
+│   └── meetingsSlice.js
+│   └── notesSlice.js
+│   └── tasksSlice.js
+│   └── materialsSlice.js
+│   └── mentorsSlice.js
+│   └── menteesSlice.js
+|
 ├── services/
-│ ├── api.ts
-│ ├── auth.service.ts
-│ ├── class.service.ts
+│   ├── api.js
+│   ├── auth.service.js
+│   ├── classes.service.js
+│   ├── meetings.service.js
+│   ├── notes.service.js
+│   ├── tasks.service.js
+│   ├── materials.service.js
+│   ├── mentors.service.js
+│   └── mentees.service.js
+│
+├── layouts/
+│   ├── MainLayout.jsx
+│   └── AuthLayout.jsx
+│
+├── pages/
+│   ├── dashboard/
+│   │   └── Dashboard.jsx
+│
+│   ├── classes/
+│   │   ├── ClassesList.jsx
+│   │   ├── ClassCreate.jsx
+│   │   ├── ClassEdit.jsx
+│   │   └── ClassDetail.jsx
+│
+│   ├── meetings/
+│   │   ├── MeetingsList.jsx
+│   │   └── MeetingDetail.jsx
+│
+│   ├── notes/
+│   │   ├── NotesList.jsx
+│   │   └── NoteDetail.jsx
+│
+│   ├── tasks/
+│   │   ├── TasksList.jsx
+│   │   └── TaskDetail.jsx
+│
+│   ├── materials/
+│   │   ├── MaterialsList.jsx
+│   │   └── MaterialDetail.jsx
+│
+│   ├── mentors/        # ADMIN ONLY
+│   │   ├── MentorsList.jsx
+│   │   └── MentorDetail.jsx
+│
+│   ├── mentees/        # ADMIN ONLY
+│   │   ├── MenteesList.jsx
+│   │   └── MenteeDetail.jsx
+│
+│   └── profile/
+│       └── Profile.jsx
 │
 ├── routes/
-│ └── index.tsx
+│   ├── index.jsx
+│   └── ProtectedRoute.jsx
 │
-├── schemas/
-│ ├── auth.schema.ts
-│ ├── class.schema.ts
+├── components/
+│   ├── ui/
+│   └── common/
 │
-├── utils/
-│ ├── constants.ts
-│ └── helpers.ts
+├── styles/
+│   ├── tailwind.css
+│   ├── globals.css
+│   └── theme.css
 │
-└── main.tsx
+├── lib/
+│   └── utils.js
+│
+├── App.jsx
+└── main.jsx
+
+
 ```
