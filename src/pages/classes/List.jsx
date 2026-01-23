@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Table from "@/components/ui/Table";
 import TableControls from "@/components/ui/TableControls";
 import useSearch from "@/hooks/useSearch";
@@ -6,21 +6,44 @@ import useFilter from "@/hooks/useFilter";
 import useSort from "@/hooks/useSort";
 import useBreadcrumbs from "@/hooks/useBreadcrumbs";
 import usePagination from "@/hooks/usePagination";
-import { classes } from "@/constants/data";
+import ClassService from "@/services/class.service";
+import { Trash2, Edit2, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const columns = [
   { key: "name", label: "Class" },
   { key: "subject", label: "Subject" },
+  { key: "startDate", label: "Date" },
+  { key: "mentorName", label: "Mentor" },
+  { key: "totalMentees", label: "Total Mentees" },
   { key: "totalMeetings", label: "Meetings" },
+  { key: "actions", label: "Actions" },
 ];
 
 const List = () => {
   const breadcrumbs = useBreadcrumbs();
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchClasses = async () => {
+      try {
+        const res = await ClassService.getAll();
+        setData(res);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchClasses();
+  }, []);
 
   // SEARCH
-  const { query, setQuery, searchedData } = useSearch(classes, [
+  const { query, setQuery, searchedData } = useSearch(data, [
     "name",
     "subject",
+    "mentorName",
   ]);
 
   // FILTER
@@ -33,14 +56,56 @@ const List = () => {
   const { sortedData, sortKey, toggleSort } = useSort(filteredData);
 
   // PAGINATION
-  const {
-    paginatedData,
-    currentPage,
-    totalPages,
-    goToPage,
-    nextPage,
-    prevPage,
-  } = usePagination(sortedData, 5);
+  const { paginatedData, currentPage, totalPages, nextPage, prevPage } =
+    usePagination(sortedData, 5);
+
+  if (loading)
+    return <div className="p-4 text-gray-500">Loading classes...</div>;
+
+  // Handler aksi
+  const handleRemove = (id) => {
+    if (confirm("Are you sure you want to remove this class?")) {
+      setData(data.filter((item) => item.id !== id));
+    }
+  };
+
+  const handleEdit = (id) => {
+    alert(`Edit class with ID: ${id}`);
+  };
+
+  const handleDetails = (id) => {
+    alert(`View details for class ID: ${id}`);
+  };
+
+  // Tambahkan render aksi per row
+  const dataWithActions = paginatedData.map((row) => ({
+    ...row,
+    actions: (
+      <div className="flex gap-2">
+        <Link
+          to={`/classes/${row.id}`}
+          className="text-blue-600 hover:text-blue-800"
+          title="Details"
+        >
+          <Eye size={16} className="mr-2" /> Details
+        </Link>
+        <button
+          onClick={() => handleEdit(row.id)}
+          className="text-green-600 hover:text-green-800"
+          title="Edit"
+        >
+          <Edit2 size={16} className="mr=2" /> Edit
+        </button>
+        <button
+          onClick={() => handleRemove(row.id)}
+          className="text-red-600 hover:text-red-800"
+          title="Remove"
+        >
+          <Trash2 size={16} className="mr-2" /> Remove
+        </button>
+      </div>
+    ),
+  }));
 
   return (
     <div className="p-4 space-y-4">
@@ -58,7 +123,11 @@ const List = () => {
       <TableControls
         searchQuery={query}
         setSearchQuery={setQuery}
-        filterOptions={["Full Stack", "Front End", "Back End"]}
+        filterOptions={[
+          "Full Stack Development",
+          "Front End Development",
+          "Back End Development",
+        ]}
         filterValue={filterValue}
         setFilterValue={setFilterValue}
         sortOptions={[
@@ -75,7 +144,7 @@ const List = () => {
       </div>
 
       {/* Table */}
-      <Table columns={columns} data={paginatedData} />
+      <Table columns={columns} data={dataWithActions} />
 
       {/* Pagination Controls */}
       <div className="flex gap-2 items-center mt-2">
