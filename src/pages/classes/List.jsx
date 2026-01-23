@@ -1,9 +1,11 @@
 import React from "react";
-import Table from "@/components/Table";
+import Table from "@/components/ui/Table";
+import TableControls from "@/components/ui/TableControls";
 import useSearch from "@/hooks/useSearch";
-import useSort from "@/hooks/useSort";
 import useFilter from "@/hooks/useFilter";
+import useSort from "@/hooks/useSort";
 import useBreadcrumbs from "@/hooks/useBreadcrumbs";
+import usePagination from "@/hooks/usePagination";
 import { classes } from "@/constants/data";
 
 const columns = [
@@ -15,20 +17,33 @@ const columns = [
 const List = () => {
   const breadcrumbs = useBreadcrumbs();
 
+  // SEARCH
   const { query, setQuery, searchedData } = useSearch(classes, [
     "name",
     "subject",
   ]);
 
+  // FILTER
   const { filterValue, setFilterValue, filteredData } = useFilter(
     searchedData,
     "subject",
   );
 
-  const { sortedData, toggleSort } = useSort(filteredData);
+  // SORT
+  const { sortedData, sortKey, toggleSort } = useSort(filteredData);
+
+  // PAGINATION
+  const {
+    paginatedData,
+    currentPage,
+    totalPages,
+    goToPage,
+    nextPage,
+    prevPage,
+  } = usePagination(sortedData, 5);
 
   return (
-    <div className="space-y-4">
+    <div className="p-4 space-y-4">
       {/* Breadcrumbs */}
       <div className="text-sm text-gray-500">
         {breadcrumbs.map((b, i) => (
@@ -40,32 +55,19 @@ const List = () => {
       </div>
 
       {/* Controls */}
-      <div className="flex flex-wrap gap-2">
-        <input
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search class..."
-          className="border px-3 py-2 rounded"
-        />
-
-        <select
-          value={filterValue}
-          onChange={(e) => setFilterValue(e.target.value)}
-          className="border px-3 py-2 rounded"
-        >
-          <option value="">All Subject</option>
-          <option value="Full Stack">Full Stack</option>
-          <option value="Front End">Front End</option>
-          <option value="Back End">Back End</option>
-        </select>
-
-        <button
-          onClick={() => toggleSort("name")}
-          className="border px-3 py-2 rounded"
-        >
-          Sort by Name
-        </button>
-      </div>
+      <TableControls
+        searchQuery={query}
+        setSearchQuery={setQuery}
+        filterOptions={["Full Stack", "Front End", "Back End"]}
+        filterValue={filterValue}
+        setFilterValue={setFilterValue}
+        sortOptions={[
+          { key: "name", label: "Name" },
+          { key: "totalMeetings", label: "Meetings" },
+        ]}
+        sortKey={sortKey}
+        toggleSort={toggleSort}
+      />
 
       {/* Count */}
       <div className="text-sm text-gray-600">
@@ -73,7 +75,28 @@ const List = () => {
       </div>
 
       {/* Table */}
-      <Table columns={columns} data={sortedData} />
+      <Table columns={columns} data={paginatedData} />
+
+      {/* Pagination Controls */}
+      <div className="flex gap-2 items-center mt-2">
+        <button
+          onClick={prevPage}
+          disabled={currentPage === 1}
+          className="border px-3 py-1 rounded disabled:opacity-50"
+        >
+          Prev
+        </button>
+        <span>
+          Page {currentPage} / {totalPages}
+        </span>
+        <button
+          onClick={nextPage}
+          disabled={currentPage === totalPages}
+          className="border px-3 py-1 rounded disabled:opacity-50"
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
