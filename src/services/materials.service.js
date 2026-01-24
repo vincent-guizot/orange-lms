@@ -2,27 +2,27 @@ import api from "./api";
 
 const MaterialService = {
   getAll: async () => {
-    const res = await api.get("/material"); // GET /material
+    const res = await api.get("/materials"); // GET /materials
     return res.data;
   },
 
   getById: async (id) => {
-    const res = await api.get(`/material/${id}`);
+    const res = await api.get(`/materials/${id}`);
     return res.data;
   },
 
   create: async (payload) => {
-    const res = await api.post("/material", payload);
+    const res = await api.post("/materials", payload);
     return res.data;
   },
 
   update: async (id, payload) => {
-    const res = await api.put(`/material/${id}`, payload);
+    const res = await api.put(`/materials/${id}`, payload);
     return res.data;
   },
 
   delete: async (id) => {
-    const res = await api.delete(`/material/${id}`);
+    const res = await api.delete(`/materials/${id}`);
     return res.data;
   },
 };

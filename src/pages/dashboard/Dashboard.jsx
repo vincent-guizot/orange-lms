@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import {
   BarChart,
@@ -8,17 +8,54 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import {
-  classes,
-  meetings,
-  tasks,
-  notes,
-  materials,
-} from "../../constants/data";
+
+import ClassService from "@/services/class.service";
+import MeetingService from "@/services/meetings.service";
+import TaskService from "@/services/tasks.service";
+import NoteService from "@/services/notes.service";
+import MaterialService from "@/services/materials.service";
 
 const Dashboard = () => {
-  // Summary counts
+  const [classes, setClasses] = useState([]);
+  const [meetings, setMeetings] = useState([]);
+  const [tasks, setTasks] = useState([]);
+  const [notes, setNotes] = useState([]);
+  const [materials, setMaterials] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  // FETCH ALL DASHBOARD DATA
+  useEffect(() => {
+    const fetchDashboardData = async () => {
+      try {
+        const [classesRes, meetingsRes, tasksRes, notesRes, materialsRes] =
+          await Promise.all([
+            ClassService.getAll(),
+            MeetingService.getAll(),
+            TaskService.getAll(),
+            NoteService.getAll(),
+            MaterialService.getAll(),
+          ]);
+
+        setClasses(classesRes);
+        setMeetings(meetingsRes);
+        setTasks(tasksRes);
+        setNotes(notesRes);
+        setMaterials(materialsRes);
+      } catch (error) {
+        console.error("Dashboard fetch error:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDashboardData();
+  }, []);
+
+  if (loading) {
+    return <div className="p-6 text-gray-500">Loading dashboard...</div>;
+  }
+
+  // SUMMARY
   const summaryData = [
     {
       title: "Classes",
@@ -36,7 +73,7 @@ const Dashboard = () => {
       color: "border-r-8 border-yellow-700",
     },
     {
-      title: "Tasks ",
+      title: "Tasks",
       count: tasks.length,
       color: "border-r-8 border-stone-700",
     },
@@ -47,26 +84,32 @@ const Dashboard = () => {
     },
   ];
 
-  // Determine active vs upcoming classes (based on today's date)
-  const today = new Date("2025-10-05"); // contoh tanggal, bisa pakai new Date() real
+  // ACTIVE & UPCOMING CLASSES
+  const today = new Date();
+
   const activeClasses = classes.filter(
     (cls) => new Date(cls.startDate) <= today && new Date(cls.endDate) >= today,
   );
+
   const upcomingClasses = classes.filter(
     (cls) => new Date(cls.startDate) > today,
   );
 
-  // Chart data: progress per class (dummy: meetings held / total meetings * 100)
+  // CHART DATA (progress)
   const chartData = classes.map((cls) => {
-    const heldMeetings = cls.meetings.length; // semua meetings sudah ada
+    const heldMeetings = cls.meetings?.length || 0;
     const progress = (heldMeetings / cls.totalMeetings) * 100;
-    return { name: cls.name, progress: Math.round(progress) };
+
+    return {
+      name: cls.name,
+      progress: Math.round(progress),
+    };
   });
 
   return (
     <div className="p-6 space-y-6">
-      {/* Summary Cards */}
-      <div className="grid grid-cols-5 gap-4">
+      {/* SUMMARY CARDS */}
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
         {summaryData.map((item) => (
           <Card className={item.color} key={item.title}>
             <CardHeader>
@@ -79,13 +122,13 @@ const Dashboard = () => {
         ))}
       </div>
 
-      {/* Chart */}
+      {/* CHART */}
       <Card>
         <CardHeader>
           <CardTitle>Class Progress Overview</CardTitle>
         </CardHeader>
         <CardContent>
-          <ResponsiveContainer width="100%" height={200}>
+          <ResponsiveContainer width="100%" height={220}>
             <BarChart data={chartData}>
               <XAxis dataKey="name" />
               <YAxis />
@@ -96,8 +139,8 @@ const Dashboard = () => {
         </CardContent>
       </Card>
 
-      {/* Classes Section */}
-      <div className="grid grid-cols-2 gap-6">
+      {/* ACTIVE / UPCOMING */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card>
           <CardHeader>
             <CardTitle>Active Classes</CardTitle>
@@ -108,7 +151,7 @@ const Dashboard = () => {
                 <li key={cls.id} className="flex justify-between">
                   <span>{cls.name}</span>
                   <span className="text-sm text-gray-500">
-                    Meetings: {cls.meetings.length}/{cls.totalMeetings}
+                    Meetings: {cls.meetings?.length || 0}/{cls.totalMeetings}
                   </span>
                 </li>
               ))}
