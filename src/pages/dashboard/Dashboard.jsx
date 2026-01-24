@@ -14,7 +14,7 @@ import {
   tasks,
   notes,
   materials,
-} from "../../constant/data";
+} from "../../constants/data";
 
 const Dashboard = () => {
   // Summary counts
