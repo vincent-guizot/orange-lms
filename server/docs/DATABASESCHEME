@@ -1,0 +1,33 @@
+# Database Tables
+
+## users
+
+Stores all system users and roles.
+
+## classes
+
+Represents learning classes.
+
+## class_users
+
+Pivot table linking mentees to classes with progress.
+
+## meetings
+
+Schedules per class.
+
+## tasks
+
+Assignments per meeting.
+
+## task_submissions
+
+Stores mentee task submissions and scores.
+
+## notes
+
+Learning notes created by mentors.
+
+## materials
+
+Uploaded learning resources.
