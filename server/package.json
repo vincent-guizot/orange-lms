@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon servers.js"
+    "start": "nodemon servers.js",
+    "createDB": "sequelize-cli db:create"
   },
   "author": "",
   "license": "ISC",

@@ -69,7 +69,7 @@ orange-lms-backend/
     │ ├── services/ # business logic
     │ │ └── ...
     │ │
-    │ ├── utils/ # helper
+    │ ├── helpers/ # helper
     │ │ └── ...
     │ │
     │ └── app.js # express app
