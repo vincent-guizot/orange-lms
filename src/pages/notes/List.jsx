@@ -37,15 +37,15 @@ const List = () => {
 
   // SEARCH
   const { query, setQuery, searchedData } = useSearch(data, [
-    "title",
-    "className",
+    "name",
+    "createdAt",
     "mentorName",
   ]);
 
   // FILTER (by class)
   const { filterValue, setFilterValue, filteredData } = useFilter(
     searchedData,
-    "className",
+    "name",
   );
 
   // SORT
@@ -120,7 +120,7 @@ const List = () => {
         filterValue={filterValue}
         setFilterValue={setFilterValue}
         sortOptions={[
-          { key: "title", label: "Title" },
+          { key: "name", label: "name" },
           { key: "createdAt", label: "Created Date" },
         ]}
         sortKey={sortKey}

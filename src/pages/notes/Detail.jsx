@@ -11,7 +11,7 @@ const Detail = (note) => {
   }
 
   Swal.fire({
-    title: note.title,
+    title: note.name,
     html: `
       <div class="text-left space-y-2">
         <p><strong>Note:</strong> ${note.name}</p>
