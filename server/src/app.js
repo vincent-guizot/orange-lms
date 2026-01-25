@@ -3,14 +3,6 @@ const cors = require("cors");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 
-// Import routes nanti
-const userRoutes = require("./routes/userRoutes");
-const classRoutes = require("./routes/classRoutes");
-const meetingRoutes = require("./routes/meetingRoutes");
-const taskRoutes = require("./routes/taskRoutes");
-const materialRoutes = require("./routes/materialRoutes");
-const noteRoutes = require("./routes/noteRoutes");
-
 const app = express();
 
 // Middleware
@@ -18,14 +10,6 @@ app.use(cors());
 app.use(morgan("dev")); // logging HTTP request
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// Routes
-app.use("/api/users", userRoutes);
-app.use("/api/classes", classRoutes);
-app.use("/api/meetings", meetingRoutes);
-app.use("/api/tasks", taskRoutes);
-app.use("/api/materials", materialRoutes);
-app.use("/api/notes", noteRoutes);
 
 // Default route
 app.get("/", (req, res) => {

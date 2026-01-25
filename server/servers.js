@@ -1,13 +1,13 @@
 const app = require("./src/app");
-const { sequelize } = require("./src/models"); // import index.js dari models
+// const { sequelize } = require("./src/models"); // import index.js dari models
 
 const PORT = process.env.PORT || 5000;
 
 (async () => {
   try {
     // Test koneksi database
-    await sequelize.authenticate();
-    console.log("Database connected successfully.");
+    // await sequelize.authenticate();
+    // console.log("Database connected successfully.");
 
     // Jalankan server
     app.listen(PORT, () => {
