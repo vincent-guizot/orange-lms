@@ -12,6 +12,7 @@ import {
   Settings,
   UserCircle,
 } from "lucide-react";
+import logo from "../../assets/ORANGECODE LOGO-FULL COLOUR LANDSCAPE.jpg";
 
 const Sidebar = () => {
   const location = useLocation(); // untuk mendeteksi route aktif
@@ -35,8 +36,9 @@ const Sidebar = () => {
   return (
     <div className="flex flex-col h-screen w-64 px-3 bg-white border-r shadow-sm">
       {/* Logo */}
-      <div className="flex items-center justify-center h-20 border-b">
-        <h1 className="text-2xl font-bold">Orange LMS</h1>
+      <div className="flex items-center justify-center h-20  border-b ">
+        {/* <h1 className="text-2xl font-bold">Orange LMS</h1> */}
+        <img size={120} src={logo} />
       </div>
 
       {/* Menu */}
