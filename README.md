@@ -15,6 +15,8 @@
 - **Admin**
 - **Mentor**
 - **Mentee**
+- **Other**
+- **Owner**
 
 ---
 
