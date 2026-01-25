@@ -1,93 +1,88 @@
-# Orange LMS
+# 🧩 Orange LMS – Frontend Setup (FINAL)
 
-🧩 Orange LMS – Frontend Setup (FINAL)
-🎯 Scope Aplikasi
+## 🎯 Scope Aplikasi
 
-Orange LMS adalah Learning Management System internal untuk:
+**Orange LMS** adalah Learning Management System internal yang digunakan untuk:
 
-Mengelola kelas & training
+- Mengelola kelas & training
+- Monitoring progress mentee
+- Kolaborasi mentor–mentee
 
-Monitoring progress mentee
+---
 
-Kolaborasi mentor–mentee
+## 👥 User Roles
 
-User Roles
+- **Admin**
+- **Mentor**
+- **Mentee**
 
-Admin
+---
 
-Mentor
+## 🧭 Main Menus (8 Menu)
 
-Mentee
+1. **Dashboard**  
+   Ringkasan aktivitas, progress belajar, jadwal, dan notifikasi.
 
-🧭 Main Menus (8 Menu)
+2. **Classes**  
+   Manajemen kelas, peserta, kurikulum, dan materi.
 
-Dashboard
-Ringkasan aktivitas, progress belajar, jadwal, notifikasi.
+3. **Meetings**  
+   Jadwal dan histori pertemuan online/offline.
 
-Classes
-Manajemen kelas, peserta, kurikulum, materi.
+4. **Tasks**  
+   Penugasan, submission, dan status pengerjaan.
 
-Meetings
-Jadwal & histori pertemuan online/offline.
+5. **Notes**  
+   Catatan pembelajaran mentor & mentee.
 
-Tasks
-Penugasan, submission, dan status.
+6. **Materials**  
+   Repository dokumen, video, dan link pembelajaran.
 
-Notes
-Catatan pembelajaran mentor & mentee.
+7. **Progress**  
+   Monitoring perkembangan mentee.
 
-Materials
-Repository dokumen, video, link.
+8. **Profile & Settings**  
+   Pengaturan akun, role, dan preferensi pengguna.
 
-Progress
-Monitoring perkembangan mentee.
+---
 
-Profile & Settings
-Akun, role, preferensi.
+## ⚙️ Tech Stack (Frontend)
 
-⚙️ Tech Stack (Frontend)
+- React 18
+- React Router DOM
+- Redux Toolkit
+- Axios
+- Tailwind CSS
+- shadcn/ui
+- React Hook Form
+- Zod
+- lucide-react
+- SweetAlert2
 
-React 18
+---
 
-React Router DOM
+## 📁 Project Structure
 
-Redux Toolkit
-
-Axios
-
-Tailwind CSS
-
-shadcn/ui
-
-React Hook Form
-
-Zod
-
-lucide-react
-
-SweetAlert2
-
-```
+```txt
 src/
 ├── app/
 │   ├── store/
 │   │   ├── index.js
 │   │   └── rootReducer.js
-│   │
 │   └── hooks.js
 │
 ├── features/
-│   └── auth/
-│       ├── authSlice.js
-│       └── authAPI.js
-│   └── classesSlice.js
-│   └── meetingsSlice.js
-│   └── notesSlice.js
-│   └── tasksSlice.js
-│   └── materialsSlice.js
-│   └── mentorsSlice.js
+│   ├── auth/
+│   │   ├── authSlice.js
+│   │   └── authAPI.js
+│   ├── classesSlice.js
+│   ├── meetingsSlice.js
+│   ├── notesSlice.js
+│   ├── tasksSlice.js
+│   ├── materialsSlice.js
+│   ├── mentorsSlice.js
 │   └── menteesSlice.js
-|
+│
 ├── services/
 │   ├── api.js
 │   ├── auth.service.js
@@ -114,22 +109,23 @@ src/
 │   │   └── Detail.jsx
 │
 │   ├── meetings/
-│   │    ├── List.jsx
+│   │   ├── List.jsx
 │   │   ├── Create.jsx
 │   │   ├── Update.jsx
 │   │   └── Detail.jsx
 │
 │   ├── notes/
-│   │    ├── List.jsx
+│   │   ├── List.jsx
 │   │   ├── Create.jsx
 │   │   ├── Update.jsx
 │   │   └── Detail.jsx
 │
 │   ├── tasks/
-│   │    ├── List.jsx
+│   │   ├── List.jsx
 │   │   ├── Create.jsx
 │   │   ├── Update.jsx
 │   │   └── Detail.jsx
+│
 │   ├── materials/
 │   │   ├── List.jsx
 │   │   ├── Create.jsx
@@ -137,7 +133,7 @@ src/
 │   │   └── Detail.jsx
 │
 │   ├── mentors/        # ADMIN ONLY
-│   │    ├── List.jsx
+│   │   ├── List.jsx
 │   │   ├── Create.jsx
 │   │   ├── Update.jsx
 │   │   └── Detail.jsx
@@ -148,15 +144,16 @@ src/
 │   │   ├── Update.jsx
 │   │   └── Detail.jsx
 │
-│   └── profile/
-│       └── Profile.jsx
-   └── setting/
-│       └── Setting.jsx
-
+│   ├── profile/
+│   │   └── Profile.jsx
+│
+│   ├── setting/
+│   │   └── Setting.jsx
+│
 │   └── auth/
-│       └── Login.jsx
-|       |-- Register.jsx
-
+│       ├── Login.jsx
+│       └── Register.jsx
+│
 ├── routes/
 │   ├── index.jsx
 │   └── ProtectedRoute.jsx
@@ -175,6 +172,4 @@ src/
 │
 ├── App.jsx
 └── main.jsx
-
-
 ```
