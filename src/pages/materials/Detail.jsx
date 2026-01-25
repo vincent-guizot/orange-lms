@@ -14,7 +14,7 @@ const Detail = (material) => {
     title: material.name,
     html: `
       <div class="text-left space-y-2">
-        <p><strong>Materisl:</strong> ${material.name}</p>
+        <p><strong>Material:</strong> ${material.name}</p>
         <p><strong>Link:</strong> ${material.link}</p>
         <hr />
         <div style="white-space: pre-line">
