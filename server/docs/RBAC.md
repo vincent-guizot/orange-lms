@@ -3,17 +3,25 @@
 ## Owner
 
 - Full access to all resources
+- Can CRUD: users, classes, meetings, tasks, notes, materials
 
 ## Admin
 
-- CRUD all except Owner
+- CRUD users (except Owner)
+- CRUD classes & meetings
+- Monitor mentee progress
+- Cannot delete/update Owner
 
 ## Mentor
 
-- Manage tasks, notes, materials
-- Grade submissions
+- Create/Read meetings
+- Upload notes & materials
+- Create tasks & grade submissions
+- Read mentees
+- Cannot CRUD classes
 
 ## Mentee
 
-- Read-only access
+- Read-only: classes, meetings, notes, materials, tasks
 - Submit tasks
+- Cannot CRUD anything
