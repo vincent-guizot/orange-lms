@@ -35,4 +35,4 @@ class ClassService {
   }
 }
 
-module.exports = new ClassService();
+module.exports = ClassService;

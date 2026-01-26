@@ -36,4 +36,4 @@ class MeetingService {
   }
 }
 
-module.exports = new MeetingService();
+module.exports = MeetingService;

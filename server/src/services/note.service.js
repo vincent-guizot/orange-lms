@@ -28,4 +28,4 @@ class NoteService {
   }
 }
 
-module.exports = new NoteService();
+module.exports = NoteService;

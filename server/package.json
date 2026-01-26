@@ -5,7 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon servers.js",
-    "createDB": "sequelize-cli db:create"
+    "createDB": "npx sequelize-cli db:create",
+    "migrateDB": "npx sequelize-cli db:migrate",
+    "undoMigrateDB": "npx sequelize-cli db:migrate:undo"
   },
   "author": "",
   "license": "ISC",

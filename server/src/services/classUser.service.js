@@ -40,4 +40,4 @@ class ClassUserService {
   }
 }
 
-module.exports = new ClassUserService();
+module.exports = ClassUserService;

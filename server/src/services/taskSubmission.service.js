@@ -15,4 +15,4 @@ class TaskSubmissionService {
   }
 }
 
-module.exports = new TaskSubmissionService();
+module.exports = TaskSubmissionService;

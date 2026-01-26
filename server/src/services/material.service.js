@@ -28,4 +28,4 @@ class MaterialService {
   }
 }
 
-module.exports = new MaterialService();
+module.exports = MaterialService;

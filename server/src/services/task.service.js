@@ -28,4 +28,4 @@ class TaskService {
   }
 }
 
-module.exports = new TaskService();
+module.exports = TaskService;
