@@ -11,10 +11,8 @@ app.use(morgan("dev")); // logging HTTP request
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Default route
-app.get("/", (req, res) => {
-  res.json({ message: "Orange LMS Server is running" });
-});
+const routes = require("./routes");
+app.use(routes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
