@@ -1,17 +1,19 @@
 const express = require("express");
 const router = express.Router();
+const { MaterialController } = require("../controllers");
 
-// GET
-router.get("/", (req, res) => res.send("Get all materials"));
-router.get("/:id", (req, res) => res.send("Get material by id"));
+/**
+ * Nested (by meeting)
+ * /meetings/:meetingId/materials
+ */
+router.get("/", MaterialController.getByMeeting);
+router.post("/", MaterialController.create);
 
-// POST
-router.post("/", (req, res) => res.send("Create material"));
-
-// PUT
-router.put("/:id", (req, res) => res.send("Update material"));
-
-// DELETE
-router.delete("/:id", (req, res) => res.send("Delete material"));
+/**
+ * Material detail
+ */
+router.get("/:id", MaterialController.getById);
+router.put("/:id", MaterialController.update);
+router.delete("/:id", MaterialController.delete);
 
 module.exports = router;

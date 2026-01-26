@@ -1,17 +1,25 @@
 const express = require("express");
 const router = express.Router();
+const { TaskController } = require("../controllers");
 
-// GET
-router.get("/", (req, res) => res.send("Get all tasks"));
-router.get("/:id", (req, res) => res.send("Get task by id"));
+/**
+ * Nested (by meeting)
+ * /meetings/:meetingId/tasks
+ */
+router.get("/", TaskController.getByMeeting);
+router.post("/", TaskController.create);
 
-// POST
-router.post("/", (req, res) => res.send("Create task"));
+/**
+ * Task detail
+ */
+router.get("/:id", TaskController.getById);
+router.put("/:id", TaskController.update);
+router.delete("/:id", TaskController.delete);
 
-// PUT
-router.put("/:id", (req, res) => res.send("Update task"));
-
-// DELETE
-router.delete("/:id", (req, res) => res.send("Delete task"));
+/**
+ * Task Submissions (pivot)
+ */
+router.post("/:id/submit", TaskController.submitTask);
+router.get("/:id/submissions", TaskController.getSubmissions);
 
 module.exports = router;

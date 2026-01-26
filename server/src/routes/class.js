@@ -1,17 +1,24 @@
 const express = require("express");
 const router = express.Router();
+const { ClassController } = require("../controllers");
 
-// GET
-router.get("/", (req, res) => res.send("Get all classes"));
-router.get("/:id", (req, res) => res.send("Get class by id"));
+/**
+ * Classes
+ */
+router.get("/", ClassController.getAll);
+router.post("/", ClassController.create);
+router.get("/:id", ClassController.getById);
+router.put("/:id", ClassController.update);
+router.delete("/:id", ClassController.delete);
 
-// POST
-router.post("/", (req, res) => res.send("Create class"));
+/**
+ * Class ↔ User (class_users pivot)
+ */
+router.post("/:id/enroll", ClassController.enrollUser); // mentee join
+router.post("/:id/assign-mentor", ClassController.assignMentor);
 
-// PUT
-router.put("/:id", (req, res) => res.send("Update class"));
-
-// DELETE
-router.delete("/:id", (req, res) => res.send("Delete class"));
+router.get("/:id/users", ClassController.getUsers);
+router.get("/:id/mentees", ClassController.getMentees);
+router.get("/:id/mentor", ClassController.getMentor);
 
 module.exports = router;

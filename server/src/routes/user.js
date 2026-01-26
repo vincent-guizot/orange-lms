@@ -1,17 +1,33 @@
 const express = require("express");
 const router = express.Router();
 
-// GET
-router.get("/", (req, res) => res.send("Get all users"));
-router.get("/:id", (req, res) => res.send("Get user by id"));
+const { UserController, ProfileController } = require("../controllers");
 
-// POST
-router.post("/", (req, res) => res.send("Create user"));
+/**
+ * =====================
+ * Auth
+ * =====================
+ */
+router.post("/register", UserController.register);
+router.post("/login", UserController.login);
 
-// PUT
-router.put("/:id", (req, res) => res.send("Update user"));
+/**
+ * =====================
+ * Users
+ * =====================
+ */
+router.get("/", UserController.getAll);
+router.post("/", UserController.create); // admin create user
+router.get("/:id", UserController.getById);
+router.put("/:id", UserController.update);
+router.delete("/:id", UserController.delete);
 
-// DELETE
-router.delete("/:id", (req, res) => res.send("Delete user"));
+/**
+ * =====================
+ * User Profile (1:1)
+ * =====================
+ */
+router.get("/:id/profile", ProfileController.getByUser);
+router.post("/:id/profile", ProfileController.createOrUpdate);
 
 module.exports = router;

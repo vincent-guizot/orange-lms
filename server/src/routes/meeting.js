@@ -1,17 +1,20 @@
 const express = require("express");
 const router = express.Router();
+const { MeetingController } = require("../controllers");
 
-// GET
-router.get("/", (req, res) => res.send("Get all meetings"));
-router.get("/:id", (req, res) => res.send("Get meeting by id"));
+/**
+ * Nested (by class)
+ * /classes/:classId/meetings
+ */
+router.get("/", MeetingController.getByClass);
+router.post("/", MeetingController.create);
 
-// POST
-router.post("/", (req, res) => res.send("Create meeting"));
-
-// PUT
-router.put("/:id", (req, res) => res.send("Update meeting"));
-
-// DELETE
-router.delete("/:id", (req, res) => res.send("Delete meeting"));
+/**
+ * Single meeting
+ * /meetings/:id
+ */
+router.get("/:id", MeetingController.getById);
+router.put("/:id", MeetingController.update);
+router.delete("/:id", MeetingController.delete);
 
 module.exports = router;
