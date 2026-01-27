@@ -9,7 +9,7 @@ const classUserService = require("./classUser.service");
 const meetingService = require("./meeting.service");
 
 const taskService = require("./task.service");
-const taskSubmissionService = require("./taskSubmission.service");
+const taskSubmissionService = require("./taskSubmission.service.js");
 
 const noteService = require("./note.service");
 const materialService = require("./material.service");

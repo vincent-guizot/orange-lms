@@ -1,7 +1,7 @@
 // controllers/index.js
 
 const UserController = require("./UserController");
-const ProfileController = require("./ProfileController");
+const ProfileController = require("./ProfileController.js");
 
 const ClassController = require("./ClassController");
 const MeetingController = require("./MeetingController");
