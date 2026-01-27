@@ -153,8 +153,7 @@
       "address": "Jl. Owner 1",
       "city": "Jakarta",
       "background": "Owner of LMS",
-      "phone": "08120000001",
-      "bio": "Oversees the LMS"
+      "phoneNumber": "08120000001"
     },
     {
       "id": 2,
@@ -163,8 +162,7 @@
       "address": "Jl. Admin 1",
       "city": "Jakarta",
       "background": "Administrator",
-      "phone": "08120000002",
-      "bio": "Manages LMS"
+      "phoneNumber": "08120000002"
     },
     {
       "id": 3,
@@ -173,8 +171,7 @@
       "address": "Jl. Admin 2",
       "city": "Jakarta",
       "background": "Administrator",
-      "phone": "08120000003",
-      "bio": "Manages LMS"
+      "phoneNumber": "08120000003"
     },
     {
       "id": 4,
@@ -183,8 +180,7 @@
       "address": "Jl. Mentor 1",
       "city": "Jakarta",
       "background": "Full Stack Mentor",
-      "phone": "08120000004",
-      "bio": "Teaches coding"
+      "phoneNumber": "08120000004"
     },
     {
       "id": 5,
@@ -193,8 +189,7 @@
       "address": "Jl. Mentor 2",
       "city": "Jakarta",
       "background": "Full Stack Mentor",
-      "phone": "08120000005",
-      "bio": "Teaches coding"
+      "phoneNumber": "08120000005"
     },
     {
       "id": 6,
@@ -203,8 +198,7 @@
       "address": "Jl. Mentor 3",
       "city": "Jakarta",
       "background": "Full Stack Mentor",
-      "phone": "08120000006",
-      "bio": "Teaches coding"
+      "phoneNumber": "08120000006"
     },
     {
       "id": 7,
@@ -213,8 +207,7 @@
       "address": "Jl. Mentee 1",
       "city": "Jakarta",
       "background": "Student",
-      "phone": "08120000007",
-      "bio": "Learning Full Stack"
+      "phoneNumber": "08120000007"
     },
     {
       "id": 8,
@@ -223,8 +216,7 @@
       "address": "Jl. Mentee 2",
       "city": "Jakarta",
       "background": "Student",
-      "phone": "08120000008",
-      "bio": "Learning Full Stack"
+      "phoneNumber": "08120000008"
     },
     {
       "id": 9,
@@ -233,8 +225,7 @@
       "address": "Jl. Mentee 3",
       "city": "Jakarta",
       "background": "Student",
-      "phone": "08120000009",
-      "bio": "Learning Full Stack"
+      "phoneNumber": "08120000009"
     },
     {
       "id": 10,
@@ -243,8 +234,7 @@
       "address": "Jl. Mentee 4",
       "city": "Jakarta",
       "background": "Student",
-      "phone": "081200000010",
-      "bio": "Learning Full Stack"
+      "phoneNumber": "081200000010"
     },
     {
       "id": 11,
@@ -253,8 +243,7 @@
       "address": "Jl. Mentee 5",
       "city": "Jakarta",
       "background": "Student",
-      "phone": "081200000011",
-      "bio": "Learning Full Stack"
+      "phoneNumber": "081200000011"
     },
     {
       "id": 12,
@@ -263,8 +252,7 @@
       "address": "Jl. Mentee 6",
       "city": "Jakarta",
       "background": "Student",
-      "phone": "081200000012",
-      "bio": "Learning Full Stack"
+      "phoneNumber": "081200000012"
     },
     {
       "id": 13,
@@ -273,8 +261,7 @@
       "address": "Jl. Mentee 7",
       "city": "Jakarta",
       "background": "Student",
-      "phone": "081200000013",
-      "bio": "Learning Full Stack"
+      "phoneNumber": "081200000013"
     },
     {
       "id": 14,
@@ -283,8 +270,7 @@
       "address": "Jl. Mentee 8",
       "city": "Jakarta",
       "background": "Student",
-      "phone": "081200000014",
-      "bio": "Learning Full Stack"
+      "phoneNumber": "081200000014"
     },
     {
       "id": 15,
@@ -293,8 +279,7 @@
       "address": "Jl. Mentee 9",
       "city": "Jakarta",
       "background": "Student",
-      "phone": "081200000015",
-      "bio": "Learning Full Stack"
+      "phoneNumber": "081200000015"
     },
     {
       "id": 16,
@@ -303,8 +288,7 @@
       "address": "Jl. Mentee 10",
       "city": "Jakarta",
       "background": "Student",
-      "phone": "081200000016",
-      "bio": "Learning Full Stack"
+      "phoneNumber": "081200000016"
     }
   ],
   "classes": [
