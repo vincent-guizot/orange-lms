@@ -5,6 +5,10 @@ class MaterialService {
     return Material.findAll({ where: { meetingId } });
   }
 
+  static async getAll() {
+    return Material.findAll();
+  }
+
   static async findById(id) {
     return Material.findByPk(id);
   }

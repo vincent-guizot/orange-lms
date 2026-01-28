@@ -12,6 +12,7 @@ router.post("/", MaterialController.create);
 /**
  * Material detail
  */
+router.get("/all", MaterialController.getAll);
 router.get("/:id", MaterialController.getById);
 router.put("/:id", MaterialController.update);
 router.delete("/:id", MaterialController.delete);

@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       Class.hasMany(models.ClassUser, { foreignKey: "classId" });
       Class.hasMany(models.Meeting, {
         foreignKey: "classId",
+        as: "meeting",
         onDelete: "CASCADE",
       });
     }

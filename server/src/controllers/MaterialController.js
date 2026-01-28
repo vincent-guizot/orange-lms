@@ -12,6 +12,15 @@ class MaterialController {
     }
   }
 
+  static async getAll(req, res, next) {
+    try {
+      const materials = await materialService.getAll();
+      res.json(materials);
+    } catch (err) {
+      next(err);
+    }
+  }
+
   static async create(req, res, next) {
     try {
       const material = await materialService.create(req.user, {

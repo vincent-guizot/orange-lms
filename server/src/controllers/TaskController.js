@@ -10,6 +10,15 @@ class TaskController {
     }
   }
 
+  static async getAll(req, res, next) {
+    try {
+      const tasks = await taskService.getAll();
+      res.json(tasks);
+    } catch (err) {
+      next(err);
+    }
+  }
+
   static async create(req, res, next) {
     try {
       const task = await taskService.create(req.user, {

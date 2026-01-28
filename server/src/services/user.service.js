@@ -23,11 +23,22 @@ class UserService {
   }
 
   static async findAll() {
-    return User.findAll({ include: Profile });
+    return User.findAll({
+      order: [["id", "ASC"]],
+      include: {
+        model: Profile,
+        as: "profile",
+      },
+    });
   }
 
   static async findById(id) {
-    return User.findByPk(id, { include: Profile });
+    return User.findByPk(id, {
+      include: {
+        model: Profile,
+        as: "profile",
+      },
+    });
   }
 
   static async update(id, data, currentUser) {
