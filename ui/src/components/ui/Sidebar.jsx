@@ -49,10 +49,10 @@ const Sidebar = () => {
             <Link
               key={item.name}
               to={item.path}
-              className={`flex items-center w-full px-6 py-3 transition-colors ${
+              className={`flex items-center w-full px-6 py-3 mb-2 transition-colors ${
                 isActive
-                  ? "bg-orange-600 text-white rounded-xl"
-                  : "text-gray-700 hover:bg-orange-600 hover:text-white rounded-xl"
+                  ? "bg-orange-500 text-white rounded"
+                  : "text-gray-700 hover:bg-orange-500 hover:text-white rounded"
               }`}
             >
               {item.icon}
@@ -72,8 +72,8 @@ const Sidebar = () => {
               to={item.path}
               className={`flex items-center w-full px-6 py-3 transition-colors ${
                 isActive
-                  ? "bg-gray-100 text-orange-700 rounded-xl "
-                  : "text-gray-700 hover:bg-orange-600 hover:text-white rounded-xl"
+                  ? "bg-gray-100 text-orange-500 rounded "
+                  : "text-gray-700 hover:bg-orange-500 hover:text-white rounded"
               }`}
             >
               {item.icon}
