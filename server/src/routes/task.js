@@ -12,6 +12,7 @@ router.post("/", TaskController.create);
 /**
  * Task detail
  */
+router.get("/all", TaskController.getAll);
 router.get("/:id", TaskController.getById);
 router.put("/:id", TaskController.update);
 router.delete("/:id", TaskController.delete);

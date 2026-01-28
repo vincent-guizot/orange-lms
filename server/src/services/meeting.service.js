@@ -3,7 +3,14 @@ const { Meeting, Task, Note, Material } = require("../models");
 class MeetingService {
   static async findAllByClass(classId) {
     return Meeting.findAll({
-      where: { classId },
+      where: { id: classId },
+      include: [Task, Note, Material],
+    });
+  }
+
+  static async getAll() {
+    return Meeting.findAll({
+      // where: { id: classId },
       include: [Task, Note, Material],
     });
   }

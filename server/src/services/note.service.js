@@ -5,6 +5,9 @@ class NoteService {
     return Note.findAll({ where: { meetingId } });
   }
 
+  static async getAll() {
+    return Note.findAll();
+  }
   static async findById(id) {
     return Note.findByPk(id);
   }

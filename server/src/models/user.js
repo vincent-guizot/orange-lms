@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
 
       User.hasOne(models.Profile, {
         foreignKey: "userId",
+        as: "profile",
         onDelete: "CASCADE",
       });
       User.belongsToMany(models.Class, {

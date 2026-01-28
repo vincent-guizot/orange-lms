@@ -2,11 +2,23 @@ const { Class, Meeting, Task, Note, Material } = require("../models");
 
 class ClassService {
   static async findAll() {
-    return Class.findAll({ include: [Meeting, Task, Note, Material] });
+    return Class.findAll({
+      order: [["id", "ASC"]],
+      include: {
+        model: Meeting,
+        as: "meeting",
+      },
+    });
   }
 
   static async findById(id) {
-    return Class.findByPk(id, { include: [Meeting, Task, Note, Material] });
+    return Class.findAll({
+      order: [["id", "ASC"]],
+      include: {
+        model: Meeting,
+        as: "meeting",
+      },
+    });
   }
 
   static async create(data, currentUser) {
