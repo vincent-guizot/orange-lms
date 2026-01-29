@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import useBreadcrumbs from "@/hooks/useBreadcrumbs";
 import MeetingService from "@/services/meetings.service";
 import { CheckCircle, XCircle } from "lucide-react";
+import { formatDate } from "@/helpers/index";
 
 const tabs = ["Attendance", "Notes", "Tasks", "Materials"];
 
@@ -43,17 +44,19 @@ const Details = () => {
         {breadcrumbs.map((b) => (
           <span key={b.to}>{b.label} / </span>
         ))}
-        <span className="font-medium">{meeting.topic}</span>
+        <span className="font-medium">{meeting.meetingNumber}</span>
       </div>
 
       {/* Meeting Overview */}
       <div className="bg-white p-4 rounded shadow">
-        <h2 className="text-xl font-bold">{meeting.topic}</h2>
-        <p className="text-gray-600">{meeting.classId}</p>
+        <h2 className="text-xl font-bold">{meeting.title}</h2>
+        <p className="text-gray-600">{meeting.description}</p>
         <p className="text-gray-500 text-sm">
-          {meeting.date} | {meeting.startHour} - {meeting.finishHour}
+          {meeting.meetingDate} | {meeting.startHour} - {meeting.finishHour}
         </p>
-        <p className="text-gray-500 text-sm">Mentor: -</p>
+        <p className="text-gray-500 text-sm">
+          Mentor: {meeting.mentor?.name ?? "-"}
+        </p>
 
         <span
           className={`inline-block mt-2 px-2 py-1 text-xs rounded ${
@@ -62,7 +65,7 @@ const Details = () => {
               : "bg-yellow-100 text-yellow-700"
           }`}
         >
-          {meeting.status}
+          {meeting.status ? "Progress" : "Done"}
         </span>
       </div>
 
@@ -114,20 +117,164 @@ const Details = () => {
       )}
 
       {activeTab === "Notes" && (
-        <div className="p-6 text-center text-gray-500">
-          No notes for this meeting.
+        <div className="mt-4 overflow-x-auto">
+          {meeting.Notes?.length === 0 ? (
+            <div className="p-6 text-center text-gray-500">
+              No notes available.
+            </div>
+          ) : (
+            <table className="w-full bg-white rounded shadow">
+              <thead className="bg-gray-100 text-sm">
+                <tr>
+                  <th className="p-3">ID</th>
+                  <th className="p-3">Title</th>
+                  <th className="p-3">Due Date</th>
+                  <th className="p-3">Max Score</th>
+                  <th className="p-3">Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                {meeting.Notes.map((note) => (
+                  <tr key={note.id} className="border-t">
+                    <td className="p-3">{note.id}</td>
+
+                    <td className="p-3">
+                      <div className="font-medium">Note #{note.id}</div>
+                      <div className="text-sm text-gray-500">
+                        {note.content}
+                      </div>
+                    </td>
+
+                    <td className="p-3">-</td>
+                    <td className="p-3">-</td>
+
+                    <td className="p-3">
+                      {note.fileUrl ? (
+                        <a
+                          href={note.fileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-orange-600 hover:text-orange-800"
+                        >
+                          ⬇️ Download
+                        </a>
+                      ) : (
+                        "-"
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       )}
 
       {activeTab === "Tasks" && (
-        <div className="p-6 text-center text-gray-500">
-          No tasks assigned yet.
+        <div className="mt-4 overflow-x-auto">
+          {meeting.Tasks?.length === 0 ? (
+            <div className="p-6 text-center text-gray-500">
+              No tasks available.
+            </div>
+          ) : (
+            <table className="w-full bg-white rounded shadow">
+              <thead className="bg-gray-100 text-sm">
+                <tr>
+                  <th className="p-3">ID</th>
+                  <th className="p-3">Title</th>
+                  <th className="p-3">Due Date</th>
+                  <th className="p-3">Max Score</th>
+                  <th className="p-3">Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                {meeting.Tasks.map((task) => (
+                  <tr key={task.id} className="border-t">
+                    <td className="p-3">{task.id}</td>
+
+                    <td className="p-3">
+                      <div className="font-medium">{task.title}</div>
+                      <div className="text-sm text-gray-500">
+                        {task.description}
+                      </div>
+                    </td>
+
+                    <td className="p-3">{formatDate(task.dueDate)}</td>
+                    <td className="p-3">{task.maxScore ?? "-"}</td>
+
+                    <td className="p-3">
+                      {task.fileUrl ? (
+                        <a
+                          href={task.fileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-orange-600 hover:text-orange-800"
+                        >
+                          ⬇️ Download
+                        </a>
+                      ) : (
+                        "-"
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       )}
 
       {activeTab === "Materials" && (
-        <div className="p-6 text-center text-gray-500">
-          No materials uploaded.
+        <div className="mt-4 overflow-x-auto">
+          {meeting.Materials?.length === 0 ? (
+            <div className="p-6 text-center text-gray-500">
+              No materials available.
+            </div>
+          ) : (
+            <table className="w-full bg-white rounded shadow">
+              <thead className="bg-gray-100 text-sm">
+                <tr>
+                  <th className="p-3">ID</th>
+                  <th className="p-3">Title</th>
+                  <th className="p-3">Due Date</th>
+                  <th className="p-3">Max Score</th>
+                  <th className="p-3">Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                {meeting.Materials.map((material) => (
+                  <tr key={material.id} className="border-t">
+                    <td className="p-3">{material.id}</td>
+
+                    <td className="p-3">
+                      <div className="font-medium">{material.title}</div>
+                      <div className="text-sm text-gray-500">
+                        Uploaded by: {material.uploadedBy}
+                      </div>
+                    </td>
+
+                    <td className="p-3">-</td>
+                    <td className="p-3">-</td>
+
+                    <td className="p-3">
+                      {material.fileUrl ? (
+                        <a
+                          href={material.fileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-orange-600 hover:text-orange-800"
+                        >
+                          ⬇️ Download
+                        </a>
+                      ) : (
+                        "-"
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       )}
     </div>
