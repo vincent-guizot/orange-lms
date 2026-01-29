@@ -11,12 +11,12 @@ import { Trash2, Edit2, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const columns = [
-  { key: "name", label: "Class" },
-  { key: "subject", label: "Subject" },
+  { key: "code", label: "Class Code" },
+  { key: "title", label: "Class" },
   { key: "startDate", label: "Date" },
-  { key: "mentorName", label: "Mentor" },
+  { key: "mentorId", label: "Mentor" },
   { key: "totalMentees", label: "Total Mentees" },
-  { key: "totalMeetings", label: "Meetings" },
+  { key: "meeting.length", label: "Meetings" },
   { key: "actions", label: "Actions" },
 ];
 

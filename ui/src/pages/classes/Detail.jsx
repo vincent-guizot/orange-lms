@@ -26,7 +26,7 @@ const Detail = () => {
     const fetchClass = async () => {
       try {
         const res = await ClassService.getById(+id);
-        setClassData(res);
+        setClassData(res[0]);
       } catch (err) {
         console.error(err);
       } finally {
@@ -47,20 +47,21 @@ const Detail = () => {
         {breadcrumbs.map((b, i) => (
           <span key={b.to}>{b.label} - </span>
         ))}
-        <span className="font-medium">{classData.name}</span>
+        <span className="font-medium">{classData.code}</span>
       </div>
 
       {/* Class Overview */}
       <div className="bg-white p-4 rounded shadow flex justify-between items-center">
         <div>
-          <h2 className="text-xl font-bold">{classData.name}</h2>
-          <p className="text-gray-600">{classData.subject}</p>
+          <h2 className="text-xl font-bold">{classData.title}</h2>
+          <p className="text-gray-600">{classData.description}</p>
           <p className="text-gray-500 text-sm">
             {classData.startDate} | {classData.startHour} -{" "}
             {classData.finishHour}
           </p>
           <p className="text-gray-500 text-sm">
-            Mentor: {classData.mentorName} | Mentees: {classData.totalMentees}
+            Mentor: {classData.mentor?.name ?? "-"} | Mentees:{" "}
+            {classData.mentee?.name ?? "-"}
           </p>
         </div>
         <div className="flex gap-2">
@@ -93,7 +94,7 @@ const Detail = () => {
       {/* Tab Content */}
       <div>
         {activeTab === "Meetings" && (
-          <TabTable data={classData.meetings || []} />
+          <TabTable data={classData.meeting || []} />
         )}
         {activeTab === "Notes" && <TabTable data={classData.notes || []} />}
         {activeTab === "Tasks" && <TabTable data={classData.tasks || []} />}
