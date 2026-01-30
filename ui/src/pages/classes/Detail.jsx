@@ -1,7 +1,8 @@
 // src/pages/classes/Detail.jsx
 import React, { useEffect, useState } from "react";
+
 import { useParams } from "react-router-dom";
-import Table from "@/components/ui/Table";
+import TabTable from "@/components/ui/TabTable";
 import TableControls from "@/components/ui/TableControls";
 import useSearch from "@/hooks/useSearch";
 import useFilter from "@/hooks/useFilter";
@@ -11,7 +12,7 @@ import useBreadcrumbs from "@/hooks/useBreadcrumbs";
 import ClassService from "@/services/class.service";
 import { Trash2, Edit2, Eye } from "lucide-react";
 
-const tabs = ["Meetings", "Notes", "Tasks", "Materials", "Mentees"];
+const tabs = ["Meetings", "Mentees", "Notes", "Tasks", "Materials"];
 
 const Detail = () => {
   const { id } = useParams();
@@ -53,13 +54,13 @@ const Detail = () => {
       {/* Class Overview */}
       <div className="bg-white p-4 rounded shadow flex justify-between items-center">
         <div>
-          <h2 className="text-xl font-bold">{classData.name}</h2>
-          <p className="text-gray-600">{classData.description}</p>
-          <p className="text-gray-500 text-sm">
+          <h2 className="text-xl font-bold mb-2">{classData.name}</h2>
+          <p className="text-gray-600 mb-2">{classData.description}</p>
+          <p className="text-gray-500 text-sm mb-2">
             {classData.startDate} | {classData.startHour} -{" "}
             {classData.finishHour}
           </p>
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm font-semibold">
             Mentor: {classData.mentor?.name ?? "-"} | Mentees:
             {classData.mentee?.length ?? "-"}
           </p>
@@ -94,74 +95,73 @@ const Detail = () => {
       {/* Tab Content */}
       <div>
         {activeTab === "Meetings" && (
-          <TabTable data={classData.meeting || []} />
+          <TabTable
+            data={classData.meeting || []}
+            columns={[
+              { key: "name", label: "Meeting Name" },
+              { key: "description", label: " Description" },
+              { key: "startHour", label: "Start Date" },
+              { key: "finishHour", label: "Finish Date" },
+              { key: "link", label: "Link" },
+            ]}
+          />
         )}
-        {activeTab === "Notes" && <TabTable data={classData.notes || []} />}
-        {activeTab === "Tasks" && <TabTable data={classData.tasks || []} />}
+        {activeTab === "Notes" && (
+          <TabTable
+            data={classData.note || []}
+            columns={[
+              { key: "name", label: "Name" },
+              { key: "description", label: "Description" },
+              { key: "dueDate", label: "Due Date" },
+              { key: "fileUrl", label: "File" },
+            ]}
+          />
+        )}
+        {activeTab === "Tasks" && (
+          <TabTable
+            data={classData.task || []}
+            columns={[
+              { key: "name", label: "Name" },
+              { key: "description", label: "Description" },
+              { key: "dueDate", label: "Due Date" },
+              { key: "maxScore", label: "Max Score" },
+              {
+                key: "actions",
+                label: "Actions",
+                render: (row) => (
+                  <button
+                    onClick={() => alert(`Download task ${row.title}`)}
+                    className="text-blue-600 hover:text-blue-800"
+                  >
+                    Download
+                  </button>
+                ),
+              },
+            ]}
+          />
+        )}
         {activeTab === "Materials" && (
-          <TabTable data={classData.materials || []} />
+          <TabTable
+            data={classData.material || []}
+            columns={[
+              { key: "name", label: "Name" },
+              { key: "description", label: "Description" },
+              { key: "fileUrl", label: "File" },
+            ]}
+          />
         )}
-        {activeTab === "Mentees" && <TabTable data={classData.mentees || []} />}
+        {activeTab === "Mentees" && (
+          <TabTable
+            data={classData.Users || []}
+            columns={[
+              { key: "name", label: "Name" },
+              { key: "email", label: "Email" },
+            ]}
+          />
+        )}
       </div>
     </div>
   );
 };
 
 export default Detail;
-
-/**
- * Reusable Table for tabs
- */
-const TabTable = ({ data }) => {
-  const columns = data[0]
-    ? Object.keys(data[0]).map((key) => ({ key, label: key }))
-    : [];
-
-  // Search / Filter / Sort / Pagination hooks
-  const { query, setQuery, searchedData } = useSearch(
-    data,
-    columns.map((c) => c.key),
-  );
-  const { filterValue, setFilterValue, filteredData } = useFilter(
-    searchedData,
-    columns[0]?.key || "",
-  );
-  const { sortedData, sortKey, toggleSort } = useSort(filteredData);
-  const { paginatedData, currentPage, totalPages, nextPage, prevPage } =
-    usePagination(sortedData, 5);
-
-  return (
-    <div className="mt-4">
-      <TableControls
-        searchQuery={query}
-        setSearchQuery={setQuery}
-        filterOptions={[]} // optional, bisa tambahkan sesuai tab
-        filterValue={filterValue}
-        setFilterValue={setFilterValue}
-        sortOptions={columns.map((c) => ({ key: c.key, label: c.label }))}
-        sortKey={sortKey}
-        toggleSort={toggleSort}
-      />
-      <Table columns={columns} data={paginatedData} />
-      <div className="flex gap-2 items-center mt-2">
-        <button
-          onClick={prevPage}
-          disabled={currentPage === 1}
-          className="border px-3 py-1 rounded disabled:opacity-50"
-        >
-          Prev
-        </button>
-        <span>
-          Page {currentPage} / {totalPages}
-        </span>
-        <button
-          onClick={nextPage}
-          disabled={currentPage === totalPages}
-          className="border px-3 py-1 rounded disabled:opacity-50"
-        >
-          Next
-        </button>
-      </div>
-    </div>
-  );
-};
