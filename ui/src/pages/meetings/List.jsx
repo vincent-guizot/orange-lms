@@ -11,11 +11,12 @@ import { Trash2, Edit2, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const columns = [
-  { key: "meetingNumber", label: "Meeting Number" },
-  { key: "title", label: "Class Topic" },
+  { key: "name", label: "Topic" },
   { key: "description", label: "Description" },
   { key: "meetingDate", label: "Date" },
-  { key: "attendanceCount", label: "Attendance" },
+  { key: "startHour", label: "Start Hour" },
+  { key: "finishHour", label: "Finish Hour" },
+  { key: "meeting", label: "Class Code", render: (row) => row.class?.code },
   { key: "actions", label: "Actions" },
 ];
 
@@ -40,14 +41,15 @@ const List = () => {
 
   // SEARCH
   const { query, setQuery, searchedData } = useSearch(data, [
-    "title",
+    "name",
     "description",
+    "category",
   ]);
 
   // FILTER (by class)
   const { filterValue, setFilterValue, filteredData } = useFilter(
     searchedData,
-    "className",
+    "category",
   );
 
   // SORT
