@@ -12,6 +12,7 @@ router.post("/", NoteController.create);
 /**
  * Note detail
  */
+router.get("/all", NoteController.getAll);
 router.get("/:id", NoteController.getById);
 router.put("/:id", NoteController.update);
 router.delete("/:id", NoteController.delete);

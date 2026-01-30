@@ -3,7 +3,22 @@ const { meetingService } = require("../services");
 class MeetingController {
   static async getByClass(req, res, next) {
     try {
-      const meetings = await meetingService.findAllByClass(req.params.classId);
+      const classId = Number(req.params.classId);
+
+      if (Number.isNaN(classId)) {
+        throw { name: "BadRequest", message: "Invalid classId" };
+      }
+
+      const meetings = await meetingService.findAllByClass(classId);
+      res.json(meetings);
+    } catch (err) {
+      next(err);
+    }
+  }
+
+  static async getAll(req, res, next) {
+    try {
+      const meetings = await meetingService.getAll();
       res.json(meetings);
     } catch (err) {
       next(err);

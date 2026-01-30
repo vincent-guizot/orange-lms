@@ -5,6 +5,10 @@ class TaskService {
     return Task.findAll({ where: { meetingId } });
   }
 
+  static async getAll() {
+    return Task.findAll();
+  }
+
   static async findById(id) {
     return Task.findByPk(id);
   }

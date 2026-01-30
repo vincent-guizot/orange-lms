@@ -10,6 +10,15 @@ class NoteController {
     }
   }
 
+  static async getAll(req, res, next) {
+    try {
+      const notes = await noteService.getAll();
+      res.json(notes);
+    } catch (err) {
+      next(err);
+    }
+  }
+
   static async create(req, res, next) {
     try {
       const note = await noteService.create(req.user, {
