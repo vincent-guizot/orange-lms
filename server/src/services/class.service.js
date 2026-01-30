@@ -1,23 +1,54 @@
-const { Class, Meeting, Task, Note, Material } = require("../models");
+const { User, Class, Meeting, Task, Note, Material } = require("../models");
 
 class ClassService {
   static async findAll() {
     return Class.findAll({
       order: [["id", "ASC"]],
-      include: {
-        model: Meeting,
-        as: "meeting",
-      },
+      include: [
+        {
+          model: Meeting,
+          as: "meeting",
+        },
+        {
+          model: User,
+          as: "mentor",
+          attributes: ["id", "name", "email", "avatarUrl"],
+        },
+        {
+          model: User,
+          attributes: ["id", "name", "email", "avatarUrl"],
+          through: {
+            attributes: ["roleInClass", "progressPercentage", "joinedAt"],
+            where: { roleInClass: "mentee" },
+          },
+        },
+      ],
     });
   }
 
   static async findById(id) {
     return Class.findAll({
+      where: { id },
       order: [["id", "ASC"]],
-      include: {
-        model: Meeting,
-        as: "meeting",
-      },
+      include: [
+        {
+          model: Meeting,
+          as: "meeting",
+        },
+        {
+          model: User,
+          as: "mentor",
+          attributes: ["id", "name", "email", "avatarUrl"],
+        },
+        {
+          model: User,
+          attributes: ["id", "name", "email", "avatarUrl"],
+          through: {
+            attributes: ["roleInClass", "progressPercentage", "joinedAt"],
+            where: { roleInClass: "mentee" },
+          },
+        },
+      ],
     });
   }
 

@@ -2,8 +2,8 @@
   "users": [
     {
       "id": 1,
-      "name": "Oliver Owner",
-      "email": "owner@example.com",
+      "name": "Vincent SG",
+      "email": "vincentsg@mail.com",
       "password": "hashed_pw",
       "role": "owner",
       "avatarUrl": "https://picsum.photos/200/100?random=353",
@@ -295,41 +295,38 @@
     {
       "id": 1,
       "code": "JSF01",
-      "title": "JS Fundamentals",
+      "name": "JS Fundamentals",
       "description": "Learn JS basics",
       "category": "JS Fundamental",
       "mentorId": 6,
       "level": "Beginner",
       "startDate": "2025-10-01",
       "endDate": "2025-12-01",
-      "status": "active",
-      "imageUrl": "https://picsum.photos/200/100?random=602"
+      "status": "active"
     },
     {
       "id": 2,
       "code": "BE01",
-      "title": "Back End Development",
+      "name": "Back End Development",
       "description": "Node, Express, DB",
       "category": "Back End",
       "mentorId": 7,
       "level": "Intermediate",
       "startDate": "2025-11-01",
       "endDate": "2026-02-01",
-      "status": "active",
-      "imageUrl": "https://picsum.photos/200/100?random=752"
+      "status": "active"
     },
     {
       "id": 3,
       "code": "FE01",
-      "title": "Front End Development",
+      "name": "Front End Development",
       "description": "React, Tailwind, Hooks",
       "category": "Front End",
       "mentorId": 8,
       "level": "Intermediate",
       "startDate": "2025-11-01",
       "endDate": "2026-02-01",
-      "status": "active",
-      "imageUrl": "https://picsum.photos/200/100?random=629"
+      "status": "active"
     }
   ],
   "class_users": [
@@ -435,353 +432,321 @@
       "id": 1,
       "classId": 1,
       "meetingNumber": 1,
-      "title": "JS Fundamentals Meeting 1",
+      "name": "JS Fundamentals Meeting 1",
       "description": "Content for JS Fundamentals meeting 1",
       "meetingDate": "2025-11-17",
       "startHour": "12:00",
-      "finishHour": "08:30",
-      "imageUrl": "https://picsum.photos/200/100?random=957"
+      "finishHour": "08:30"
     },
     {
       "id": 2,
       "classId": 1,
       "meetingNumber": 2,
-      "title": "JS Fundamentals Meeting 2",
+      "name": "JS Fundamentals Meeting 2",
       "description": "Content for JS Fundamentals meeting 2",
       "meetingDate": "2025-10-22",
       "startHour": "11:00",
-      "finishHour": "09:30",
-      "imageUrl": "https://picsum.photos/200/100?random=150"
+      "finishHour": "09:30"
     },
     {
       "id": 3,
       "classId": 1,
       "meetingNumber": 3,
-      "title": "JS Fundamentals Meeting 3",
+      "name": "JS Fundamentals Meeting 3",
       "description": "Content for JS Fundamentals meeting 3",
       "meetingDate": "2025-11-08",
       "startHour": "14:00",
-      "finishHour": "12:00",
-      "imageUrl": "https://picsum.photos/200/100?random=486"
+      "finishHour": "12:00"
     },
     {
       "id": 4,
       "classId": 1,
       "meetingNumber": 4,
-      "title": "JS Fundamentals Meeting 4",
+      "name": "JS Fundamentals Meeting 4",
       "description": "Content for JS Fundamentals meeting 4",
       "meetingDate": "2025-10-04",
       "startHour": "09:00",
-      "finishHour": "15:00",
-      "imageUrl": "https://picsum.photos/200/100?random=445"
+      "finishHour": "15:00"
     },
     {
       "id": 5,
       "classId": 1,
       "meetingNumber": 5,
-      "title": "JS Fundamentals Meeting 5",
+      "name": "JS Fundamentals Meeting 5",
       "description": "Content for JS Fundamentals meeting 5",
       "meetingDate": "2025-10-13",
       "startHour": "14:30",
-      "finishHour": "16:30",
-      "imageUrl": "https://picsum.photos/200/100?random=128"
+      "finishHour": "16:30"
     },
     {
       "id": 6,
       "classId": 1,
       "meetingNumber": 6,
-      "title": "JS Fundamentals Meeting 6",
+      "name": "JS Fundamentals Meeting 6",
       "description": "Content for JS Fundamentals meeting 6",
       "meetingDate": "2025-10-28",
       "startHour": "11:30",
-      "finishHour": "09:00",
-      "imageUrl": "https://picsum.photos/200/100?random=854"
+      "finishHour": "09:00"
     },
     {
       "id": 7,
       "classId": 1,
       "meetingNumber": 7,
-      "title": "JS Fundamentals Meeting 7",
+      "name": "JS Fundamentals Meeting 7",
       "description": "Content for JS Fundamentals meeting 7",
       "meetingDate": "2025-11-21",
       "startHour": "15:30",
-      "finishHour": "13:00",
-      "imageUrl": "https://picsum.photos/200/100?random=142"
+      "finishHour": "13:00"
     },
     {
       "id": 8,
       "classId": 1,
       "meetingNumber": 8,
-      "title": "JS Fundamentals Meeting 8",
+      "name": "JS Fundamentals Meeting 8",
       "description": "Content for JS Fundamentals meeting 8",
       "meetingDate": "2025-11-25",
       "startHour": "14:00",
-      "finishHour": "15:00",
-      "imageUrl": "https://picsum.photos/200/100?random=111"
+      "finishHour": "15:00"
     },
     {
       "id": 9,
       "classId": 2,
       "meetingNumber": 1,
-      "title": "Back End Development Meeting 1",
+      "name": "Back End Development Meeting 1",
       "description": "Content for Back End Development meeting 1",
       "meetingDate": "2025-12-29",
       "startHour": "09:30",
-      "finishHour": "13:00",
-      "imageUrl": "https://picsum.photos/200/100?random=803"
+      "finishHour": "13:00"
     },
     {
       "id": 10,
       "classId": 2,
       "meetingNumber": 2,
-      "title": "Back End Development Meeting 2",
+      "name": "Back End Development Meeting 2",
       "description": "Content for Back End Development meeting 2",
       "meetingDate": "2025-11-21",
       "startHour": "14:00",
-      "finishHour": "10:30",
-      "imageUrl": "https://picsum.photos/200/100?random=446"
+      "finishHour": "10:30"
     },
     {
       "id": 11,
       "classId": 2,
       "meetingNumber": 3,
-      "title": "Back End Development Meeting 3",
+      "name": "Back End Development Meeting 3",
       "description": "Content for Back End Development meeting 3",
       "meetingDate": "2025-12-18",
       "startHour": "14:00",
-      "finishHour": "14:30",
-      "imageUrl": "https://picsum.photos/200/100?random=572"
+      "finishHour": "14:30"
     },
     {
       "id": 12,
       "classId": 2,
       "meetingNumber": 4,
-      "title": "Back End Development Meeting 4",
+      "name": "Back End Development Meeting 4",
       "description": "Content for Back End Development meeting 4",
       "meetingDate": "2026-01-31",
       "startHour": "13:30",
-      "finishHour": "14:30",
-      "imageUrl": "https://picsum.photos/200/100?random=175"
+      "finishHour": "14:30"
     },
     {
       "id": 13,
       "classId": 2,
       "meetingNumber": 5,
-      "title": "Back End Development Meeting 5",
+      "name": "Back End Development Meeting 5",
       "description": "Content for Back End Development meeting 5",
       "meetingDate": "2025-12-01",
       "startHour": "15:00",
-      "finishHour": "12:30",
-      "imageUrl": "https://picsum.photos/200/100?random=893"
+      "finishHour": "12:30"
     },
     {
       "id": 14,
       "classId": 2,
       "meetingNumber": 6,
-      "title": "Back End Development Meeting 6",
+      "name": "Back End Development Meeting 6",
       "description": "Content for Back End Development meeting 6",
       "meetingDate": "2026-01-19",
       "startHour": "14:30",
-      "finishHour": "16:30",
-      "imageUrl": "https://picsum.photos/200/100?random=868"
+      "finishHour": "16:30"
     },
     {
       "id": 15,
       "classId": 2,
       "meetingNumber": 7,
-      "title": "Back End Development Meeting 7",
+      "name": "Back End Development Meeting 7",
       "description": "Content for Back End Development meeting 7",
       "meetingDate": "2025-11-04",
       "startHour": "09:00",
-      "finishHour": "08:30",
-      "imageUrl": "https://picsum.photos/200/100?random=226"
+      "finishHour": "08:30"
     },
     {
       "id": 16,
       "classId": 2,
       "meetingNumber": 8,
-      "title": "Back End Development Meeting 8",
+      "name": "Back End Development Meeting 8",
       "description": "Content for Back End Development meeting 8",
       "meetingDate": "2025-12-23",
       "startHour": "13:30",
-      "finishHour": "15:00",
-      "imageUrl": "https://picsum.photos/200/100?random=964"
+      "finishHour": "15:00"
     },
     {
       "id": 17,
       "classId": 2,
       "meetingNumber": 9,
-      "title": "Back End Development Meeting 9",
+      "name": "Back End Development Meeting 9",
       "description": "Content for Back End Development meeting 9",
       "meetingDate": "2026-01-29",
       "startHour": "10:30",
-      "finishHour": "11:00",
-      "imageUrl": "https://picsum.photos/200/100?random=790"
+      "finishHour": "11:00"
     },
     {
       "id": 18,
       "classId": 2,
       "meetingNumber": 10,
-      "title": "Back End Development Meeting 10",
+      "name": "Back End Development Meeting 10",
       "description": "Content for Back End Development meeting 10",
       "meetingDate": "2025-12-18",
       "startHour": "12:30",
-      "finishHour": "09:00",
-      "imageUrl": "https://picsum.photos/200/100?random=3"
+      "finishHour": "09:00"
     },
     {
       "id": 19,
       "classId": 2,
       "meetingNumber": 11,
-      "title": "Back End Development Meeting 11",
+      "name": "Back End Development Meeting 11",
       "description": "Content for Back End Development meeting 11",
       "meetingDate": "2025-11-17",
       "startHour": "09:30",
-      "finishHour": "16:00",
-      "imageUrl": "https://picsum.photos/200/100?random=884"
+      "finishHour": "16:00"
     },
     {
       "id": 20,
       "classId": 2,
       "meetingNumber": 12,
-      "title": "Back End Development Meeting 12",
+      "name": "Back End Development Meeting 12",
       "description": "Content for Back End Development meeting 12",
       "meetingDate": "2025-11-11",
       "startHour": "13:30",
-      "finishHour": "13:30",
-      "imageUrl": "https://picsum.photos/200/100?random=22"
+      "finishHour": "13:30"
     },
     {
       "id": 21,
       "classId": 3,
       "meetingNumber": 1,
-      "title": "Front End Development Meeting 1",
+      "name": "Front End Development Meeting 1",
       "description": "Content for Front End Development meeting 1",
       "meetingDate": "2025-11-29",
       "startHour": "10:00",
-      "finishHour": "08:00",
-      "imageUrl": "https://picsum.photos/200/100?random=829"
+      "finishHour": "08:00"
     },
     {
       "id": 22,
       "classId": 3,
       "meetingNumber": 2,
-      "title": "Front End Development Meeting 2",
+      "name": "Front End Development Meeting 2",
       "description": "Content for Front End Development meeting 2",
       "meetingDate": "2025-11-27",
       "startHour": "12:00",
-      "finishHour": "13:00",
-      "imageUrl": "https://picsum.photos/200/100?random=680"
+      "finishHour": "13:00"
     },
     {
       "id": 23,
       "classId": 3,
       "meetingNumber": 3,
-      "title": "Front End Development Meeting 3",
+      "name": "Front End Development Meeting 3",
       "description": "Content for Front End Development meeting 3",
       "meetingDate": "2026-01-23",
       "startHour": "09:00",
-      "finishHour": "08:00",
-      "imageUrl": "https://picsum.photos/200/100?random=987"
+      "finishHour": "08:00"
     },
     {
       "id": 24,
       "classId": 3,
       "meetingNumber": 4,
-      "title": "Front End Development Meeting 4",
+      "name": "Front End Development Meeting 4",
       "description": "Content for Front End Development meeting 4",
       "meetingDate": "2025-11-01",
       "startHour": "11:30",
-      "finishHour": "15:00",
-      "imageUrl": "https://picsum.photos/200/100?random=723"
+      "finishHour": "15:00"
     },
     {
       "id": 25,
       "classId": 3,
       "meetingNumber": 5,
-      "title": "Front End Development Meeting 5",
+      "name": "Front End Development Meeting 5",
       "description": "Content for Front End Development meeting 5",
       "meetingDate": "2026-01-25",
       "startHour": "15:30",
-      "finishHour": "10:00",
-      "imageUrl": "https://picsum.photos/200/100?random=291"
+      "finishHour": "10:00"
     },
     {
       "id": 26,
       "classId": 3,
       "meetingNumber": 6,
-      "title": "Front End Development Meeting 6",
+      "name": "Front End Development Meeting 6",
       "description": "Content for Front End Development meeting 6",
       "meetingDate": "2026-01-05",
       "startHour": "14:00",
-      "finishHour": "14:00",
-      "imageUrl": "https://picsum.photos/200/100?random=57"
+      "finishHour": "14:00"
     },
     {
       "id": 27,
       "classId": 3,
       "meetingNumber": 7,
-      "title": "Front End Development Meeting 7",
+      "name": "Front End Development Meeting 7",
       "description": "Content for Front End Development meeting 7",
       "meetingDate": "2025-11-03",
       "startHour": "10:30",
-      "finishHour": "13:30",
-      "imageUrl": "https://picsum.photos/200/100?random=494"
+      "finishHour": "13:30"
     },
     {
       "id": 28,
       "classId": 3,
       "meetingNumber": 8,
-      "title": "Front End Development Meeting 8",
+      "name": "Front End Development Meeting 8",
       "description": "Content for Front End Development meeting 8",
       "meetingDate": "2025-12-06",
       "startHour": "11:30",
-      "finishHour": "13:30",
-      "imageUrl": "https://picsum.photos/200/100?random=193"
+      "finishHour": "13:30"
     },
     {
       "id": 29,
       "classId": 3,
       "meetingNumber": 9,
-      "title": "Front End Development Meeting 9",
+      "name": "Front End Development Meeting 9",
       "description": "Content for Front End Development meeting 9",
       "meetingDate": "2025-12-03",
       "startHour": "09:30",
-      "finishHour": "11:00",
-      "imageUrl": "https://picsum.photos/200/100?random=979"
+      "finishHour": "11:00"
     },
     {
       "id": 30,
       "classId": 3,
       "meetingNumber": 10,
-      "title": "Front End Development Meeting 10",
+      "name": "Front End Development Meeting 10",
       "description": "Content for Front End Development meeting 10",
       "meetingDate": "2025-12-13",
       "startHour": "13:00",
-      "finishHour": "10:30",
-      "imageUrl": "https://picsum.photos/200/100?random=160"
+      "finishHour": "10:30"
     },
     {
       "id": 31,
       "classId": 3,
       "meetingNumber": 11,
-      "title": "Front End Development Meeting 11",
+      "name": "Front End Development Meeting 11",
       "description": "Content for Front End Development meeting 11",
       "meetingDate": "2025-12-29",
       "startHour": "11:30",
-      "finishHour": "15:00",
-      "imageUrl": "https://picsum.photos/200/100?random=960"
+      "finishHour": "15:00"
     },
     {
       "id": 32,
       "classId": 3,
       "meetingNumber": 12,
-      "title": "Front End Development Meeting 12",
+      "name": "Front End Development Meeting 12",
       "description": "Content for Front End Development meeting 12",
       "meetingDate": "2025-11-06",
       "startHour": "15:30",
-      "finishHour": "10:00",
-      "imageUrl": "https://picsum.photos/200/100?random=569"
+      "finishHour": "10:00"
     }
   ],
   "tasks": [
@@ -789,641 +754,641 @@
       "id": 1,
       "classId": 1,
       "meetingId": 1,
-      "title": "Task 1 for JS Fundamentals Meeting 1",
+      "name": "Task 1 for JS Fundamentals Meeting 1",
       "description": "Description task 1",
       "dueDate": "2025-11-17",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=549"
+      "createdBy": 5
     },
     {
       "id": 2,
       "classId": 1,
       "meetingId": 1,
-      "title": "Task 2 for JS Fundamentals Meeting 1",
+      "name": "Task 2 for JS Fundamentals Meeting 1",
       "description": "Description task 2",
       "dueDate": "2025-11-17",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=851"
+      "createdBy": 5
     },
     {
       "id": 3,
       "classId": 1,
       "meetingId": 2,
-      "title": "Task 1 for JS Fundamentals Meeting 2",
+      "name": "Task 1 for JS Fundamentals Meeting 2",
       "description": "Description task 1",
       "dueDate": "2025-10-22",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=912"
+      "createdBy": 5
     },
     {
       "id": 4,
       "classId": 1,
       "meetingId": 2,
-      "title": "Task 2 for JS Fundamentals Meeting 2",
+      "name": "Task 2 for JS Fundamentals Meeting 2",
       "description": "Description task 2",
       "dueDate": "2025-10-22",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=293"
+      "createdBy": 5
     },
     {
       "id": 5,
       "classId": 1,
       "meetingId": 3,
-      "title": "Task 1 for JS Fundamentals Meeting 3",
+      "name": "Task 1 for JS Fundamentals Meeting 3",
       "description": "Description task 1",
       "dueDate": "2025-11-08",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=300"
+      "createdBy": 5
     },
     {
       "id": 6,
       "classId": 1,
       "meetingId": 3,
-      "title": "Task 2 for JS Fundamentals Meeting 3",
+      "name": "Task 2 for JS Fundamentals Meeting 3",
       "description": "Description task 2",
       "dueDate": "2025-11-08",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=283"
+      "createdBy": 5
     },
     {
       "id": 7,
       "classId": 1,
       "meetingId": 4,
-      "title": "Task 1 for JS Fundamentals Meeting 4",
+      "name": "Task 1 for JS Fundamentals Meeting 4",
       "description": "Description task 1",
       "dueDate": "2025-10-04",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=205"
+      "createdBy": 5
     },
     {
       "id": 8,
       "classId": 1,
       "meetingId": 4,
-      "title": "Task 2 for JS Fundamentals Meeting 4",
+      "name": "Task 2 for JS Fundamentals Meeting 4",
       "description": "Description task 2",
       "dueDate": "2025-10-04",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=863"
+      "createdBy": 5
     },
     {
       "id": 9,
       "classId": 1,
       "meetingId": 5,
-      "title": "Task 1 for JS Fundamentals Meeting 5",
+      "name": "Task 1 for JS Fundamentals Meeting 5",
       "description": "Description task 1",
       "dueDate": "2025-10-13",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=288"
+      "createdBy": 5
     },
     {
       "id": 10,
       "classId": 1,
       "meetingId": 5,
-      "title": "Task 2 for JS Fundamentals Meeting 5",
+      "name": "Task 2 for JS Fundamentals Meeting 5",
       "description": "Description task 2",
       "dueDate": "2025-10-13",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=67"
+      "createdBy": 5
     },
     {
       "id": 11,
       "classId": 1,
       "meetingId": 6,
-      "title": "Task 1 for JS Fundamentals Meeting 6",
+      "name": "Task 1 for JS Fundamentals Meeting 6",
       "description": "Description task 1",
       "dueDate": "2025-10-28",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=678"
+      "createdBy": 5
     },
     {
       "id": 12,
       "classId": 1,
       "meetingId": 6,
-      "title": "Task 2 for JS Fundamentals Meeting 6",
+      "name": "Task 2 for JS Fundamentals Meeting 6",
       "description": "Description task 2",
       "dueDate": "2025-10-28",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=35"
+      "createdBy": 5
     },
     {
       "id": 13,
       "classId": 1,
       "meetingId": 7,
-      "title": "Task 1 for JS Fundamentals Meeting 7",
+      "name": "Task 1 for JS Fundamentals Meeting 7",
       "description": "Description task 1",
       "dueDate": "2025-11-21",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=990"
+      "createdBy": 3
     },
     {
       "id": 14,
       "classId": 1,
       "meetingId": 7,
-      "title": "Task 2 for JS Fundamentals Meeting 7",
+      "name": "Task 2 for JS Fundamentals Meeting 7",
       "description": "Description task 2",
       "dueDate": "2025-11-21",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=364"
+      "createdBy": 3
     },
     {
       "id": 15,
       "classId": 1,
       "meetingId": 8,
-      "title": "Task 1 for JS Fundamentals Meeting 8",
+      "name": "Task 1 for JS Fundamentals Meeting 8",
       "description": "Description task 1",
       "dueDate": "2025-11-25",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=952"
+      "createdBy": 3
     },
     {
       "id": 16,
       "classId": 1,
       "meetingId": 8,
-      "title": "Task 2 for JS Fundamentals Meeting 8",
+      "name": "Task 2 for JS Fundamentals Meeting 8",
       "description": "Description task 2",
       "dueDate": "2025-11-25",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=845"
+      "createdBy": 3
     },
     {
       "id": 17,
       "classId": 2,
       "meetingId": 9,
-      "title": "Task 1 for Back End Development Meeting 1",
+      "name": "Task 1 for Back End Development Meeting 1",
       "description": "Description task 1",
       "dueDate": "2025-12-29",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=357"
+      "createdBy": 3
     },
     {
       "id": 18,
       "classId": 2,
       "meetingId": 9,
-      "title": "Task 2 for Back End Development Meeting 1",
+      "name": "Task 2 for Back End Development Meeting 1",
       "description": "Description task 2",
       "dueDate": "2025-12-29",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=706"
+      "createdBy": 3
     },
     {
       "id": 19,
       "classId": 2,
       "meetingId": 10,
-      "title": "Task 1 for Back End Development Meeting 2",
+      "name": "Task 1 for Back End Development Meeting 2",
       "description": "Description task 1",
       "dueDate": "2025-11-21",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=961"
+      "createdBy": 3
     },
     {
       "id": 20,
       "classId": 2,
       "meetingId": 10,
-      "title": "Task 2 for Back End Development Meeting 2",
+      "name": "Task 2 for Back End Development Meeting 2",
       "description": "Description task 2",
       "dueDate": "2025-11-21",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=96"
+      "createdBy": 3
     },
     {
       "id": 21,
       "classId": 2,
       "meetingId": 11,
-      "title": "Task 1 for Back End Development Meeting 3",
+      "name": "Task 1 for Back End Development Meeting 3",
       "description": "Description task 1",
       "dueDate": "2025-12-18",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=293"
+      "createdBy": 3
     },
     {
       "id": 22,
       "classId": 2,
       "meetingId": 11,
-      "title": "Task 2 for Back End Development Meeting 3",
+      "name": "Task 2 for Back End Development Meeting 3",
       "description": "Description task 2",
       "dueDate": "2025-12-18",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=672"
+      "createdBy": 3
     },
     {
       "id": 23,
       "classId": 2,
       "meetingId": 12,
-      "title": "Task 1 for Back End Development Meeting 4",
+      "name": "Task 1 for Back End Development Meeting 4",
       "description": "Description task 1",
       "dueDate": "2026-01-31",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=223"
+      "createdBy": 3
     },
     {
       "id": 24,
       "classId": 2,
       "meetingId": 12,
-      "title": "Task 2 for Back End Development Meeting 4",
+      "name": "Task 2 for Back End Development Meeting 4",
       "description": "Description task 2",
       "dueDate": "2026-01-31",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=688"
+      "createdBy": 3
     },
     {
       "id": 25,
       "classId": 2,
       "meetingId": 13,
-      "title": "Task 1 for Back End Development Meeting 5",
+      "name": "Task 1 for Back End Development Meeting 5",
       "description": "Description task 1",
       "dueDate": "2025-12-01",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=872"
+      "createdBy": 3
     },
     {
       "id": 26,
       "classId": 2,
       "meetingId": 13,
-      "title": "Task 2 for Back End Development Meeting 5",
+      "name": "Task 2 for Back End Development Meeting 5",
       "description": "Description task 2",
       "dueDate": "2025-12-01",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=747"
+      "createdBy": 3
     },
     {
       "id": 27,
       "classId": 2,
       "meetingId": 14,
-      "title": "Task 1 for Back End Development Meeting 6",
+      "name": "Task 1 for Back End Development Meeting 6",
       "description": "Description task 1",
       "dueDate": "2026-01-19",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=152"
+      "createdBy": 3
     },
     {
       "id": 28,
       "classId": 2,
       "meetingId": 14,
-      "title": "Task 2 for Back End Development Meeting 6",
+      "name": "Task 2 for Back End Development Meeting 6",
       "description": "Description task 2",
       "dueDate": "2026-01-19",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=779"
+      "createdBy": 3
     },
     {
       "id": 29,
       "classId": 2,
       "meetingId": 15,
-      "title": "Task 1 for Back End Development Meeting 7",
+      "name": "Task 1 for Back End Development Meeting 7",
       "description": "Description task 1",
       "dueDate": "2025-11-04",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=292"
+      "createdBy": 3
     },
     {
       "id": 30,
       "classId": 2,
       "meetingId": 15,
-      "title": "Task 2 for Back End Development Meeting 7",
+      "name": "Task 2 for Back End Development Meeting 7",
       "description": "Description task 2",
       "dueDate": "2025-11-04",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=605"
+      "createdBy": 3
     },
     {
       "id": 31,
       "classId": 2,
       "meetingId": 16,
-      "title": "Task 1 for Back End Development Meeting 8",
+      "name": "Task 1 for Back End Development Meeting 8",
       "description": "Description task 1",
       "dueDate": "2025-12-23",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=631"
+      "createdBy": 3
     },
     {
       "id": 32,
       "classId": 2,
       "meetingId": 16,
-      "title": "Task 2 for Back End Development Meeting 8",
+      "name": "Task 2 for Back End Development Meeting 8",
       "description": "Description task 2",
       "dueDate": "2025-12-23",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=227"
+      "createdBy": 3
     },
     {
       "id": 33,
       "classId": 2,
       "meetingId": 17,
-      "title": "Task 1 for Back End Development Meeting 9",
+      "name": "Task 1 for Back End Development Meeting 9",
       "description": "Description task 1",
       "dueDate": "2026-01-29",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=730"
+      "createdBy": 3
     },
     {
       "id": 34,
       "classId": 2,
       "meetingId": 17,
-      "title": "Task 2 for Back End Development Meeting 9",
+      "name": "Task 2 for Back End Development Meeting 9",
       "description": "Description task 2",
       "dueDate": "2026-01-29",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=981"
+      "createdBy": 3
     },
     {
       "id": 35,
       "classId": 2,
       "meetingId": 18,
-      "title": "Task 1 for Back End Development Meeting 10",
+      "name": "Task 1 for Back End Development Meeting 10",
       "description": "Description task 1",
       "dueDate": "2025-12-18",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=966"
+      "createdBy": 3
     },
     {
       "id": 36,
       "classId": 2,
       "meetingId": 18,
-      "title": "Task 2 for Back End Development Meeting 10",
+      "name": "Task 2 for Back End Development Meeting 10",
       "description": "Description task 2",
       "dueDate": "2025-12-18",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=962"
+      "createdBy": 3
     },
     {
       "id": 37,
       "classId": 2,
       "meetingId": 19,
-      "title": "Task 1 for Back End Development Meeting 11",
+      "name": "Task 1 for Back End Development Meeting 11",
       "description": "Description task 1",
       "dueDate": "2025-11-17",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=514"
+      "createdBy": 3
     },
     {
       "id": 38,
       "classId": 2,
       "meetingId": 19,
-      "title": "Task 2 for Back End Development Meeting 11",
+      "name": "Task 2 for Back End Development Meeting 11",
       "description": "Description task 2",
       "dueDate": "2025-11-17",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=506"
+      "createdBy": 3
     },
     {
       "id": 39,
       "classId": 2,
       "meetingId": 20,
-      "title": "Task 1 for Back End Development Meeting 12",
+      "name": "Task 1 for Back End Development Meeting 12",
       "description": "Description task 1",
       "dueDate": "2025-11-11",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=391"
+      "createdBy": 3
     },
     {
       "id": 40,
       "classId": 2,
       "meetingId": 20,
-      "title": "Task 2 for Back End Development Meeting 12",
+      "name": "Task 2 for Back End Development Meeting 12",
       "description": "Description task 2",
       "dueDate": "2025-11-11",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=290"
+      "createdBy": 3
     },
     {
       "id": 41,
       "classId": 3,
       "meetingId": 21,
-      "title": "Task 1 for Front End Development Meeting 1",
+      "name": "Task 1 for Front End Development Meeting 1",
       "description": "Description task 1",
       "dueDate": "2025-11-29",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=702"
+      "createdBy": 3
     },
     {
       "id": 42,
       "classId": 3,
       "meetingId": 21,
-      "title": "Task 2 for Front End Development Meeting 1",
+      "name": "Task 2 for Front End Development Meeting 1",
       "description": "Description task 2",
       "dueDate": "2025-11-29",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=729"
+      "createdBy": 3
     },
     {
       "id": 43,
       "classId": 3,
       "meetingId": 22,
-      "title": "Task 1 for Front End Development Meeting 2",
+      "name": "Task 1 for Front End Development Meeting 2",
       "description": "Description task 1",
       "dueDate": "2025-11-27",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=723"
+      "createdBy": 3
     },
     {
       "id": 44,
       "classId": 3,
       "meetingId": 22,
-      "title": "Task 2 for Front End Development Meeting 2",
+      "name": "Task 2 for Front End Development Meeting 2",
       "description": "Description task 2",
       "dueDate": "2025-11-27",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=941"
+      "createdBy": 3
     },
     {
       "id": 45,
       "classId": 3,
       "meetingId": 23,
-      "title": "Task 1 for Front End Development Meeting 3",
+      "name": "Task 1 for Front End Development Meeting 3",
       "description": "Description task 1",
       "dueDate": "2026-01-23",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=684"
+      "createdBy": 3
     },
     {
       "id": 46,
       "classId": 3,
       "meetingId": 23,
-      "title": "Task 2 for Front End Development Meeting 3",
+      "name": "Task 2 for Front End Development Meeting 3",
       "description": "Description task 2",
       "dueDate": "2026-01-23",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=687"
+      "createdBy": 3
     },
     {
       "id": 47,
       "classId": 3,
       "meetingId": 24,
-      "title": "Task 1 for Front End Development Meeting 4",
+      "name": "Task 1 for Front End Development Meeting 4",
       "description": "Description task 1",
       "dueDate": "2025-11-01",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=990"
+      "createdBy": 3
     },
     {
       "id": 48,
       "classId": 3,
       "meetingId": 24,
-      "title": "Task 2 for Front End Development Meeting 4",
+      "name": "Task 2 for Front End Development Meeting 4",
       "description": "Description task 2",
       "dueDate": "2025-11-01",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=184"
+      "createdBy": 3
     },
     {
       "id": 49,
       "classId": 3,
       "meetingId": 25,
-      "title": "Task 1 for Front End Development Meeting 5",
+      "name": "Task 1 for Front End Development Meeting 5",
       "description": "Description task 1",
       "dueDate": "2026-01-25",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=460"
+      "createdBy": 3
     },
     {
       "id": 50,
       "classId": 3,
       "meetingId": 25,
-      "title": "Task 2 for Front End Development Meeting 5",
+      "name": "Task 2 for Front End Development Meeting 5",
       "description": "Description task 2",
       "dueDate": "2026-01-25",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=199"
+      "createdBy": 3
     },
     {
       "id": 51,
       "classId": 3,
       "meetingId": 26,
-      "title": "Task 1 for Front End Development Meeting 6",
+      "name": "Task 1 for Front End Development Meeting 6",
       "description": "Description task 1",
       "dueDate": "2026-01-05",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=736"
+      "createdBy": 3
     },
     {
       "id": 52,
       "classId": 3,
       "meetingId": 26,
-      "title": "Task 2 for Front End Development Meeting 6",
+      "name": "Task 2 for Front End Development Meeting 6",
       "description": "Description task 2",
       "dueDate": "2026-01-05",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=116"
+      "createdBy": 3
     },
     {
       "id": 53,
       "classId": 3,
       "meetingId": 27,
-      "title": "Task 1 for Front End Development Meeting 7",
+      "name": "Task 1 for Front End Development Meeting 7",
       "description": "Description task 1",
       "dueDate": "2025-11-03",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=702"
+      "createdBy": 3
     },
     {
       "id": 54,
       "classId": 3,
       "meetingId": 27,
-      "title": "Task 2 for Front End Development Meeting 7",
+      "name": "Task 2 for Front End Development Meeting 7",
       "description": "Description task 2",
       "dueDate": "2025-11-03",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=425"
+      "createdBy": 3
     },
     {
       "id": 55,
       "classId": 3,
       "meetingId": 28,
-      "title": "Task 1 for Front End Development Meeting 8",
+      "name": "Task 1 for Front End Development Meeting 8",
       "description": "Description task 1",
       "dueDate": "2025-12-06",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=190"
+      "createdBy": 3
     },
     {
       "id": 56,
       "classId": 3,
       "meetingId": 28,
-      "title": "Task 2 for Front End Development Meeting 8",
+      "name": "Task 2 for Front End Development Meeting 8",
       "description": "Description task 2",
       "dueDate": "2025-12-06",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=892"
+      "createdBy": 3
     },
     {
       "id": 57,
       "classId": 3,
       "meetingId": 29,
-      "title": "Task 1 for Front End Development Meeting 9",
+      "name": "Task 1 for Front End Development Meeting 9",
       "description": "Description task 1",
       "dueDate": "2025-12-03",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=158"
+      "createdBy": 3
     },
     {
       "id": 58,
       "classId": 3,
       "meetingId": 29,
-      "title": "Task 2 for Front End Development Meeting 9",
+      "name": "Task 2 for Front End Development Meeting 9",
       "description": "Description task 2",
       "dueDate": "2025-12-03",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=75"
+      "createdBy": 3
     },
     {
       "id": 59,
       "classId": 3,
       "meetingId": 30,
-      "title": "Task 1 for Front End Development Meeting 10",
+      "name": "Task 1 for Front End Development Meeting 10",
       "description": "Description task 1",
       "dueDate": "2025-12-13",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=853"
+      "createdBy": 3
     },
     {
       "id": 60,
       "classId": 3,
       "meetingId": 30,
-      "title": "Task 2 for Front End Development Meeting 10",
+      "name": "Task 2 for Front End Development Meeting 10",
       "description": "Description task 2",
       "dueDate": "2025-12-13",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=661"
+      "createdBy": 3
     },
     {
       "id": 61,
       "classId": 3,
       "meetingId": 31,
-      "title": "Task 1 for Front End Development Meeting 11",
+      "name": "Task 1 for Front End Development Meeting 11",
       "description": "Description task 1",
       "dueDate": "2025-12-29",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=625"
+      "createdBy": 3
     },
     {
       "id": 62,
       "classId": 3,
       "meetingId": 31,
-      "title": "Task 2 for Front End Development Meeting 11",
+      "name": "Task 2 for Front End Development Meeting 11",
       "description": "Description task 2",
       "dueDate": "2025-12-29",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=442"
+      "createdBy": 3
     },
     {
       "id": 63,
       "classId": 3,
       "meetingId": 32,
-      "title": "Task 1 for Front End Development Meeting 12",
+      "name": "Task 1 for Front End Development Meeting 12",
       "description": "Description task 1",
       "dueDate": "2025-11-06",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=246"
+      "createdBy": 3
     },
     {
       "id": 64,
       "classId": 3,
       "meetingId": 32,
-      "title": "Task 2 for Front End Development Meeting 12",
+      "name": "Task 2 for Front End Development Meeting 12",
       "description": "Description task 2",
       "dueDate": "2025-11-06",
       "maxScore": 100,
-      "imageUrl": "https://picsum.photos/200/100?random=639"
+      "createdBy": 3
     }
   ],
   "task_submissions": [
@@ -2714,576 +2679,576 @@
       "classId": 1,
       "meetingId": 1,
       "createdBy": 4,
-      "content": "Note 1 content for JS Fundamentals Meeting 1",
-      "createdAt": "2025-11-17",
-      "imageUrl": "https://picsum.photos/200/100?random=755"
+      "name": "Note",
+      "description": "Note 1 content for JS Fundamentals Meeting 1",
+      "createdAt": "2025-11-17"
     },
     {
       "id": 2,
       "classId": 1,
       "meetingId": 1,
       "createdBy": 3,
-      "content": "Note 2 content for JS Fundamentals Meeting 1",
-      "createdAt": "2025-11-17",
-      "imageUrl": "https://picsum.photos/200/100?random=621"
+      "name": "Note",
+      "description": "Note 2 content for JS Fundamentals Meeting 1",
+      "createdAt": "2025-11-17"
     },
     {
       "id": 3,
       "classId": 1,
       "meetingId": 2,
       "createdBy": 3,
-      "content": "Note 1 content for JS Fundamentals Meeting 2",
-      "createdAt": "2025-10-22",
-      "imageUrl": "https://picsum.photos/200/100?random=395"
+      "name": "Note",
+      "description": "Note 1 content for JS Fundamentals Meeting 2",
+      "createdAt": "2025-10-22"
     },
     {
       "id": 4,
       "classId": 1,
       "meetingId": 2,
       "createdBy": 3,
-      "content": "Note 2 content for JS Fundamentals Meeting 2",
-      "createdAt": "2025-10-22",
-      "imageUrl": "https://picsum.photos/200/100?random=725"
+      "name": "Note",
+      "description": "Note 2 content for JS Fundamentals Meeting 2",
+      "createdAt": "2025-10-22"
     },
     {
       "id": 5,
       "classId": 1,
       "meetingId": 3,
       "createdBy": 3,
-      "content": "Note 1 content for JS Fundamentals Meeting 3",
-      "createdAt": "2025-11-08",
-      "imageUrl": "https://picsum.photos/200/100?random=328"
+      "name": "Note",
+      "description": "Note 1 content for JS Fundamentals Meeting 3",
+      "createdAt": "2025-11-08"
     },
     {
       "id": 6,
       "classId": 1,
       "meetingId": 3,
       "createdBy": 5,
-      "content": "Note 2 content for JS Fundamentals Meeting 3",
-      "createdAt": "2025-11-08",
-      "imageUrl": "https://picsum.photos/200/100?random=558"
+      "name": "Note",
+      "description": "Note 2 content for JS Fundamentals Meeting 3",
+      "createdAt": "2025-11-08"
     },
     {
       "id": 7,
       "classId": 1,
       "meetingId": 4,
       "createdBy": 5,
-      "content": "Note 1 content for JS Fundamentals Meeting 4",
-      "createdAt": "2025-10-04",
-      "imageUrl": "https://picsum.photos/200/100?random=405"
+      "name": "Note",
+      "description": "Note 1 content for JS Fundamentals Meeting 4",
+      "createdAt": "2025-10-04"
     },
     {
       "id": 8,
       "classId": 1,
       "meetingId": 4,
       "createdBy": 3,
-      "content": "Note 2 content for JS Fundamentals Meeting 4",
-      "createdAt": "2025-10-04",
-      "imageUrl": "https://picsum.photos/200/100?random=195"
+      "name": "Note",
+      "description": "Note 2 content for JS Fundamentals Meeting 4",
+      "createdAt": "2025-10-04"
     },
     {
       "id": 9,
       "classId": 1,
       "meetingId": 5,
       "createdBy": 3,
-      "content": "Note 1 content for JS Fundamentals Meeting 5",
-      "createdAt": "2025-10-13",
-      "imageUrl": "https://picsum.photos/200/100?random=903"
+      "name": "Note",
+      "description": "Note 1 content for JS Fundamentals Meeting 5",
+      "createdAt": "2025-10-13"
     },
     {
       "id": 10,
       "classId": 1,
       "meetingId": 5,
       "createdBy": 4,
-      "content": "Note 2 content for JS Fundamentals Meeting 5",
-      "createdAt": "2025-10-13",
-      "imageUrl": "https://picsum.photos/200/100?random=443"
+      "name": "Note",
+      "description": "Note 2 content for JS Fundamentals Meeting 5",
+      "createdAt": "2025-10-13"
     },
     {
       "id": 11,
       "classId": 1,
       "meetingId": 6,
       "createdBy": 5,
-      "content": "Note 1 content for JS Fundamentals Meeting 6",
-      "createdAt": "2025-10-28",
-      "imageUrl": "https://picsum.photos/200/100?random=790"
+      "name": "Note",
+      "description": "Note 1 content for JS Fundamentals Meeting 6",
+      "createdAt": "2025-10-28"
     },
     {
       "id": 12,
       "classId": 1,
       "meetingId": 6,
       "createdBy": 4,
-      "content": "Note 2 content for JS Fundamentals Meeting 6",
-      "createdAt": "2025-10-28",
-      "imageUrl": "https://picsum.photos/200/100?random=447"
+      "name": "Note",
+      "description": "Note 2 content for JS Fundamentals Meeting 6",
+      "createdAt": "2025-10-28"
     },
     {
       "id": 13,
       "classId": 1,
       "meetingId": 7,
       "createdBy": 5,
-      "content": "Note 1 content for JS Fundamentals Meeting 7",
-      "createdAt": "2025-11-21",
-      "imageUrl": "https://picsum.photos/200/100?random=645"
+      "name": "Note",
+      "description": "Note 1 content for JS Fundamentals Meeting 7",
+      "createdAt": "2025-11-21"
     },
     {
       "id": 14,
       "classId": 1,
       "meetingId": 7,
       "createdBy": 3,
-      "content": "Note 2 content for JS Fundamentals Meeting 7",
-      "createdAt": "2025-11-21",
-      "imageUrl": "https://picsum.photos/200/100?random=540"
+      "name": "Note",
+      "description": "Note 2 content for JS Fundamentals Meeting 7",
+      "createdAt": "2025-11-21"
     },
     {
       "id": 15,
       "classId": 1,
       "meetingId": 8,
       "createdBy": 4,
-      "content": "Note 1 content for JS Fundamentals Meeting 8",
-      "createdAt": "2025-11-25",
-      "imageUrl": "https://picsum.photos/200/100?random=982"
+      "name": "Note",
+      "description": "Note 1 content for JS Fundamentals Meeting 8",
+      "createdAt": "2025-11-25"
     },
     {
       "id": 16,
       "classId": 1,
       "meetingId": 8,
       "createdBy": 5,
-      "content": "Note 2 content for JS Fundamentals Meeting 8",
-      "createdAt": "2025-11-25",
-      "imageUrl": "https://picsum.photos/200/100?random=691"
+      "name": "Note",
+      "description": "Note 2 content for JS Fundamentals Meeting 8",
+      "createdAt": "2025-11-25"
     },
     {
       "id": 17,
       "classId": 2,
       "meetingId": 9,
       "createdBy": 4,
-      "content": "Note 1 content for Back End Development Meeting 1",
-      "createdAt": "2025-12-29",
-      "imageUrl": "https://picsum.photos/200/100?random=804"
+      "name": "Note",
+      "description": "Note 1 content for Back End Development Meeting 1",
+      "createdAt": "2025-12-29"
     },
     {
       "id": 18,
       "classId": 2,
       "meetingId": 9,
       "createdBy": 4,
-      "content": "Note 2 content for Back End Development Meeting 1",
-      "createdAt": "2025-12-29",
-      "imageUrl": "https://picsum.photos/200/100?random=233"
+      "name": "Note",
+      "description": "Note 2 content for Back End Development Meeting 1",
+      "createdAt": "2025-12-29"
     },
     {
       "id": 19,
       "classId": 2,
       "meetingId": 10,
       "createdBy": 5,
-      "content": "Note 1 content for Back End Development Meeting 2",
-      "createdAt": "2025-11-21",
-      "imageUrl": "https://picsum.photos/200/100?random=688"
+      "name": "Note",
+      "description": "Note 1 content for Back End Development Meeting 2",
+      "createdAt": "2025-11-21"
     },
     {
       "id": 20,
       "classId": 2,
       "meetingId": 10,
       "createdBy": 3,
-      "content": "Note 2 content for Back End Development Meeting 2",
-      "createdAt": "2025-11-21",
-      "imageUrl": "https://picsum.photos/200/100?random=367"
+      "name": "Note",
+      "description": "Note 2 content for Back End Development Meeting 2",
+      "createdAt": "2025-11-21"
     },
     {
       "id": 21,
       "classId": 2,
       "meetingId": 11,
       "createdBy": 5,
-      "content": "Note 1 content for Back End Development Meeting 3",
-      "createdAt": "2025-12-18",
-      "imageUrl": "https://picsum.photos/200/100?random=753"
+      "name": "Note",
+      "description": "Note 1 content for Back End Development Meeting 3",
+      "createdAt": "2025-12-18"
     },
     {
       "id": 22,
       "classId": 2,
       "meetingId": 11,
       "createdBy": 4,
-      "content": "Note 2 content for Back End Development Meeting 3",
-      "createdAt": "2025-12-18",
-      "imageUrl": "https://picsum.photos/200/100?random=660"
+      "name": "Note",
+      "description": "Note 2 content for Back End Development Meeting 3",
+      "createdAt": "2025-12-18"
     },
     {
       "id": 23,
       "classId": 2,
       "meetingId": 12,
       "createdBy": 3,
-      "content": "Note 1 content for Back End Development Meeting 4",
-      "createdAt": "2026-01-31",
-      "imageUrl": "https://picsum.photos/200/100?random=297"
+      "name": "Note",
+      "description": "Note 1 content for Back End Development Meeting 4",
+      "createdAt": "2026-01-31"
     },
     {
       "id": 24,
       "classId": 2,
       "meetingId": 12,
       "createdBy": 3,
-      "content": "Note 2 content for Back End Development Meeting 4",
-      "createdAt": "2026-01-31",
-      "imageUrl": "https://picsum.photos/200/100?random=275"
+      "name": "Note",
+      "description": "Note 2 content for Back End Development Meeting 4",
+      "createdAt": "2026-01-31"
     },
     {
       "id": 25,
       "classId": 2,
       "meetingId": 13,
       "createdBy": 4,
-      "content": "Note 1 content for Back End Development Meeting 5",
-      "createdAt": "2025-12-01",
-      "imageUrl": "https://picsum.photos/200/100?random=851"
+      "name": "Note",
+      "description": "Note 1 content for Back End Development Meeting 5",
+      "createdAt": "2025-12-01"
     },
     {
       "id": 26,
       "classId": 2,
       "meetingId": 13,
       "createdBy": 3,
-      "content": "Note 2 content for Back End Development Meeting 5",
-      "createdAt": "2025-12-01",
-      "imageUrl": "https://picsum.photos/200/100?random=837"
+      "name": "Note",
+      "description": "Note 2 content for Back End Development Meeting 5",
+      "createdAt": "2025-12-01"
     },
     {
       "id": 27,
       "classId": 2,
       "meetingId": 14,
       "createdBy": 5,
-      "content": "Note 1 content for Back End Development Meeting 6",
-      "createdAt": "2026-01-19",
-      "imageUrl": "https://picsum.photos/200/100?random=317"
+      "name": "Note",
+      "description": "Note 1 content for Back End Development Meeting 6",
+      "createdAt": "2026-01-19"
     },
     {
       "id": 28,
       "classId": 2,
       "meetingId": 14,
       "createdBy": 5,
-      "content": "Note 2 content for Back End Development Meeting 6",
-      "createdAt": "2026-01-19",
-      "imageUrl": "https://picsum.photos/200/100?random=409"
+      "name": "Note",
+      "description": "Note 2 content for Back End Development Meeting 6",
+      "createdAt": "2026-01-19"
     },
     {
       "id": 29,
       "classId": 2,
       "meetingId": 15,
       "createdBy": 5,
-      "content": "Note 1 content for Back End Development Meeting 7",
-      "createdAt": "2025-11-04",
-      "imageUrl": "https://picsum.photos/200/100?random=254"
+      "name": "Note",
+      "description": "Note 1 content for Back End Development Meeting 7",
+      "createdAt": "2025-11-04"
     },
     {
       "id": 30,
       "classId": 2,
       "meetingId": 15,
       "createdBy": 4,
-      "content": "Note 2 content for Back End Development Meeting 7",
-      "createdAt": "2025-11-04",
-      "imageUrl": "https://picsum.photos/200/100?random=168"
+      "name": "Note",
+      "description": "Note 2 content for Back End Development Meeting 7",
+      "createdAt": "2025-11-04"
     },
     {
       "id": 31,
       "classId": 2,
       "meetingId": 16,
       "createdBy": 3,
-      "content": "Note 1 content for Back End Development Meeting 8",
-      "createdAt": "2025-12-23",
-      "imageUrl": "https://picsum.photos/200/100?random=417"
+      "name": "Note",
+      "description": "Note 1 content for Back End Development Meeting 8",
+      "createdAt": "2025-12-23"
     },
     {
       "id": 32,
       "classId": 2,
       "meetingId": 16,
       "createdBy": 5,
-      "content": "Note 2 content for Back End Development Meeting 8",
-      "createdAt": "2025-12-23",
-      "imageUrl": "https://picsum.photos/200/100?random=746"
+      "name": "Note",
+      "description": "Note 2 content for Back End Development Meeting 8",
+      "createdAt": "2025-12-23"
     },
     {
       "id": 33,
       "classId": 2,
       "meetingId": 17,
       "createdBy": 4,
-      "content": "Note 1 content for Back End Development Meeting 9",
-      "createdAt": "2026-01-29",
-      "imageUrl": "https://picsum.photos/200/100?random=946"
+      "name": "Note",
+      "description": "Note 1 content for Back End Development Meeting 9",
+      "createdAt": "2026-01-29"
     },
     {
       "id": 34,
       "classId": 2,
       "meetingId": 17,
       "createdBy": 4,
-      "content": "Note 2 content for Back End Development Meeting 9",
-      "createdAt": "2026-01-29",
-      "imageUrl": "https://picsum.photos/200/100?random=891"
+      "name": "Note",
+      "description": "Note 2 content for Back End Development Meeting 9",
+      "createdAt": "2026-01-29"
     },
     {
       "id": 35,
       "classId": 2,
       "meetingId": 18,
       "createdBy": 5,
-      "content": "Note 1 content for Back End Development Meeting 10",
-      "createdAt": "2025-12-18",
-      "imageUrl": "https://picsum.photos/200/100?random=458"
+      "name": "Note",
+      "description": "Note 1 content for Back End Development Meeting 10",
+      "createdAt": "2025-12-18"
     },
     {
       "id": 36,
       "classId": 2,
       "meetingId": 18,
       "createdBy": 4,
-      "content": "Note 2 content for Back End Development Meeting 10",
-      "createdAt": "2025-12-18",
-      "imageUrl": "https://picsum.photos/200/100?random=604"
+      "name": "Note",
+      "description": "Note 2 content for Back End Development Meeting 10",
+      "createdAt": "2025-12-18"
     },
     {
       "id": 37,
       "classId": 2,
       "meetingId": 19,
       "createdBy": 4,
-      "content": "Note 1 content for Back End Development Meeting 11",
-      "createdAt": "2025-11-17",
-      "imageUrl": "https://picsum.photos/200/100?random=481"
+      "name": "Note",
+      "description": "Note 1 content for Back End Development Meeting 11",
+      "createdAt": "2025-11-17"
     },
     {
       "id": 38,
       "classId": 2,
       "meetingId": 19,
       "createdBy": 4,
-      "content": "Note 2 content for Back End Development Meeting 11",
-      "createdAt": "2025-11-17",
-      "imageUrl": "https://picsum.photos/200/100?random=695"
+      "name": "Note",
+      "description": "Note 2 content for Back End Development Meeting 11",
+      "createdAt": "2025-11-17"
     },
     {
       "id": 39,
       "classId": 2,
       "meetingId": 20,
       "createdBy": 3,
-      "content": "Note 1 content for Back End Development Meeting 12",
-      "createdAt": "2025-11-11",
-      "imageUrl": "https://picsum.photos/200/100?random=952"
+      "name": "Note",
+      "description": "Note 1 content for Back End Development Meeting 12",
+      "createdAt": "2025-11-11"
     },
     {
       "id": 40,
       "classId": 2,
       "meetingId": 20,
       "createdBy": 4,
-      "content": "Note 2 content for Back End Development Meeting 12",
-      "createdAt": "2025-11-11",
-      "imageUrl": "https://picsum.photos/200/100?random=730"
+      "name": "Note",
+      "description": "Note 2 content for Back End Development Meeting 12",
+      "createdAt": "2025-11-11"
     },
     {
       "id": 41,
       "classId": 3,
       "meetingId": 21,
       "createdBy": 5,
-      "content": "Note 1 content for Front End Development Meeting 1",
-      "createdAt": "2025-11-29",
-      "imageUrl": "https://picsum.photos/200/100?random=802"
+      "name": "Note",
+      "description": "Note 1 content for Front End Development Meeting 1",
+      "createdAt": "2025-11-29"
     },
     {
       "id": 42,
       "classId": 3,
       "meetingId": 21,
       "createdBy": 3,
-      "content": "Note 2 content for Front End Development Meeting 1",
-      "createdAt": "2025-11-29",
-      "imageUrl": "https://picsum.photos/200/100?random=532"
+      "name": "Note",
+      "description": "Note 2 content for Front End Development Meeting 1",
+      "createdAt": "2025-11-29"
     },
     {
       "id": 43,
       "classId": 3,
       "meetingId": 22,
       "createdBy": 4,
-      "content": "Note 1 content for Front End Development Meeting 2",
-      "createdAt": "2025-11-27",
-      "imageUrl": "https://picsum.photos/200/100?random=189"
+      "name": "Note",
+      "description": "Note 1 content for Front End Development Meeting 2",
+      "createdAt": "2025-11-27"
     },
     {
       "id": 44,
       "classId": 3,
       "meetingId": 22,
       "createdBy": 4,
-      "content": "Note 2 content for Front End Development Meeting 2",
-      "createdAt": "2025-11-27",
-      "imageUrl": "https://picsum.photos/200/100?random=220"
+      "name": "Note",
+      "description": "Note 2 content for Front End Development Meeting 2",
+      "createdAt": "2025-11-27"
     },
     {
       "id": 45,
       "classId": 3,
       "meetingId": 23,
       "createdBy": 3,
-      "content": "Note 1 content for Front End Development Meeting 3",
-      "createdAt": "2026-01-23",
-      "imageUrl": "https://picsum.photos/200/100?random=455"
+      "name": "Note",
+      "description": "Note 1 content for Front End Development Meeting 3",
+      "createdAt": "2026-01-23"
     },
     {
       "id": 46,
       "classId": 3,
       "meetingId": 23,
       "createdBy": 4,
-      "content": "Note 2 content for Front End Development Meeting 3",
-      "createdAt": "2026-01-23",
-      "imageUrl": "https://picsum.photos/200/100?random=653"
+      "name": "Note",
+      "description": "Note 2 content for Front End Development Meeting 3",
+      "createdAt": "2026-01-23"
     },
     {
       "id": 47,
       "classId": 3,
       "meetingId": 24,
       "createdBy": 3,
-      "content": "Note 1 content for Front End Development Meeting 4",
-      "createdAt": "2025-11-01",
-      "imageUrl": "https://picsum.photos/200/100?random=344"
+      "name": "Note",
+      "description": "Note 1 content for Front End Development Meeting 4",
+      "createdAt": "2025-11-01"
     },
     {
       "id": 48,
       "classId": 3,
       "meetingId": 24,
       "createdBy": 3,
-      "content": "Note 2 content for Front End Development Meeting 4",
-      "createdAt": "2025-11-01",
-      "imageUrl": "https://picsum.photos/200/100?random=863"
+      "name": "Note",
+      "description": "Note 2 content for Front End Development Meeting 4",
+      "createdAt": "2025-11-01"
     },
     {
       "id": 49,
       "classId": 3,
       "meetingId": 25,
       "createdBy": 3,
-      "content": "Note 1 content for Front End Development Meeting 5",
-      "createdAt": "2026-01-25",
-      "imageUrl": "https://picsum.photos/200/100?random=680"
+      "name": "Note",
+      "description": "Note 1 content for Front End Development Meeting 5",
+      "createdAt": "2026-01-25"
     },
     {
       "id": 50,
       "classId": 3,
       "meetingId": 25,
       "createdBy": 4,
-      "content": "Note 2 content for Front End Development Meeting 5",
-      "createdAt": "2026-01-25",
-      "imageUrl": "https://picsum.photos/200/100?random=473"
+      "name": "Note",
+      "description": "Note 2 content for Front End Development Meeting 5",
+      "createdAt": "2026-01-25"
     },
     {
       "id": 51,
       "classId": 3,
       "meetingId": 26,
       "createdBy": 5,
-      "content": "Note 1 content for Front End Development Meeting 6",
-      "createdAt": "2026-01-05",
-      "imageUrl": "https://picsum.photos/200/100?random=708"
+      "name": "Note",
+      "description": "Note 1 content for Front End Development Meeting 6",
+      "createdAt": "2026-01-05"
     },
     {
       "id": 52,
       "classId": 3,
       "meetingId": 26,
       "createdBy": 4,
-      "content": "Note 2 content for Front End Development Meeting 6",
-      "createdAt": "2026-01-05",
-      "imageUrl": "https://picsum.photos/200/100?random=350"
+      "name": "Note",
+      "description": "Note 2 content for Front End Development Meeting 6",
+      "createdAt": "2026-01-05"
     },
     {
       "id": 53,
       "classId": 3,
       "meetingId": 27,
       "createdBy": 3,
-      "content": "Note 1 content for Front End Development Meeting 7",
-      "createdAt": "2025-11-03",
-      "imageUrl": "https://picsum.photos/200/100?random=260"
+      "name": "Note",
+      "description": "Note 1 content for Front End Development Meeting 7",
+      "createdAt": "2025-11-03"
     },
     {
       "id": 54,
       "classId": 3,
       "meetingId": 27,
       "createdBy": 5,
-      "content": "Note 2 content for Front End Development Meeting 7",
-      "createdAt": "2025-11-03",
-      "imageUrl": "https://picsum.photos/200/100?random=482"
+      "name": "Note",
+      "description": "Note 2 content for Front End Development Meeting 7",
+      "createdAt": "2025-11-03"
     },
     {
       "id": 55,
       "classId": 3,
       "meetingId": 28,
       "createdBy": 3,
-      "content": "Note 1 content for Front End Development Meeting 8",
-      "createdAt": "2025-12-06",
-      "imageUrl": "https://picsum.photos/200/100?random=999"
+      "name": "Note",
+      "description": "Note 1 content for Front End Development Meeting 8",
+      "createdAt": "2025-12-06"
     },
     {
       "id": 56,
       "classId": 3,
       "meetingId": 28,
       "createdBy": 4,
-      "content": "Note 2 content for Front End Development Meeting 8",
-      "createdAt": "2025-12-06",
-      "imageUrl": "https://picsum.photos/200/100?random=768"
+      "name": "Note",
+      "description": "Note 2 content for Front End Development Meeting 8",
+      "createdAt": "2025-12-06"
     },
     {
       "id": 57,
       "classId": 3,
       "meetingId": 29,
       "createdBy": 5,
-      "content": "Note 1 content for Front End Development Meeting 9",
-      "createdAt": "2025-12-03",
-      "imageUrl": "https://picsum.photos/200/100?random=329"
+      "name": "Note",
+      "description": "Note 1 content for Front End Development Meeting 9",
+      "createdAt": "2025-12-03"
     },
     {
       "id": 58,
       "classId": 3,
       "meetingId": 29,
       "createdBy": 3,
-      "content": "Note 2 content for Front End Development Meeting 9",
-      "createdAt": "2025-12-03",
-      "imageUrl": "https://picsum.photos/200/100?random=917"
+      "name": "Note",
+      "description": "Note 2 content for Front End Development Meeting 9",
+      "createdAt": "2025-12-03"
     },
     {
       "id": 59,
       "classId": 3,
       "meetingId": 30,
       "createdBy": 4,
-      "content": "Note 1 content for Front End Development Meeting 10",
-      "createdAt": "2025-12-13",
-      "imageUrl": "https://picsum.photos/200/100?random=760"
+      "name": "Note",
+      "description": "Note 1 content for Front End Development Meeting 10",
+      "createdAt": "2025-12-13"
     },
     {
       "id": 60,
       "classId": 3,
       "meetingId": 30,
       "createdBy": 5,
-      "content": "Note 2 content for Front End Development Meeting 10",
-      "createdAt": "2025-12-13",
-      "imageUrl": "https://picsum.photos/200/100?random=685"
+      "name": "Note",
+      "description": "Note 2 content for Front End Development Meeting 10",
+      "createdAt": "2025-12-13"
     },
     {
       "id": 61,
       "classId": 3,
       "meetingId": 31,
       "createdBy": 4,
-      "content": "Note 1 content for Front End Development Meeting 11",
-      "createdAt": "2025-12-29",
-      "imageUrl": "https://picsum.photos/200/100?random=427"
+      "name": "Note",
+      "description": "Note 1 content for Front End Development Meeting 11",
+      "createdAt": "2025-12-29"
     },
     {
       "id": 62,
       "classId": 3,
       "meetingId": 31,
       "createdBy": 4,
-      "content": "Note 2 content for Front End Development Meeting 11",
-      "createdAt": "2025-12-29",
-      "imageUrl": "https://picsum.photos/200/100?random=8"
+      "name": "Note",
+      "description": "Note 2 content for Front End Development Meeting 11",
+      "createdAt": "2025-12-29"
     },
     {
       "id": 63,
       "classId": 3,
       "meetingId": 32,
       "createdBy": 5,
-      "content": "Note 1 content for Front End Development Meeting 12",
-      "createdAt": "2025-11-06",
-      "imageUrl": "https://picsum.photos/200/100?random=732"
+      "name": "Note",
+      "description": "Note 1 content for Front End Development Meeting 12",
+      "createdAt": "2025-11-06"
     },
     {
       "id": 64,
       "classId": 3,
       "meetingId": 32,
       "createdBy": 4,
-      "content": "Note 2 content for Front End Development Meeting 12",
-      "createdAt": "2025-11-06",
-      "imageUrl": "https://picsum.photos/200/100?random=724"
+      "name": "Note",
+      "description": "Note 2 content for Front End Development Meeting 12",
+      "createdAt": "2025-11-06"
     }
   ],
   "materials": [
@@ -3291,705 +3256,641 @@
       "id": 1,
       "classId": 1,
       "meetingId": 1,
-      "title": "Material 1 for JS Fundamentals Meeting 1",
+      "name": "Material 1 for JS Fundamentals Meeting 1",
       "type": "pdf",
-      "url": "https://example.com/material_1.pdf",
+      "fileUrl": "https://example.com/material_1.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-11-17",
-      "imageUrl": "https://picsum.photos/200/100?random=272"
+      "createdAt": "2025-11-17"
     },
     {
       "id": 2,
       "classId": 1,
       "meetingId": 1,
-      "title": "Material 2 for JS Fundamentals Meeting 1",
+      "name": "Material 2 for JS Fundamentals Meeting 1",
       "type": "pdf",
-      "url": "https://example.com/material_2.pdf",
+      "fileUrl": "https://example.com/material_2.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-11-17",
-      "imageUrl": "https://picsum.photos/200/100?random=239"
+      "createdAt": "2025-11-17"
     },
     {
       "id": 3,
       "classId": 1,
       "meetingId": 2,
-      "title": "Material 1 for JS Fundamentals Meeting 2",
+      "name": "Material 1 for JS Fundamentals Meeting 2",
       "type": "pdf",
-      "url": "https://example.com/material_3.pdf",
+      "fileUrl": "https://example.com/material_3.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-10-22",
-      "imageUrl": "https://picsum.photos/200/100?random=141"
+      "createdAt": "2025-10-22"
     },
     {
       "id": 4,
       "classId": 1,
       "meetingId": 2,
-      "title": "Material 2 for JS Fundamentals Meeting 2",
+      "name": "Material 2 for JS Fundamentals Meeting 2",
       "type": "pdf",
-      "url": "https://example.com/material_4.pdf",
+      "fileUrl": "https://example.com/material_4.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-10-22",
-      "imageUrl": "https://picsum.photos/200/100?random=588"
+      "createdAt": "2025-10-22"
     },
     {
       "id": 5,
       "classId": 1,
       "meetingId": 3,
-      "title": "Material 1 for JS Fundamentals Meeting 3",
+      "name": "Material 1 for JS Fundamentals Meeting 3",
       "type": "pdf",
-      "url": "https://example.com/material_5.pdf",
+      "fileUrl": "https://example.com/material_5.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-11-08",
-      "imageUrl": "https://picsum.photos/200/100?random=506"
+      "createdAt": "2025-11-08"
     },
     {
       "id": 6,
       "classId": 1,
       "meetingId": 3,
-      "title": "Material 2 for JS Fundamentals Meeting 3",
+      "name": "Material 2 for JS Fundamentals Meeting 3",
       "type": "pdf",
-      "url": "https://example.com/material_6.pdf",
+      "fileUrl": "https://example.com/material_6.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-11-08",
-      "imageUrl": "https://picsum.photos/200/100?random=362"
+      "createdAt": "2025-11-08"
     },
     {
       "id": 7,
       "classId": 1,
       "meetingId": 4,
-      "title": "Material 1 for JS Fundamentals Meeting 4",
+      "name": "Material 1 for JS Fundamentals Meeting 4",
       "type": "pdf",
-      "url": "https://example.com/material_7.pdf",
+      "fileUrl": "https://example.com/material_7.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-10-04",
-      "imageUrl": "https://picsum.photos/200/100?random=93"
+      "createdAt": "2025-10-04"
     },
     {
       "id": 8,
       "classId": 1,
       "meetingId": 4,
-      "title": "Material 2 for JS Fundamentals Meeting 4",
+      "name": "Material 2 for JS Fundamentals Meeting 4",
       "type": "pdf",
-      "url": "https://example.com/material_8.pdf",
+      "fileUrl": "https://example.com/material_8.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-10-04",
-      "imageUrl": "https://picsum.photos/200/100?random=179"
+      "createdAt": "2025-10-04"
     },
     {
       "id": 9,
       "classId": 1,
       "meetingId": 5,
-      "title": "Material 1 for JS Fundamentals Meeting 5",
+      "name": "Material 1 for JS Fundamentals Meeting 5",
       "type": "pdf",
-      "url": "https://example.com/material_9.pdf",
+      "fileUrl": "https://example.com/material_9.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-10-13",
-      "imageUrl": "https://picsum.photos/200/100?random=88"
+      "createdAt": "2025-10-13"
     },
     {
       "id": 10,
       "classId": 1,
       "meetingId": 5,
-      "title": "Material 2 for JS Fundamentals Meeting 5",
+      "name": "Material 2 for JS Fundamentals Meeting 5",
       "type": "pdf",
-      "url": "https://example.com/material_10.pdf",
+      "fileUrl": "https://example.com/material_10.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-10-13",
-      "imageUrl": "https://picsum.photos/200/100?random=567"
+      "createdAt": "2025-10-13"
     },
     {
       "id": 11,
       "classId": 1,
       "meetingId": 6,
-      "title": "Material 1 for JS Fundamentals Meeting 6",
+      "name": "Material 1 for JS Fundamentals Meeting 6",
       "type": "pdf",
-      "url": "https://example.com/material_11.pdf",
+      "fileUrl": "https://example.com/material_11.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-10-28",
-      "imageUrl": "https://picsum.photos/200/100?random=397"
+      "createdAt": "2025-10-28"
     },
     {
       "id": 12,
       "classId": 1,
       "meetingId": 6,
-      "title": "Material 2 for JS Fundamentals Meeting 6",
+      "name": "Material 2 for JS Fundamentals Meeting 6",
       "type": "pdf",
-      "url": "https://example.com/material_12.pdf",
+      "fileUrl": "https://example.com/material_12.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-10-28",
-      "imageUrl": "https://picsum.photos/200/100?random=89"
+      "createdAt": "2025-10-28"
     },
     {
       "id": 13,
       "classId": 1,
       "meetingId": 7,
-      "title": "Material 1 for JS Fundamentals Meeting 7",
+      "name": "Material 1 for JS Fundamentals Meeting 7",
       "type": "pdf",
-      "url": "https://example.com/material_13.pdf",
+      "fileUrl": "https://example.com/material_13.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-11-21",
-      "imageUrl": "https://picsum.photos/200/100?random=804"
+      "createdAt": "2025-11-21"
     },
     {
       "id": 14,
       "classId": 1,
       "meetingId": 7,
-      "title": "Material 2 for JS Fundamentals Meeting 7",
+      "name": "Material 2 for JS Fundamentals Meeting 7",
       "type": "pdf",
-      "url": "https://example.com/material_14.pdf",
+      "fileUrl": "https://example.com/material_14.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-11-21",
-      "imageUrl": "https://picsum.photos/200/100?random=858"
+      "createdAt": "2025-11-21"
     },
     {
       "id": 15,
       "classId": 1,
       "meetingId": 8,
-      "title": "Material 1 for JS Fundamentals Meeting 8",
+      "name": "Material 1 for JS Fundamentals Meeting 8",
       "type": "pdf",
-      "url": "https://example.com/material_15.pdf",
+      "fileUrl": "https://example.com/material_15.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-11-25",
-      "imageUrl": "https://picsum.photos/200/100?random=856"
+      "createdAt": "2025-11-25"
     },
     {
       "id": 16,
       "classId": 1,
       "meetingId": 8,
-      "title": "Material 2 for JS Fundamentals Meeting 8",
+      "name": "Material 2 for JS Fundamentals Meeting 8",
       "type": "pdf",
-      "url": "https://example.com/material_16.pdf",
+      "fileUrl": "https://example.com/material_16.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-11-25",
-      "imageUrl": "https://picsum.photos/200/100?random=952"
+      "createdAt": "2025-11-25"
     },
     {
       "id": 17,
       "classId": 2,
       "meetingId": 9,
-      "title": "Material 1 for Back End Development Meeting 1",
+      "name": "Material 1 for Back End Development Meeting 1",
       "type": "pdf",
-      "url": "https://example.com/material_17.pdf",
+      "fileUrl": "https://example.com/material_17.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-12-29",
-      "imageUrl": "https://picsum.photos/200/100?random=66"
+      "createdAt": "2025-12-29"
     },
     {
       "id": 18,
       "classId": 2,
       "meetingId": 9,
-      "title": "Material 2 for Back End Development Meeting 1",
+      "name": "Material 2 for Back End Development Meeting 1",
       "type": "pdf",
-      "url": "https://example.com/material_18.pdf",
+      "fileUrl": "https://example.com/material_18.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-12-29",
-      "imageUrl": "https://picsum.photos/200/100?random=295"
+      "createdAt": "2025-12-29"
     },
     {
       "id": 19,
       "classId": 2,
       "meetingId": 10,
-      "title": "Material 1 for Back End Development Meeting 2",
+      "name": "Material 1 for Back End Development Meeting 2",
       "type": "pdf",
-      "url": "https://example.com/material_19.pdf",
+      "fileUrl": "https://example.com/material_19.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-11-21",
-      "imageUrl": "https://picsum.photos/200/100?random=986"
+      "createdAt": "2025-11-21"
     },
     {
       "id": 20,
       "classId": 2,
       "meetingId": 10,
-      "title": "Material 2 for Back End Development Meeting 2",
+      "name": "Material 2 for Back End Development Meeting 2",
       "type": "pdf",
-      "url": "https://example.com/material_20.pdf",
+      "fileUrl": "https://example.com/material_20.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-11-21",
-      "imageUrl": "https://picsum.photos/200/100?random=599"
+      "createdAt": "2025-11-21"
     },
     {
       "id": 21,
       "classId": 2,
       "meetingId": 11,
-      "title": "Material 1 for Back End Development Meeting 3",
+      "name": "Material 1 for Back End Development Meeting 3",
       "type": "pdf",
-      "url": "https://example.com/material_21.pdf",
+      "fileUrl": "https://example.com/material_21.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-12-18",
-      "imageUrl": "https://picsum.photos/200/100?random=778"
+      "createdAt": "2025-12-18"
     },
     {
       "id": 22,
       "classId": 2,
       "meetingId": 11,
-      "title": "Material 2 for Back End Development Meeting 3",
+      "name": "Material 2 for Back End Development Meeting 3",
       "type": "pdf",
-      "url": "https://example.com/material_22.pdf",
+      "fileUrl": "https://example.com/material_22.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-12-18",
-      "imageUrl": "https://picsum.photos/200/100?random=811"
+      "createdAt": "2025-12-18"
     },
     {
       "id": 23,
       "classId": 2,
       "meetingId": 12,
-      "title": "Material 1 for Back End Development Meeting 4",
+      "name": "Material 1 for Back End Development Meeting 4",
       "type": "pdf",
-      "url": "https://example.com/material_23.pdf",
+      "fileUrl": "https://example.com/material_23.pdf",
       "uploadedBy": 5,
-      "createdAt": "2026-01-31",
-      "imageUrl": "https://picsum.photos/200/100?random=901"
+      "createdAt": "2026-01-31"
     },
     {
       "id": 24,
       "classId": 2,
       "meetingId": 12,
-      "title": "Material 2 for Back End Development Meeting 4",
+      "name": "Material 2 for Back End Development Meeting 4",
       "type": "pdf",
-      "url": "https://example.com/material_24.pdf",
+      "fileUrl": "https://example.com/material_24.pdf",
       "uploadedBy": 3,
-      "createdAt": "2026-01-31",
-      "imageUrl": "https://picsum.photos/200/100?random=188"
+      "createdAt": "2026-01-31"
     },
     {
       "id": 25,
       "classId": 2,
       "meetingId": 13,
-      "title": "Material 1 for Back End Development Meeting 5",
+      "name": "Material 1 for Back End Development Meeting 5",
       "type": "pdf",
-      "url": "https://example.com/material_25.pdf",
+      "fileUrl": "https://example.com/material_25.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-12-01",
-      "imageUrl": "https://picsum.photos/200/100?random=470"
+      "createdAt": "2025-12-01"
     },
     {
       "id": 26,
       "classId": 2,
       "meetingId": 13,
-      "title": "Material 2 for Back End Development Meeting 5",
+      "name": "Material 2 for Back End Development Meeting 5",
       "type": "pdf",
-      "url": "https://example.com/material_26.pdf",
+      "fileUrl": "https://example.com/material_26.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-12-01",
-      "imageUrl": "https://picsum.photos/200/100?random=750"
+      "createdAt": "2025-12-01"
     },
     {
       "id": 27,
       "classId": 2,
       "meetingId": 14,
-      "title": "Material 1 for Back End Development Meeting 6",
+      "name": "Material 1 for Back End Development Meeting 6",
       "type": "pdf",
-      "url": "https://example.com/material_27.pdf",
+      "fileUrl": "https://example.com/material_27.pdf",
       "uploadedBy": 3,
-      "createdAt": "2026-01-19",
-      "imageUrl": "https://picsum.photos/200/100?random=880"
+      "createdAt": "2026-01-19"
     },
     {
       "id": 28,
       "classId": 2,
       "meetingId": 14,
-      "title": "Material 2 for Back End Development Meeting 6",
+      "name": "Material 2 for Back End Development Meeting 6",
       "type": "pdf",
-      "url": "https://example.com/material_28.pdf",
+      "fileUrl": "https://example.com/material_28.pdf",
       "uploadedBy": 5,
-      "createdAt": "2026-01-19",
-      "imageUrl": "https://picsum.photos/200/100?random=242"
+      "createdAt": "2026-01-19"
     },
     {
       "id": 29,
       "classId": 2,
       "meetingId": 15,
-      "title": "Material 1 for Back End Development Meeting 7",
+      "name": "Material 1 for Back End Development Meeting 7",
       "type": "pdf",
-      "url": "https://example.com/material_29.pdf",
+      "fileUrl": "https://example.com/material_29.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-11-04",
-      "imageUrl": "https://picsum.photos/200/100?random=231"
+      "createdAt": "2025-11-04"
     },
     {
       "id": 30,
       "classId": 2,
       "meetingId": 15,
-      "title": "Material 2 for Back End Development Meeting 7",
+      "name": "Material 2 for Back End Development Meeting 7",
       "type": "pdf",
-      "url": "https://example.com/material_30.pdf",
+      "fileUrl": "https://example.com/material_30.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-11-04",
-      "imageUrl": "https://picsum.photos/200/100?random=479"
+      "createdAt": "2025-11-04"
     },
     {
       "id": 31,
       "classId": 2,
       "meetingId": 16,
-      "title": "Material 1 for Back End Development Meeting 8",
+      "name": "Material 1 for Back End Development Meeting 8",
       "type": "pdf",
-      "url": "https://example.com/material_31.pdf",
+      "fileUrl": "https://example.com/material_31.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-12-23",
-      "imageUrl": "https://picsum.photos/200/100?random=120"
+      "createdAt": "2025-12-23"
     },
     {
       "id": 32,
       "classId": 2,
       "meetingId": 16,
-      "title": "Material 2 for Back End Development Meeting 8",
+      "name": "Material 2 for Back End Development Meeting 8",
       "type": "pdf",
-      "url": "https://example.com/material_32.pdf",
+      "fileUrl": "https://example.com/material_32.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-12-23",
-      "imageUrl": "https://picsum.photos/200/100?random=67"
+      "createdAt": "2025-12-23"
     },
     {
       "id": 33,
       "classId": 2,
       "meetingId": 17,
-      "title": "Material 1 for Back End Development Meeting 9",
+      "name": "Material 1 for Back End Development Meeting 9",
       "type": "pdf",
-      "url": "https://example.com/material_33.pdf",
+      "fileUrl": "https://example.com/material_33.pdf",
       "uploadedBy": 3,
-      "createdAt": "2026-01-29",
-      "imageUrl": "https://picsum.photos/200/100?random=436"
+      "createdAt": "2026-01-29"
     },
     {
       "id": 34,
       "classId": 2,
       "meetingId": 17,
-      "title": "Material 2 for Back End Development Meeting 9",
+      "name": "Material 2 for Back End Development Meeting 9",
       "type": "pdf",
-      "url": "https://example.com/material_34.pdf",
+      "fileUrl": "https://example.com/material_34.pdf",
       "uploadedBy": 4,
-      "createdAt": "2026-01-29",
-      "imageUrl": "https://picsum.photos/200/100?random=526"
+      "createdAt": "2026-01-29"
     },
     {
       "id": 35,
       "classId": 2,
       "meetingId": 18,
-      "title": "Material 1 for Back End Development Meeting 10",
+      "name": "Material 1 for Back End Development Meeting 10",
       "type": "pdf",
-      "url": "https://example.com/material_35.pdf",
+      "fileUrl": "https://example.com/material_35.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-12-18",
-      "imageUrl": "https://picsum.photos/200/100?random=146"
+      "createdAt": "2025-12-18"
     },
     {
       "id": 36,
       "classId": 2,
       "meetingId": 18,
-      "title": "Material 2 for Back End Development Meeting 10",
+      "name": "Material 2 for Back End Development Meeting 10",
       "type": "pdf",
-      "url": "https://example.com/material_36.pdf",
+      "fileUrl": "https://example.com/material_36.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-12-18",
-      "imageUrl": "https://picsum.photos/200/100?random=545"
+      "createdAt": "2025-12-18"
     },
     {
       "id": 37,
       "classId": 2,
       "meetingId": 19,
-      "title": "Material 1 for Back End Development Meeting 11",
+      "name": "Material 1 for Back End Development Meeting 11",
       "type": "pdf",
-      "url": "https://example.com/material_37.pdf",
+      "fileUrl": "https://example.com/material_37.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-11-17",
-      "imageUrl": "https://picsum.photos/200/100?random=849"
+      "createdAt": "2025-11-17"
     },
     {
       "id": 38,
       "classId": 2,
       "meetingId": 19,
-      "title": "Material 2 for Back End Development Meeting 11",
+      "name": "Material 2 for Back End Development Meeting 11",
       "type": "pdf",
-      "url": "https://example.com/material_38.pdf",
+      "fileUrl": "https://example.com/material_38.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-11-17",
-      "imageUrl": "https://picsum.photos/200/100?random=884"
+      "createdAt": "2025-11-17"
     },
     {
       "id": 39,
       "classId": 2,
       "meetingId": 20,
-      "title": "Material 1 for Back End Development Meeting 12",
+      "name": "Material 1 for Back End Development Meeting 12",
       "type": "pdf",
-      "url": "https://example.com/material_39.pdf",
+      "fileUrl": "https://example.com/material_39.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-11-11",
-      "imageUrl": "https://picsum.photos/200/100?random=350"
+      "createdAt": "2025-11-11"
     },
     {
       "id": 40,
       "classId": 2,
       "meetingId": 20,
-      "title": "Material 2 for Back End Development Meeting 12",
+      "name": "Material 2 for Back End Development Meeting 12",
       "type": "pdf",
-      "url": "https://example.com/material_40.pdf",
+      "fileUrl": "https://example.com/material_40.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-11-11",
-      "imageUrl": "https://picsum.photos/200/100?random=329"
+      "createdAt": "2025-11-11"
     },
     {
       "id": 41,
       "classId": 3,
       "meetingId": 21,
-      "title": "Material 1 for Front End Development Meeting 1",
+      "name": "Material 1 for Front End Development Meeting 1",
       "type": "pdf",
-      "url": "https://example.com/material_41.pdf",
+      "fileUrl": "https://example.com/material_41.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-11-29",
-      "imageUrl": "https://picsum.photos/200/100?random=701"
+      "createdAt": "2025-11-29"
     },
     {
       "id": 42,
       "classId": 3,
       "meetingId": 21,
-      "title": "Material 2 for Front End Development Meeting 1",
+      "name": "Material 2 for Front End Development Meeting 1",
       "type": "pdf",
-      "url": "https://example.com/material_42.pdf",
+      "fileUrl": "https://example.com/material_42.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-11-29",
-      "imageUrl": "https://picsum.photos/200/100?random=372"
+      "createdAt": "2025-11-29"
     },
     {
       "id": 43,
       "classId": 3,
       "meetingId": 22,
-      "title": "Material 1 for Front End Development Meeting 2",
+      "name": "Material 1 for Front End Development Meeting 2",
       "type": "pdf",
-      "url": "https://example.com/material_43.pdf",
+      "fileUrl": "https://example.com/material_43.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-11-27",
-      "imageUrl": "https://picsum.photos/200/100?random=580"
+      "createdAt": "2025-11-27"
     },
     {
       "id": 44,
       "classId": 3,
       "meetingId": 22,
-      "title": "Material 2 for Front End Development Meeting 2",
+      "name": "Material 2 for Front End Development Meeting 2",
       "type": "pdf",
-      "url": "https://example.com/material_44.pdf",
+      "fileUrl": "https://example.com/material_44.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-11-27",
-      "imageUrl": "https://picsum.photos/200/100?random=353"
+      "createdAt": "2025-11-27"
     },
     {
       "id": 45,
       "classId": 3,
       "meetingId": 23,
-      "title": "Material 1 for Front End Development Meeting 3",
+      "name": "Material 1 for Front End Development Meeting 3",
       "type": "pdf",
-      "url": "https://example.com/material_45.pdf",
+      "fileUrl": "https://example.com/material_45.pdf",
       "uploadedBy": 4,
-      "createdAt": "2026-01-23",
-      "imageUrl": "https://picsum.photos/200/100?random=621"
+      "createdAt": "2026-01-23"
     },
     {
       "id": 46,
       "classId": 3,
       "meetingId": 23,
-      "title": "Material 2 for Front End Development Meeting 3",
+      "name": "Material 2 for Front End Development Meeting 3",
       "type": "pdf",
-      "url": "https://example.com/material_46.pdf",
+      "fileUrl": "https://example.com/material_46.pdf",
       "uploadedBy": 3,
-      "createdAt": "2026-01-23",
-      "imageUrl": "https://picsum.photos/200/100?random=524"
+      "createdAt": "2026-01-23"
     },
     {
       "id": 47,
       "classId": 3,
       "meetingId": 24,
-      "title": "Material 1 for Front End Development Meeting 4",
+      "name": "Material 1 for Front End Development Meeting 4",
       "type": "pdf",
-      "url": "https://example.com/material_47.pdf",
+      "fileUrl": "https://example.com/material_47.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-11-01",
-      "imageUrl": "https://picsum.photos/200/100?random=346"
+      "createdAt": "2025-11-01"
     },
     {
       "id": 48,
       "classId": 3,
       "meetingId": 24,
-      "title": "Material 2 for Front End Development Meeting 4",
+      "name": "Material 2 for Front End Development Meeting 4",
       "type": "pdf",
-      "url": "https://example.com/material_48.pdf",
+      "fileUrl": "https://example.com/material_48.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-11-01",
-      "imageUrl": "https://picsum.photos/200/100?random=965"
+      "createdAt": "2025-11-01"
     },
     {
       "id": 49,
       "classId": 3,
       "meetingId": 25,
-      "title": "Material 1 for Front End Development Meeting 5",
+      "name": "Material 1 for Front End Development Meeting 5",
       "type": "pdf",
-      "url": "https://example.com/material_49.pdf",
+      "fileUrl": "https://example.com/material_49.pdf",
       "uploadedBy": 3,
-      "createdAt": "2026-01-25",
-      "imageUrl": "https://picsum.photos/200/100?random=483"
+      "createdAt": "2026-01-25"
     },
     {
       "id": 50,
       "classId": 3,
       "meetingId": 25,
-      "title": "Material 2 for Front End Development Meeting 5",
+      "name": "Material 2 for Front End Development Meeting 5",
       "type": "pdf",
-      "url": "https://example.com/material_50.pdf",
+      "fileUrl": "https://example.com/material_50.pdf",
       "uploadedBy": 3,
-      "createdAt": "2026-01-25",
-      "imageUrl": "https://picsum.photos/200/100?random=462"
+      "createdAt": "2026-01-25"
     },
     {
       "id": 51,
       "classId": 3,
       "meetingId": 26,
-      "title": "Material 1 for Front End Development Meeting 6",
+      "name": "Material 1 for Front End Development Meeting 6",
       "type": "pdf",
-      "url": "https://example.com/material_51.pdf",
+      "fileUrl": "https://example.com/material_51.pdf",
       "uploadedBy": 4,
-      "createdAt": "2026-01-05",
-      "imageUrl": "https://picsum.photos/200/100?random=622"
+      "createdAt": "2026-01-05"
     },
     {
       "id": 52,
       "classId": 3,
       "meetingId": 26,
-      "title": "Material 2 for Front End Development Meeting 6",
+      "name": "Material 2 for Front End Development Meeting 6",
       "type": "pdf",
-      "url": "https://example.com/material_52.pdf",
+      "fileUrl": "https://example.com/material_52.pdf",
       "uploadedBy": 4,
-      "createdAt": "2026-01-05",
-      "imageUrl": "https://picsum.photos/200/100?random=902"
+      "createdAt": "2026-01-05"
     },
     {
       "id": 53,
       "classId": 3,
       "meetingId": 27,
-      "title": "Material 1 for Front End Development Meeting 7",
+      "name": "Material 1 for Front End Development Meeting 7",
       "type": "pdf",
-      "url": "https://example.com/material_53.pdf",
+      "fileUrl": "https://example.com/material_53.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-11-03",
-      "imageUrl": "https://picsum.photos/200/100?random=601"
+      "createdAt": "2025-11-03"
     },
     {
       "id": 54,
       "classId": 3,
       "meetingId": 27,
-      "title": "Material 2 for Front End Development Meeting 7",
+      "name": "Material 2 for Front End Development Meeting 7",
       "type": "pdf",
-      "url": "https://example.com/material_54.pdf",
+      "fileUrl": "https://example.com/material_54.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-11-03",
-      "imageUrl": "https://picsum.photos/200/100?random=525"
+      "createdAt": "2025-11-03"
     },
     {
       "id": 55,
       "classId": 3,
       "meetingId": 28,
-      "title": "Material 1 for Front End Development Meeting 8",
+      "name": "Material 1 for Front End Development Meeting 8",
       "type": "pdf",
-      "url": "https://example.com/material_55.pdf",
+      "fileUrl": "https://example.com/material_55.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-12-06",
-      "imageUrl": "https://picsum.photos/200/100?random=601"
+      "createdAt": "2025-12-06"
     },
     {
       "id": 56,
       "classId": 3,
       "meetingId": 28,
-      "title": "Material 2 for Front End Development Meeting 8",
+      "name": "Material 2 for Front End Development Meeting 8",
       "type": "pdf",
-      "url": "https://example.com/material_56.pdf",
+      "fileUrl": "https://example.com/material_56.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-12-06",
-      "imageUrl": "https://picsum.photos/200/100?random=278"
+      "createdAt": "2025-12-06"
     },
     {
       "id": 57,
       "classId": 3,
       "meetingId": 29,
-      "title": "Material 1 for Front End Development Meeting 9",
+      "name": "Material 1 for Front End Development Meeting 9",
       "type": "pdf",
-      "url": "https://example.com/material_57.pdf",
+      "fileUrl": "https://example.com/material_57.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-12-03",
-      "imageUrl": "https://picsum.photos/200/100?random=900"
+      "createdAt": "2025-12-03"
     },
     {
       "id": 58,
       "classId": 3,
       "meetingId": 29,
-      "title": "Material 2 for Front End Development Meeting 9",
+      "name": "Material 2 for Front End Development Meeting 9",
       "type": "pdf",
-      "url": "https://example.com/material_58.pdf",
+      "fileUrl": "https://example.com/material_58.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-12-03",
-      "imageUrl": "https://picsum.photos/200/100?random=940"
+      "createdAt": "2025-12-03"
     },
     {
       "id": 59,
       "classId": 3,
       "meetingId": 30,
-      "title": "Material 1 for Front End Development Meeting 10",
+      "name": "Material 1 for Front End Development Meeting 10",
       "type": "pdf",
-      "url": "https://example.com/material_59.pdf",
+      "fileUrl": "https://example.com/material_59.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-12-13",
-      "imageUrl": "https://picsum.photos/200/100?random=451"
+      "createdAt": "2025-12-13"
     },
     {
       "id": 60,
       "classId": 3,
       "meetingId": 30,
-      "title": "Material 2 for Front End Development Meeting 10",
+      "name": "Material 2 for Front End Development Meeting 10",
       "type": "pdf",
-      "url": "https://example.com/material_60.pdf",
+      "fileUrl": "https://example.com/material_60.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-12-13",
-      "imageUrl": "https://picsum.photos/200/100?random=367"
+      "createdAt": "2025-12-13"
     },
     {
       "id": 61,
       "classId": 3,
       "meetingId": 31,
-      "title": "Material 1 for Front End Development Meeting 11",
+      "name": "Material 1 for Front End Development Meeting 11",
       "type": "pdf",
-      "url": "https://example.com/material_61.pdf",
+      "fileUrl": "https://example.com/material_61.pdf",
       "uploadedBy": 5,
-      "createdAt": "2025-12-29",
-      "imageUrl": "https://picsum.photos/200/100?random=575"
+      "createdAt": "2025-12-29"
     },
     {
       "id": 62,
       "classId": 3,
       "meetingId": 31,
-      "title": "Material 2 for Front End Development Meeting 11",
+      "name": "Material 2 for Front End Development Meeting 11",
       "type": "pdf",
-      "url": "https://example.com/material_62.pdf",
+      "fileUrl": "https://example.com/material_62.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-12-29",
-      "imageUrl": "https://picsum.photos/200/100?random=207"
+      "createdAt": "2025-12-29"
     },
     {
       "id": 63,
       "classId": 3,
       "meetingId": 32,
-      "title": "Material 1 for Front End Development Meeting 12",
+      "name": "Material 1 for Front End Development Meeting 12",
       "type": "pdf",
-      "url": "https://example.com/material_63.pdf",
+      "fileUrl": "https://example.com/material_63.pdf",
       "uploadedBy": 4,
-      "createdAt": "2025-11-06",
-      "imageUrl": "https://picsum.photos/200/100?random=863"
+      "createdAt": "2025-11-06"
     },
     {
       "id": 64,
       "classId": 3,
       "meetingId": 32,
-      "title": "Material 2 for Front End Development Meeting 12",
+      "name": "Material 2 for Front End Development Meeting 12",
       "type": "pdf",
-      "url": "https://example.com/material_64.pdf",
+      "fileUrl": "https://example.com/material_64.pdf",
       "uploadedBy": 3,
-      "createdAt": "2025-11-06",
-      "imageUrl": "https://picsum.photos/200/100?random=749"
+      "createdAt": "2025-11-06"
     }
   ]
 }
