@@ -53,29 +53,29 @@ const Detail = () => {
       {/* Class Overview */}
       <div className="bg-white p-4 rounded shadow flex justify-between items-center">
         <div>
-          <h2 className="text-xl font-bold">{classData.title}</h2>
+          <h2 className="text-xl font-bold">{classData.name}</h2>
           <p className="text-gray-600">{classData.description}</p>
           <p className="text-gray-500 text-sm">
             {classData.startDate} | {classData.startHour} -{" "}
             {classData.finishHour}
           </p>
           <p className="text-gray-500 text-sm">
-            Mentor: {classData.mentor?.name ?? "-"} | Mentees:{" "}
-            {classData.mentee?.name ?? "-"}
+            Mentor: {classData.mentor?.name ?? "-"} | Mentees:
+            {classData.mentee?.length ?? "-"}
           </p>
         </div>
         <div className="flex gap-2">
           <button className="text-green-600 hover:text-green-800">
-            <Edit2 size={20} />
+            <Edit2 size={20} /> Edit
           </button>
           <button className="text-red-600 hover:text-red-800">
-            <Trash2 size={20} />
+            <Trash2 size={20} /> Delete
           </button>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-4 border-b">
+      <div className="flex gap-4 border-b max-w-100">
         {tabs.map((tab) => (
           <button
             key={tab}

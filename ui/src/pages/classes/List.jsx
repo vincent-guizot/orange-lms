@@ -12,11 +12,16 @@ import { Link } from "react-router-dom";
 
 const columns = [
   { key: "code", label: "Class Code" },
-  { key: "title", label: "Class" },
+  { key: "name", label: "Class" },
   { key: "startDate", label: "Date" },
-  { key: "mentorId", label: "Mentor" },
-  { key: "totalMentees", label: "Total Mentees" },
-  { key: "meeting.length", label: "Meetings" },
+  { key: "mentor", label: "Mentor", render: (row) => row.mentor?.name },
+  {
+    key: "mentee.length",
+    label: "Total Mentees",
+    render: (row) =>
+      row.Users?.filter((u) => u.ClassUser.roleInClass === "mentee").length,
+  },
+  { key: "meeting", label: "Meetings", render: (row) => row.meeting?.length },
   { key: "actions", label: "Actions" },
 ];
 
