@@ -1,22 +1,49 @@
-const { Meeting, Task, Note, Material } = require("../models");
+const { Class, Meeting, Task, Note, Material } = require("../models");
 
 class MeetingService {
   static async findAllByClass(classId) {
     return Meeting.findAll({
       where: { id: classId },
-      include: [Task, Note, Material],
+      include: [
+        {
+          model: Class,
+          as: "class",
+        },
+
+        Task,
+        Note,
+        Material,
+      ],
     });
   }
 
   static async getAll() {
     return Meeting.findAll({
       // where: { id: classId },
-      include: [Task, Note, Material],
+      include: [
+        {
+          model: Class,
+          as: "class",
+        },
+        Task,
+        Note,
+        Material,
+      ],
     });
   }
 
   static async findById(id) {
-    return Meeting.findByPk(id, { include: [Task, Note, Material] });
+    return Meeting.findByPk(id, {
+      include: [
+        {
+          model: Class,
+          as: "class",
+        },
+        Task,
+        Note,
+        Material,
+      ],
+    });
   }
 
   static async create(currentUser, classId, data) {

@@ -10,7 +10,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Task.belongsTo(models.Meeting, { foreignKey: "meetingId" });
-
+      Task.belongsTo(models.Class, { foreignKey: "classId" });
+      Task.belongsTo(models.User, {
+        foreignKey: "createdBy",
+        as: "TaskCreatedBy",
+      });
       Task.hasMany(models.TaskSubmission, {
         foreignKey: "taskId",
         onDelete: "CASCADE",
@@ -21,11 +25,12 @@ module.exports = (sequelize, DataTypes) => {
     {
       classId: DataTypes.INTEGER,
       meetingId: DataTypes.INTEGER,
-      title: DataTypes.STRING,
+      name: DataTypes.STRING,
       description: DataTypes.TEXT,
+      createdBy: DataTypes.INTEGER,
       dueDate: DataTypes.DATE,
       maxScore: DataTypes.INTEGER,
-      imageUrl: DataTypes.STRING,
+      fileUrl: DataTypes.STRING,
     },
     {
       sequelize,

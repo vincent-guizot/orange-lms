@@ -9,6 +9,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+
+      Class.belongsTo(models.User, {
+        foreignKey: "mentorId",
+        as: "mentor",
+      });
+
       Class.belongsToMany(models.User, {
         through: models.ClassUser,
         foreignKey: "classId",
@@ -20,12 +26,24 @@ module.exports = (sequelize, DataTypes) => {
         as: "meeting",
         onDelete: "CASCADE",
       });
+      Class.hasMany(models.Note, {
+        foreignKey: "classId",
+        onDelete: "CASCADE",
+      });
+      Class.hasMany(models.Task, {
+        foreignKey: "classId",
+        onDelete: "CASCADE",
+      });
+      Class.hasMany(models.Material, {
+        foreignKey: "classId",
+        onDelete: "CASCADE",
+      });
     }
   }
   Class.init(
     {
       code: DataTypes.STRING,
-      title: DataTypes.STRING,
+      name: DataTypes.STRING,
       description: DataTypes.TEXT,
       category: DataTypes.STRING,
       mentorId: DataTypes.INTEGER,
