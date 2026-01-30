@@ -63,7 +63,7 @@
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Folder Structure
 
 ```txt
 src/
