@@ -10,6 +10,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Note.belongsTo(models.Meeting, { foreignKey: "meetingId" });
+      Note.belongsTo(models.Class, { foreignKey: "classId" });
+      Note.belongsTo(models.User, {
+        foreignKey: "createdBy",
+        as: "NoteCreatedBy",
+      });
     }
   }
   Note.init(
@@ -17,8 +22,9 @@ module.exports = (sequelize, DataTypes) => {
       classId: DataTypes.INTEGER,
       meetingId: DataTypes.INTEGER,
       createdBy: DataTypes.INTEGER,
-      content: DataTypes.TEXT,
-      imageUrl: DataTypes.STRING,
+      name: DataTypes.STRING,
+      description: DataTypes.TEXT,
+      fileUrl: DataTypes.STRING,
     },
     {
       sequelize,

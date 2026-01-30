@@ -3,7 +3,7 @@ const { noteService } = require("../services");
 class NoteController {
   static async getByMeeting(req, res, next) {
     try {
-      const notes = await noteService.findAllByMeeting(req.params.meetingId);
+      const notes = await noteService.findAllByMeeting(+req.params.meetingId);
       res.json(notes);
     } catch (err) {
       next(err);

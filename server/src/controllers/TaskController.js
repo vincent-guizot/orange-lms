@@ -3,7 +3,7 @@ const { taskService, taskSubmissionService } = require("../services");
 class TaskController {
   static async getByMeeting(req, res, next) {
     try {
-      const tasks = await taskService.findAllByMeeting(req.params.meetingId);
+      const tasks = await taskService.findAllByMeeting(+req.params.meetingId);
       res.json(tasks);
     } catch (err) {
       next(err);
