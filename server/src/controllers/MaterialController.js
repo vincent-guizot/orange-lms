@@ -4,7 +4,7 @@ class MaterialController {
   static async getByMeeting(req, res, next) {
     try {
       const materials = await materialService.findAllByMeeting(
-        req.params.meetingId,
+        +req.params.meetingId,
       );
       res.json(materials);
     } catch (err) {
