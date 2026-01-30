@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       classId: DataTypes.INTEGER,
       meetingNumber: DataTypes.INTEGER,
-      title: DataTypes.STRING,
+      name: DataTypes.STRING,
       description: DataTypes.TEXT,
       meetingDate: DataTypes.DATE,
       startHour: DataTypes.TIME,

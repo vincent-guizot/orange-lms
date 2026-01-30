@@ -1,15 +1,64 @@
-const { Note } = require("../models");
+const { Note, Class, User, Meeting } = require("../models");
 
 class NoteService {
   static async findAllByMeeting(meetingId) {
-    return Note.findAll({ where: { meetingId } });
+    return Note.findAll({
+      where: { meetingId },
+      include: [
+        {
+          model: Class,
+          attributes: ["id", "code", "name"],
+        },
+        {
+          model: User,
+          as: "NoteCreatedBy",
+          attributes: ["id", "name", "email"],
+        },
+        {
+          model: Meeting,
+          attributes: ["id", "name", "meetingNumber"],
+        },
+      ],
+    });
   }
 
   static async getAll() {
-    return Note.findAll();
+    return Note.findAll({
+      include: [
+        {
+          model: Class,
+          attributes: ["id", "code", "name"],
+        },
+        {
+          model: User,
+          as: "NoteCreatedBy",
+          attributes: ["id", "name", "email"],
+        },
+        {
+          model: Meeting,
+          attributes: ["id", "name", "meetingNumber"],
+        },
+      ],
+    });
   }
   static async findById(id) {
-    return Note.findByPk(id);
+    return Note.findByPk(id, {
+      include: [
+        {
+          model: Class,
+          attributes: ["id", "code", "name"],
+        },
+        {
+          model: User,
+          as: "NoteCreatedBy",
+          attributes: ["id", "name", "email"],
+        },
+        {
+          model: Meeting,
+          attributes: ["id", "name", "meetingNumber"],
+        },
+      ],
+    });
   }
 
   static async create(currentUser, data) {
