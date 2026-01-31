@@ -11,12 +11,17 @@ import { Trash2, Edit2, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const columns = [
+  { key: "code", label: "Class Code" },
   { key: "name", label: "Class" },
-  { key: "subject", label: "Subject" },
   { key: "startDate", label: "Date" },
-  { key: "mentorName", label: "Mentor" },
-  { key: "totalMentees", label: "Total Mentees" },
-  { key: "totalMeetings", label: "Meetings" },
+  { key: "mentor", label: "Mentor", render: (row) => row.mentor?.name },
+  {
+    key: "mentee.length",
+    label: "Total Mentees",
+    render: (row) =>
+      row.Users?.filter((u) => u.ClassUser.roleInClass === "mentee").length,
+  },
+  { key: "meeting", label: "Meetings", render: (row) => row.meeting?.length },
   { key: "actions", label: "Actions" },
 ];
 
