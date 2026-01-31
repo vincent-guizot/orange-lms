@@ -7,12 +7,38 @@ import useSort from "@/hooks/useSort";
 import useBreadcrumbs from "@/hooks/useBreadcrumbs";
 import usePagination from "@/hooks/usePagination";
 import MaterialService from "@/services/materials.service";
-import { Trash2, Edit2, Eye } from "lucide-react";
+import { Trash2, Edit2, Eye, Download } from "lucide-react";
 import MaterialDetail from "./Detail";
 
 const columns = [
   { key: "name", label: "Name" },
-  { key: "link", label: "Link" },
+  { key: "description", label: "Description" },
+  { key: "code", label: "Class Code", render: (row) => row.Class?.code },
+  {
+    key: "meetingName",
+    label: "Meeting Name",
+    render: (row) => row.Meeting?.name,
+  },
+  {
+    key: "task",
+    label: "Created By",
+    render: (row) => row.MaterialUploadedBy?.name,
+  },
+  {
+    key: "fileUrl",
+    label: "Link",
+    render: (row) => {
+      const url = row.fileUrl;
+      return (
+        <button className="p-2 bg-blue-800 text-white rounded">
+          <div className="flex justify-center items-center">
+            <Download size={16} className="mr-2"></Download>
+            Download
+          </div>
+        </button>
+      );
+    },
+  },
   { key: "actions", label: "Actions" },
 ];
 
