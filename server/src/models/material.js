@@ -11,17 +11,22 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
 
       Material.belongsTo(models.Meeting, { foreignKey: "meetingId" });
+      Material.belongsTo(models.Class, { foreignKey: "classId" });
+      Material.belongsTo(models.User, {
+        foreignKey: "uploadedBy",
+        as: "MaterialUploadedBy",
+      });
     }
   }
   Material.init(
     {
       classId: DataTypes.INTEGER,
       meetingId: DataTypes.INTEGER,
-      title: DataTypes.STRING,
+      name: DataTypes.STRING,
+      description: DataTypes.TEXT,
       type: DataTypes.STRING,
-      url: DataTypes.STRING,
       uploadedBy: DataTypes.INTEGER,
-      imageUrl: DataTypes.STRING,
+      fileUrl: DataTypes.STRING,
     },
     {
       sequelize,

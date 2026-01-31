@@ -4,7 +4,7 @@ const { MeetingController } = require("../controllers");
 
 /**
  * Nested (by class)
- * /classes/:classId/meetings
+ * /classes/:class/meetings
  */
 router.get("/", MeetingController.getByClass);
 router.post("/", MeetingController.create);

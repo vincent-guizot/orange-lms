@@ -1,16 +1,65 @@
-const { Material } = require("../models");
+const { Material, Class, User, Meeting } = require("../models");
 
 class MaterialService {
   static async findAllByMeeting(meetingId) {
-    return Material.findAll({ where: { meetingId } });
+    return Material.findAll({
+      where: { meetingId },
+      include: [
+        {
+          model: Class,
+          attributes: ["id", "code", "name"],
+        },
+        {
+          model: User,
+          as: "MaterialUploadedBy",
+          attributes: ["id", "name", "email"],
+        },
+        {
+          model: Meeting,
+          attributes: ["id", "name", "meetingNumber"],
+        },
+      ],
+    });
   }
 
   static async getAll() {
-    return Material.findAll();
+    return Material.findAll({
+      include: [
+        {
+          model: Class,
+          attributes: ["id", "code", "name"],
+        },
+        {
+          model: User,
+          as: "MaterialUploadedBy",
+          attributes: ["id", "name", "email"],
+        },
+        {
+          model: Meeting,
+          attributes: ["id", "name", "meetingNumber"],
+        },
+      ],
+    });
   }
 
   static async findById(id) {
-    return Material.findByPk(id);
+    return Material.findByPk(id, {
+      include: [
+        {
+          model: Class,
+          attributes: ["id", "code", "name"],
+        },
+        {
+          model: User,
+          as: "MaterialUploadedBy",
+          attributes: ["id", "name", "email"],
+        },
+        {
+          model: Meeting,
+          attributes: ["id", "name", "meetingNumber"],
+        },
+      ],
+    });
   }
 
   static async create(currentUser, data) {
