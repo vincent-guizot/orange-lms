@@ -11,11 +11,12 @@ import { Trash2, Edit2, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const columns = [
-  { key: "topic", label: "Meeting" },
-  { key: "className", label: "Class" },
-  { key: "date", label: "Date" },
-  { key: "mentorName", label: "Mentor" },
-  { key: "attendanceCount", label: "Attendance" },
+  { key: "name", label: "Topic" },
+  { key: "description", label: "Description" },
+  { key: "meetingDate", label: "Date" },
+  { key: "startHour", label: "Start Hour" },
+  { key: "finishHour", label: "Finish Hour" },
+  { key: "meeting", label: "Class Code", render: (row) => row.class?.code },
   { key: "actions", label: "Actions" },
 ];
 
@@ -40,15 +41,15 @@ const List = () => {
 
   // SEARCH
   const { query, setQuery, searchedData } = useSearch(data, [
-    "topic",
-    "className",
-    "mentorName",
+    "name",
+    "description",
+    "category",
   ]);
 
   // FILTER (by class)
   const { filterValue, setFilterValue, filteredData } = useFilter(
     searchedData,
-    "className",
+    "category",
   );
 
   // SORT
@@ -56,7 +57,7 @@ const List = () => {
 
   // PAGINATION
   const { paginatedData, currentPage, totalPages, nextPage, prevPage } =
-    usePagination(sortedData, 5);
+    usePagination(sortedData, 10);
 
   if (loading)
     return <div className="p-4 text-gray-500">Loading meetings...</div>;
