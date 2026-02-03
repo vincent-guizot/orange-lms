@@ -87,3 +87,62 @@ export const meetingSchema = [
     type: "text",
   },
 ];
+
+export const noteSchema = [
+  { name: "name", label: "Note Title", type: "text" },
+  { name: "description", label: "Description", type: "textarea" },
+  {
+    name: "classId",
+    label: "Class",
+    type: "select",
+    options: [],
+  },
+  {
+    name: "meetingId",
+    label: "Meeting",
+    type: "select",
+    options: [],
+  },
+
+  { name: "fileUrl", label: "File URL", type: "text" },
+];
+
+export const taskSchema = [
+  { name: "name", label: "Task Title", type: "text" },
+  { name: "maxScore", label: "Max Score", type: "number" },
+  { name: "description", label: "Description", type: "textarea" },
+  { name: "dueDate", label: "Due Date", type: "date" },
+  {
+    name: "classId",
+    label: "Class",
+    type: "select",
+    options: [],
+  },
+  {
+    name: "meetingId",
+    label: "Meeting",
+    type: "select",
+    options: [],
+  },
+
+  { name: "fileUrl", label: "File URL", type: "text" },
+];
+
+export const materialSchema = [
+  { name: "name", label: "Material Title", type: "text" },
+  { name: "description", label: "Description", type: "textarea" },
+  {
+    name: "classId",
+    label: "Class",
+    type: "select",
+    options: [],
+  },
+  {
+    name: "meetingId",
+    label: "Meeting",
+    type: "select",
+    options: [],
+  },
+
+  { name: "fileUrl", label: "File URL", type: "text" },
+];
