@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Table from "@/components/ui/Table";
 import TableControls from "@/components/ui/TableControls";
-import useSearch from "@/hooks/useSearch";
-import useFilter from "@/hooks/useFilter";
-import useSort from "@/hooks/useSort";
-import useBreadcrumbs from "@/hooks/useBreadcrumbs";
-import usePagination from "@/hooks/usePagination";
+
+import {
+  useBreadcrumbs,
+  useFilter,
+  useSearch,
+  usePagination,
+  useSort,
+} from "@/hooks";
+
 import NotesService from "@/services/notes.service";
 import { Trash2, Edit2, Eye, Download } from "lucide-react";
 import NotesDetails from "./Detail";
