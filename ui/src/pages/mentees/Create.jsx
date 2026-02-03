@@ -13,7 +13,7 @@ const Create = () => {
   return (
     <Form
       title="Create Mentee"
-      description="Fill mentor personal information"
+      description="Fill mentee personal information"
       schema={menteeSchema}
       values={values}
       onChange={handleChange}

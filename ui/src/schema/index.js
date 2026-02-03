@@ -29,3 +29,61 @@ export const menteeSchema = [
     icon: FileText,
   },
 ];
+// schema/class.schema.js
+export const classSchema = [
+  { name: "code", label: "Class Code", type: "text" },
+  { name: "name", label: "Class Name", type: "text" },
+  { name: "category", label: "Category", type: "text" },
+  {
+    name: "level",
+    label: "Level",
+    type: "select",
+    options: [
+      { label: "Beginner", value: "Beginner" },
+      { label: "Intermediate", value: "Intermediate" },
+      { label: "Advanced", value: "Advanced" },
+    ],
+  },
+
+  { name: "startDate", label: "Start Date", type: "date" },
+  { name: "endDate", label: "End Date", type: "date" },
+
+  {
+    name: "mentorId",
+    label: "Mentor",
+    type: "select",
+    options: [], // <- akan diisi dari API
+  },
+
+  {
+    name: "status",
+    label: "Status",
+    type: "select",
+    options: [
+      { label: "Active", value: "active" },
+      { label: "Inactive", value: "inactive" },
+    ],
+  },
+
+  { name: "imageUrl", label: "Image URL", type: "text" },
+];
+
+export const meetingSchema = [
+  { name: "name", label: "Meeting Name", type: "text" },
+  { name: "meetingNumber", label: "Meeting Number", type: "number" },
+  { name: "description", label: "Description", type: "textarea" },
+  { name: "meetingDate", label: "Meeting Date", type: "date" },
+  { name: "startHour", label: "Start Hour", type: "time" },
+  { name: "finishHour", label: "Finish Hour", type: "time" },
+  {
+    name: "classId",
+    label: "Class Code",
+    type: "select",
+    options: [],
+  },
+  {
+    name: "imageUrl",
+    label: "Image URL",
+    type: "text",
+  },
+];
