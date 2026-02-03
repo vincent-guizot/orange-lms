@@ -9,6 +9,7 @@ import usePagination from "@/hooks/usePagination";
 import NotesService from "@/services/notes.service";
 import { Trash2, Edit2, Eye, Download } from "lucide-react";
 import NotesDetails from "./Detail";
+import { Link } from "react-router-dom";
 
 const columns = [
   { key: "name", label: "Name" },
@@ -30,7 +31,7 @@ const columns = [
     render: (row) => {
       const url = row.fileUrl;
       return (
-        <button className="px-2 bg-blue-800 text-white rounded">
+        <button className="p-2 bg-blue-800 text-white rounded">
           <div className="flex justify-center items-center">
             <Download size={16} className="mr-2"></Download>
             Download
@@ -109,12 +110,12 @@ const List = () => {
           <Eye size={16} /> Detail
         </button>
 
-        <button
-          onClick={() => handleEdit(row.id)}
+        <Link
+          to={`/notes/update/${row.id}`}
           className="text-green-600 hover:text-green-800 flex items-center gap-1"
         >
           <Edit2 size={16} /> Edit
-        </button>
+        </Link>
 
         <button
           onClick={() => handleRemove(row.id)}
