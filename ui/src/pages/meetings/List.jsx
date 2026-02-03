@@ -82,12 +82,12 @@ const List = () => {
         >
           <Eye size={16} /> Details
         </Link>
-        <button
-          onClick={() => handleEdit(row.id)}
+        <Link
+          to={`/meetings/update/${row.id}`}
           className="text-green-600 hover:text-green-800 flex items-center gap-1"
         >
           <Edit2 size={16} /> Edit
-        </button>
+        </Link>
         <button
           onClick={() => handleRemove(row.id)}
           className="text-red-600 hover:text-red-800 flex items-center gap-1"
