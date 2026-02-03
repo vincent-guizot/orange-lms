@@ -40,7 +40,7 @@ const useClassMeetingOptions = (values, setValues, baseSchema) => {
           f.name === "meetingId"
             ? {
                 ...f,
-                options: cls.meeting.map((m) => ({
+                options: cls[0].meeting.map((m) => ({
                   label: `Meeting ${m.meetingNumber} - ${m.name}`,
                   value: m.id,
                 })),
