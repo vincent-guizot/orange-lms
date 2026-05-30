@@ -32,6 +32,13 @@ router.use("/auth", authRoutes);
 router.use(authentication);
 
 /**
+ * User routes for testing
+ */
+
+const userRoutes = require("./user");
+router.use("/users", userRoutes);
+
+/**
  * User Domains
  */
 router.use("/mentors", mentorRoutes);

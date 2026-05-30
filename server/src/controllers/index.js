@@ -1,5 +1,5 @@
 const AuthController = require("./AuthController");
-
+const UserController = require("./UserController");
 const ProfileController = require("./ProfileController");
 
 const ClassController = require("./ClassController");
@@ -16,7 +16,7 @@ const MenteeController = require("./MenteeController");
 
 module.exports = {
   AuthController,
-
+  UserController,
   ProfileController,
 
   MentorController,
