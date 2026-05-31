@@ -17,7 +17,7 @@ class AttendanceController {
   static async getByMeeting(req, res, next) {
     try {
       const attendances = await attendanceService.findAllByMeeting(
-        req.params.MeetingId,
+        req.params.meetingId,
       );
 
       res.status(200).json(attendances);

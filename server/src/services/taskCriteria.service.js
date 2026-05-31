@@ -6,7 +6,10 @@ class TaskCriteriaService {
       throw new Error("Permission denied");
     }
 
-    return TaskCriteria.create(data);
+    return TaskCriteria.create({
+      ...data,
+      createdBy: currentUser.id,
+    });
   }
 
   static async findAllByTask(TaskId) {

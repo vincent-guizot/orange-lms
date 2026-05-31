@@ -3,7 +3,7 @@
 /** @type {import("sequelize-cli").Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("TaskCriteria", {
+    await queryInterface.createTable("TaskCriterias", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -60,6 +60,6 @@ module.exports = {
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable("TaskCriteria");
+    await queryInterface.dropTable("TaskCriterias");
   },
 };

@@ -14,10 +14,22 @@ class SubmissionCriteriaScoreController {
     }
   }
 
-  static async getBySubmission(req, res, next) {
+  // static async getBySubmission(req, res, next) {
+  //   try {
+  //     const scores = await submissionCriteriaScoreService.findAllBySubmission(
+  //       req.params.assessmentResultId,
+  //     );
+
+  //     res.status(200).json(scores);
+  //   } catch (error) {
+  //     next(error);
+  //   }
+  // }
+
+  static async getByAssessment(req, res, next) {
     try {
-      const scores = await submissionCriteriaScoreService.findAllBySubmission(
-        req.params.submissionId,
+      const scores = await submissionCriteriaScoreService.findAllByAssessment(
+        req.params.assessmentResultId,
       );
 
       res.status(200).json(scores);

@@ -31,7 +31,7 @@ module.exports = {
       updatedAt: now,
     }));
 
-    await queryInterface.bulkInsert("TaskCriteria", taskCriteria, {});
+    await queryInterface.bulkInsert("TaskCriterias", taskCriteria, {});
 
     /**
      * ASSESSMENT RESULTS
@@ -77,7 +77,7 @@ module.exports = {
     await queryInterface.bulkDelete("HistoryClasses", null, {});
     await queryInterface.bulkDelete("SubmissionCriteriaScores", null, {});
     await queryInterface.bulkDelete("AssessmentResults", null, {});
-    await queryInterface.bulkDelete("TaskCriteria", null, {});
+    await queryInterface.bulkDelete("TaskCriterias", null, {});
     await queryInterface.bulkDelete("Attendances", null, {});
   },
 };
