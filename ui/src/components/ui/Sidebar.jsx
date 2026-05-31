@@ -34,7 +34,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="flex flex-col h-screen w-64 px-3 bg-white border-r shadow-sm">
+    <div className="flex flex-col h-screen w-64 px-3 border-r border-gray-300 shadow-sm">
       {/* Logo */}
       <div className="flex items-center justify-center h-20  border-b ">
         {/* <h1 className="text-2xl font-bold">Orange LMS</h1> */}
