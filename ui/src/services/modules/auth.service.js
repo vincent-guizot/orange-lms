@@ -13,7 +13,14 @@ class AuthService {
   }
 
   static async me() {
-    const { data } = await api.get(ENDPOINTS.AUTH.ME);
+    const token = this.getToken();
+
+    const { data } = await api.get(ENDPOINTS.AUTH.ME, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
     return data;
   }
 

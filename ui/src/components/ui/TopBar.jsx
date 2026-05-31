@@ -13,12 +13,18 @@ import {
   Archive,
   UserPlus,
 } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 import { useThemeStore } from "@/features/theme/theme.store";
+import { logout } from "@/app/store/slices/authSlice";
 
-const TopBar = ({ username = "Vincent" }) => {
-  const location = useLocation();
+const TopBar = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { user } = useSelector((state) => state.auth);
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [dropdownOpenLogin, setDropdownOpenLogin] = useState(false);
@@ -27,6 +33,19 @@ const TopBar = ({ username = "Vincent" }) => {
   const loginRef = useRef(null);
 
   const { theme, toggleTheme } = useThemeStore();
+
+  const roleStyles = {
+    Owner:
+      "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300",
+
+    Admin:
+      "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",
+
+    Mentor: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300",
+
+    Mentee:
+      "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -44,8 +63,13 @@ const TopBar = ({ username = "Vincent" }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/auth/login");
+  };
+
   return (
-    <div className="flex items-center justify-between dark:bg-neutral-950 border-b border-orange-100 dark:border-neutral-800 px-6 h-16 transition-colors">
+    <div className="flex items-center justify-between bg-[var(--color-surface)] border-b border-[var(--color-border)] px-6 h-16 transition-colors">
       {/* Left Side */}
       <div className="flex items-center gap-4">
         {/* Theme Toggle */}
@@ -60,7 +84,7 @@ const TopBar = ({ username = "Vincent" }) => {
         <div className="relative" ref={createRef}>
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-all bg-gray-100 dark:bg-neutral-800 px-4 py-2 rounded-xl"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--color-surface-muted)] hover:bg-orange-50 dark:hover:bg-neutral-800 transition-all"
           >
             <PlusCircle size={16} />
             <span className="font-medium">Create</span>
@@ -68,16 +92,11 @@ const TopBar = ({ username = "Vincent" }) => {
           </button>
 
           {dropdownOpen && (
-            <div className="absolute left-0 mt-2 w-64 bg-white dark:bg-neutral-900 border dark:border-neutral-700 rounded-xl shadow-lg z-50 divide-y">
-              {/* Class / Meeting */}
+            <div className="absolute left-0 mt-2 w-64 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl shadow-lg z-50">
               <div className="p-2">
-                <p className="text-xs font-semibold text-orange-600 mb-2 px-2">
-                  Class / Meeting
-                </p>
-
                 <Link
                   to="/classes/create"
-                  className="flex items-center gap-2 px-3 py-2 hover:bg-orange-50 dark:hover:bg-neutral-800 rounded-lg"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-neutral-800"
                 >
                   <BookOpen size={16} />
                   Class
@@ -85,45 +104,15 @@ const TopBar = ({ username = "Vincent" }) => {
 
                 <Link
                   to="/meetings/create"
-                  className="flex items-center gap-2 px-3 py-2 hover:bg-orange-50 dark:hover:bg-neutral-800 rounded-lg"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-neutral-800"
                 >
                   <Calendar size={16} />
                   Meeting
                 </Link>
-              </div>
-
-              {/* Mentor / Mentee */}
-              <div className="p-2">
-                <p className="text-xs font-semibold text-green-600 mb-2 px-2">
-                  Mentor / Mentee
-                </p>
-
-                <Link
-                  to="/mentors/create"
-                  className="flex items-center gap-2 px-3 py-2 hover:bg-green-50 dark:hover:bg-neutral-800 rounded-lg"
-                >
-                  <UserPlus size={16} />
-                  Mentor
-                </Link>
-
-                <Link
-                  to="/mentees/create"
-                  className="flex items-center gap-2 px-3 py-2 hover:bg-green-50 dark:hover:bg-neutral-800 rounded-lg"
-                >
-                  <UserPlus size={16} />
-                  Mentee
-                </Link>
-              </div>
-
-              {/* Task / Note / Material */}
-              <div className="p-2">
-                <p className="text-xs font-semibold text-blue-600 mb-2 px-2">
-                  Task / Note / Material
-                </p>
 
                 <Link
                   to="/tasks/create"
-                  className="flex items-center gap-2 px-3 py-2 hover:bg-blue-50 dark:hover:bg-neutral-800 rounded-lg"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-neutral-800"
                 >
                   <CheckSquare size={16} />
                   Task
@@ -131,7 +120,7 @@ const TopBar = ({ username = "Vincent" }) => {
 
                 <Link
                   to="/notes/create"
-                  className="flex items-center gap-2 px-3 py-2 hover:bg-blue-50 dark:hover:bg-neutral-800 rounded-lg"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-neutral-800"
                 >
                   <FileText size={16} />
                   Note
@@ -139,10 +128,26 @@ const TopBar = ({ username = "Vincent" }) => {
 
                 <Link
                   to="/materials/create"
-                  className="flex items-center gap-2 px-3 py-2 hover:bg-blue-50 dark:hover:bg-neutral-800 rounded-lg"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-neutral-800"
                 >
                   <Archive size={16} />
                   Material
+                </Link>
+
+                <Link
+                  to="/mentors/create"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-neutral-800"
+                >
+                  <UserPlus size={16} />
+                  Mentor
+                </Link>
+
+                <Link
+                  to="/mentees/create"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-neutral-800"
+                >
+                  <UserPlus size={16} />
+                  Mentee
                 </Link>
               </div>
             </div>
@@ -154,21 +159,37 @@ const TopBar = ({ username = "Vincent" }) => {
       <div className="relative" ref={loginRef}>
         <button
           onClick={() => setDropdownOpenLogin(!dropdownOpenLogin)}
-          className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-all"
+          className="flex items-center gap-3"
         >
+          <span
+            className={`px-3 py-1 text-xs font-semibold rounded-full ${
+              roleStyles[user?.role] || "bg-gray-100 text-gray-700"
+            }`}
+          >
+            {user?.role || "Guest"}
+          </span>
+
           <User size={20} />
-          <span className="font-medium">{username}</span>
+
+          <span className="font-medium">{user?.name || "Guest"}</span>
+
           <ChevronDown size={16} />
         </button>
 
         {dropdownOpenLogin && (
-          <div className="absolute right-0 mt-2 w-44 bg-white dark:bg-neutral-900 border dark:border-neutral-700 rounded-xl shadow-lg z-50">
-            <button className="flex items-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors">
+          <div className="absolute right-0 mt-2 w-44 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl shadow-lg z-50">
+            <button
+              onClick={() => navigate("/profile")}
+              className="flex items-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors"
+            >
               <User size={16} className="mr-2" />
-              Account
+              Profile
             </button>
 
-            <button className="flex items-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors text-red-500">
+            <button
+              onClick={handleLogout}
+              className="flex items-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors text-red-500"
+            >
               <LogOut size={16} className="mr-2" />
               Logout
             </button>
