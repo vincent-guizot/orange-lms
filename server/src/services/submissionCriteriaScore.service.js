@@ -9,9 +9,9 @@ class SubmissionCriteriaScoreService {
     return SubmissionCriteriaScore.create(data);
   }
 
-  static async findAllBySubmission(TaskSubmissionId) {
+  static async findAllByAssessment(AssessmentResultId) {
     return SubmissionCriteriaScore.findAll({
-      where: { TaskSubmissionId },
+      where: { AssessmentResultId },
     });
   }
 

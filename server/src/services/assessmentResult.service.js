@@ -6,7 +6,11 @@ class AssessmentResultService {
       throw new Error("Permission denied");
     }
 
-    return AssessmentResult.create(data);
+    return AssessmentResult.create({
+      ...data,
+      gradedBy: currentUser.id,
+      gradedAt: new Date(),
+    });
   }
 
   static async findAll() {

@@ -14,7 +14,7 @@ class TaskCriteriaController {
   static async getByTask(req, res, next) {
     try {
       const criterias = await taskCriteriaService.findAllByTask(
-        req.params.TaskId,
+        req.params.taskId,
       );
 
       res.status(200).json(criterias);

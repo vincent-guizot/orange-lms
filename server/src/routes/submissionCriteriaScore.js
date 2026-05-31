@@ -7,7 +7,7 @@ const { authorization } = require("../middlewares");
 router.get(
   "/submission/:submissionId",
   authorization("score", "read"),
-  SubmissionCriteriaScoreController.getBySubmission,
+  SubmissionCriteriaScoreController.getByAssessment,
 );
 
 router.post(

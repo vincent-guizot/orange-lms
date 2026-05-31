@@ -24,7 +24,7 @@ class HistoryClassController {
   static async archive(req, res, next) {
     try {
       const result = await historyClassService.archive(
-        req.params.ClassId,
+        req.params.classId,
         req.user,
       );
 

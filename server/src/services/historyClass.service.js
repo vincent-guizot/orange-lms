@@ -1,4 +1,4 @@
-const { HistoryClass, Class, User } = require("../models");
+const { HistoryClass, Class, User, ClassUser } = require("../models");
 
 class HistoryClassService {
   static async findAll() {
@@ -11,7 +11,6 @@ class HistoryClassService {
         },
         {
           model: User,
-          as: "mentor",
           attributes: ["id", "name", "email"],
         },
       ],
@@ -27,7 +26,6 @@ class HistoryClassService {
         },
         {
           model: User,
-          as: "mentor",
           attributes: ["id", "name", "email"],
         },
       ],
@@ -47,24 +45,35 @@ class HistoryClassService {
 
     if (!cls) throw new Error("Class not found");
 
-    const history = await HistoryClass.create({
-      classId: cls.id,
-      code: cls.code,
-      name: cls.name,
-      category: cls.category,
-      level: cls.level,
-      mentorId: cls.mentorId,
-      startDate: cls.startDate,
-      endDate: cls.endDate,
-      status: "Completed",
-      archivedAt: new Date(),
+    const classUsers = await ClassUser.findAll({
+      where: { ClassId: classId },
     });
+
+    if (!classUsers.length) {
+      throw new Error("No participants found");
+    }
+
+    const histories = await Promise.all(
+      classUsers.map((participant) =>
+        HistoryClass.create({
+          ClassId: cls.id,
+          UserId: participant.UserId,
+          roleInClass: participant.roleInClass,
+          status: "Completed",
+          finalScore: 0,
+          attendancePercentage: 0,
+          completedAt: new Date(),
+          remarks: `Archived from class ${cls.name}`,
+          certificateUrl: null,
+        }),
+      ),
+    );
 
     await cls.update({
       status: "Archived",
     });
 
-    return history;
+    return histories;
   }
 
   static async restore(id, currentUser) {
@@ -76,7 +85,7 @@ class HistoryClassService {
 
     if (!history) throw new Error("History class not found");
 
-    const cls = await Class.findByPk(history.classId);
+    const cls = await Class.findByPk(history.ClassId);
 
     if (!cls) throw new Error("Original class not found");
 

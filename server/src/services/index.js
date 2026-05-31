@@ -21,7 +21,7 @@ const materialService = require("./material.service");
 const attendanceService = require("./attendance.service");
 const taskCriteriaService = require("./taskCriteria.service");
 const submissionCriteriaScoreService = require("./submissionCriteriaScore.service");
-const assesmentResultService = require("./assesmentResult.service");
+const assessmentResultService = require("./assessmentResult.service");
 const historyClassService = require("./historyClass.service");
 
 module.exports = {
@@ -47,6 +47,6 @@ module.exports = {
   attendanceService,
   taskCriteriaService,
   submissionCriteriaScoreService,
-  assesmentResultService,
+  assessmentResultService,
   historyClassService,
 };

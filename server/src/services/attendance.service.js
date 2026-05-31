@@ -6,7 +6,11 @@ class AttendanceService {
       throw new Error("Permission denied");
     }
 
-    return Attendance.create(data);
+    return Attendance.create({
+      ...data,
+      gradedBy: currentUser.id,
+      gradedAt: new Date(),
+    });
   }
 
   static async findAllByMeeting(MeetingId) {

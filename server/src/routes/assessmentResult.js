@@ -6,31 +6,31 @@ const { authorization } = require("../middlewares");
 
 router.get(
   "/",
-  authorization("assessment", "read"),
+  authorization("assessmentResult", "read"),
   AssessmentResultController.getAll,
 );
 
 router.post(
   "/",
-  authorization("assessment", "create"),
+  authorization("assessmentResult", "create"),
   AssessmentResultController.create,
 );
 
 router.get(
   "/submission/:submissionId",
-  authorization("assessment", "read"),
+  authorization("assessmentResult", "read"),
   AssessmentResultController.getBySubmission,
 );
 
 router.put(
   "/:id",
-  authorization("assessment", "update"),
+  authorization("assessmentResult", "update"),
   AssessmentResultController.update,
 );
 
 router.delete(
   "/:id",
-  authorization("assessment", "delete"),
+  authorization("assessmentResult", "delete"),
   AssessmentResultController.delete,
 );
 
