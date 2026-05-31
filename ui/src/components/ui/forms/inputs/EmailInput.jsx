@@ -10,7 +10,7 @@ const EmailInput = ({ label, value, onChange, placeholder }) => (
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full pl-10 pr-3 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 outline-none"
+        className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-orange-500 outline-none"
       />
     </div>
   </div>
