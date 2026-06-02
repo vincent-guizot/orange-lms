@@ -1,22 +1,15 @@
-const { Material, Class, User, Meeting } = require("../models");
+const { Material, Meeting, Class, User } = require("../models");
 
 class MaterialService {
-  static async findAllByMeeting(meetingId) {
+  static async findAllByMeeting(MeetingId) {
     return Material.findAll({
-      where: { meetingId },
+      where: { MeetingId },
       include: [
-        {
-          model: Class,
-          attributes: ["id", "code", "name"],
-        },
+        Meeting,
+        Class,
         {
           model: User,
-          as: "MaterialUploadedBy",
-          attributes: ["id", "name", "email"],
-        },
-        {
-          model: Meeting,
-          attributes: ["id", "name", "meetingNumber"],
+          as: "uploader",
         },
       ],
     });
@@ -25,18 +18,11 @@ class MaterialService {
   static async getAll() {
     return Material.findAll({
       include: [
-        {
-          model: Class,
-          attributes: ["id", "code", "name"],
-        },
+        Meeting,
+        Class,
         {
           model: User,
-          as: "MaterialUploadedBy",
-          attributes: ["id", "name", "email"],
-        },
-        {
-          model: Meeting,
-          attributes: ["id", "name", "meetingNumber"],
+          as: "uploader",
         },
       ],
     });
@@ -45,38 +31,48 @@ class MaterialService {
   static async findById(id) {
     return Material.findByPk(id, {
       include: [
-        {
-          model: Class,
-          attributes: ["id", "code", "name"],
-        },
+        Meeting,
+        Class,
         {
           model: User,
-          as: "MaterialUploadedBy",
-          attributes: ["id", "name", "email"],
-        },
-        {
-          model: Meeting,
-          attributes: ["id", "name", "meetingNumber"],
+          as: "uploader",
         },
       ],
     });
   }
 
-  static async create(currentUser, data) {
-    if (!["admin", "owner", "mentor"].includes(currentUser.role))
+  static async create(currentUser, meetingId, data) {
+    if (!["Admin", "Owner", "Mentor"].includes(currentUser.role)) {
       throw new Error("Permission denied");
-    return Material.create(data);
+    }
+
+    const meeting = await Meeting.findByPk(meetingId);
+
+    if (!meeting) {
+      throw new Error("Meeting not found");
+    }
+
+    return Material.create({
+      ...data,
+      MeetingId: Number(meetingId),
+      ClassId: meeting.ClassId,
+      uploadedBy: currentUser.id,
+    });
   }
 
-  static async update(id, data, currentUser) {
+  static async update(id, data) {
     const material = await Material.findByPk(id);
+
     if (!material) throw new Error("Material not found");
+
     return material.update(data);
   }
 
-  static async delete(id, currentUser) {
+  static async delete(id) {
     const material = await Material.findByPk(id);
+
     if (!material) throw new Error("Material not found");
+
     return material.destroy();
   }
 }

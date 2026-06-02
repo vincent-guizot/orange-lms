@@ -1,22 +1,15 @@
-const { Task, Class, User, Meeting } = require("../models");
+const { Task, Meeting, Class, User } = require("../models");
 
 class TaskService {
-  static async findAllByMeeting(meetingId) {
+  static async findAllByMeeting(MeetingId) {
     return Task.findAll({
-      where: { meetingId },
+      where: { MeetingId },
       include: [
-        {
-          model: Class,
-          attributes: ["id", "code", "name"],
-        },
+        Meeting,
+        Class,
         {
           model: User,
-          as: "TaskCreatedBy",
-          attributes: ["id", "name", "email"],
-        },
-        {
-          model: Meeting,
-          attributes: ["id", "name", "meetingNumber"],
+          as: "creator",
         },
       ],
     });
@@ -25,18 +18,11 @@ class TaskService {
   static async getAll() {
     return Task.findAll({
       include: [
-        {
-          model: Class,
-          attributes: ["id", "code", "name"],
-        },
+        Meeting,
+        Class,
         {
           model: User,
-          as: "TaskCreatedBy",
-          attributes: ["id", "name", "email"],
-        },
-        {
-          model: Meeting,
-          attributes: ["id", "name", "meetingNumber"],
+          as: "creator",
         },
       ],
     });
@@ -45,38 +31,60 @@ class TaskService {
   static async findById(id) {
     return Task.findByPk(id, {
       include: [
-        {
-          model: Class,
-          attributes: ["id", "code", "name"],
-        },
+        Meeting,
+        Class,
         {
           model: User,
-          as: "TaskCreatedBy",
-          attributes: ["id", "name", "email"],
-        },
-        {
-          model: Meeting,
-          attributes: ["id", "name", "meetingNumber"],
+          as: "creator",
         },
       ],
     });
   }
 
-  static async create(currentUser, data) {
-    if (!["admin", "owner", "mentor"].includes(currentUser.role))
+  static async create(currentUser, meetingId, data) {
+    if (!["Admin", "Owner", "Mentor"].includes(currentUser.role)) {
       throw new Error("Permission denied");
-    return Task.create(data);
+    }
+
+    const meeting = await Meeting.findByPk(meetingId);
+
+    if (!meeting) {
+      throw new Error("Meeting not found");
+    }
+
+    return Task.create({
+      ...data,
+      MeetingId: Number(meetingId),
+      ClassId: meeting.ClassId,
+      createdBy: currentUser.id,
+    });
   }
 
   static async update(id, data, currentUser) {
+    if (!["Admin", "Owner", "Mentor"].includes(currentUser.role)) {
+      throw new Error("Permission denied");
+    }
+
     const task = await Task.findByPk(id);
-    if (!task) throw new Error("Task not found");
+
+    if (!task) {
+      throw new Error("Task not found");
+    }
+
     return task.update(data);
   }
 
   static async delete(id, currentUser) {
+    if (!["Admin", "Owner", "Mentor"].includes(currentUser.role)) {
+      throw new Error("Permission denied");
+    }
+
     const task = await Task.findByPk(id);
-    if (!task) throw new Error("Task not found");
+
+    if (!task) {
+      throw new Error("Task not found");
+    }
+
     return task.destroy();
   }
 }

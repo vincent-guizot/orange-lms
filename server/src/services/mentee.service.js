@@ -1,4 +1,4 @@
-const { User, Profile } = require("../models");
+const { User, Profile, Class, Meeting } = require("../models");
 const { bcrypt } = require("../helpers");
 
 class MenteeService {
@@ -15,10 +15,23 @@ class MenteeService {
 
   static async findAll() {
     return User.findAll({
-      where: { role: "Mentee" },
-      include: {
-        model: Profile,
-        as: "profile",
+      where: {
+        role: "Mentee",
+      },
+
+      include: [
+        {
+          model: Profile,
+          as: "profile",
+        },
+        {
+          model: Class,
+          as: "enrolledClasses",
+        },
+      ],
+
+      attributes: {
+        exclude: ["password"],
       },
     });
   }
@@ -29,9 +42,27 @@ class MenteeService {
         id,
         role: "Mentee",
       },
-      include: {
-        model: Profile,
-        as: "profile",
+
+      include: [
+        {
+          model: Profile,
+          as: "profile",
+        },
+        {
+          model: Class,
+          as: "enrolledClasses",
+
+          include: [
+            {
+              model: Meeting,
+              as: "meetings",
+            },
+          ],
+        },
+      ],
+
+      attributes: {
+        exclude: ["password"],
       },
     });
   }
@@ -50,7 +81,7 @@ class MenteeService {
     if (!user) throw new Error("Mentee not found");
 
     await Profile.destroy({
-      where: { userId: id },
+      where: { UserId: id },
     });
 
     await user.destroy();

@@ -1,22 +1,15 @@
-const { Note, Class, User, Meeting } = require("../models");
+const { Note, Meeting, Class, User } = require("../models");
 
 class NoteService {
-  static async findAllByMeeting(meetingId) {
+  static async findAllByMeeting(MeetingId) {
     return Note.findAll({
-      where: { meetingId },
+      where: { MeetingId },
       include: [
-        {
-          model: Class,
-          attributes: ["id", "code", "name"],
-        },
+        Meeting,
+        Class,
         {
           model: User,
-          as: "NoteCreatedBy",
-          attributes: ["id", "name", "email"],
-        },
-        {
-          model: Meeting,
-          attributes: ["id", "name", "meetingNumber"],
+          as: "creator",
         },
       ],
     });
@@ -25,57 +18,73 @@ class NoteService {
   static async getAll() {
     return Note.findAll({
       include: [
-        {
-          model: Class,
-          attributes: ["id", "code", "name"],
-        },
+        Meeting,
+        Class,
         {
           model: User,
-          as: "NoteCreatedBy",
-          attributes: ["id", "name", "email"],
-        },
-        {
-          model: Meeting,
-          attributes: ["id", "name", "meetingNumber"],
+          as: "creator",
         },
       ],
     });
   }
+
   static async findById(id) {
     return Note.findByPk(id, {
       include: [
-        {
-          model: Class,
-          attributes: ["id", "code", "name"],
-        },
+        Meeting,
+        Class,
         {
           model: User,
-          as: "NoteCreatedBy",
-          attributes: ["id", "name", "email"],
-        },
-        {
-          model: Meeting,
-          attributes: ["id", "name", "meetingNumber"],
+          as: "creator",
         },
       ],
     });
   }
 
-  static async create(currentUser, data) {
-    if (!["admin", "owner", "mentor"].includes(currentUser.role))
+  static async create(currentUser, meetingId, data) {
+    if (!["Admin", "Owner", "Mentor"].includes(currentUser.role)) {
       throw new Error("Permission denied");
-    return Note.create(data);
+    }
+
+    const meeting = await Meeting.findByPk(meetingId);
+
+    if (!meeting) {
+      throw new Error("Meeting not found");
+    }
+
+    return Note.create({
+      ...data,
+      MeetingId: Number(meetingId),
+      ClassId: meeting.ClassId,
+      createdBy: currentUser.id,
+    });
   }
 
   static async update(id, data, currentUser) {
+    if (!["Admin", "Owner", "Mentor"].includes(currentUser.role)) {
+      throw new Error("Permission denied");
+    }
+
     const note = await Note.findByPk(id);
-    if (!note) throw new Error("Note not found");
+
+    if (!note) {
+      throw new Error("Note not found");
+    }
+
     return note.update(data);
   }
 
   static async delete(id, currentUser) {
+    if (!["Admin", "Owner", "Mentor"].includes(currentUser.role)) {
+      throw new Error("Permission denied");
+    }
+
     const note = await Note.findByPk(id);
-    if (!note) throw new Error("Note not found");
+
+    if (!note) {
+      throw new Error("Note not found");
+    }
+
     return note.destroy();
   }
 }
