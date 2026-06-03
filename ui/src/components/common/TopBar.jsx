@@ -12,6 +12,7 @@ import {
   FileText,
   Archive,
   UserPlus,
+  Settings,
 } from "lucide-react";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -84,7 +85,7 @@ const TopBar = () => {
         <div className="relative" ref={createRef}>
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--color-surface-muted)] hover:bg-orange-50 dark:hover:bg-neutral-800 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-sm bg-[var(--color-surface-muted)] hover:bg-orange-50 dark:hover:bg-neutral-800 transition-all"
           >
             <PlusCircle size={16} />
             <span className="font-medium">Create</span>
@@ -162,40 +163,59 @@ const TopBar = () => {
 
       {/* Right Side */}
       <div className="relative" ref={loginRef}>
-        <button
-          onClick={() => setDropdownOpenLogin(!dropdownOpenLogin)}
-          className="flex items-center gap-3"
-        >
+        <div className="flex items-center gap-3">
+          {/* Role Badge */}
           <span
-            className={`px-3 py-1 text-xs font-semibold rounded-full ${
+            className={`rounded-sm px-3 py-1 text-xs font-semibold ${
               roleStyles[user?.role] || "bg-gray-100 text-gray-700"
             }`}
           >
             {user?.role || "Guest"}
           </span>
 
-          <User size={20} />
+          {/* User Dropdown */}
+          <button
+            onClick={() => setDropdownOpenLogin(!dropdownOpenLogin)}
+            className="flex items-center gap-2 rounded-sm px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-neutral-800"
+          >
+            <User size={18} />
 
-          <span className="font-medium">{user?.name || "Guest"}</span>
+            <span className="font-medium">{user?.name || "Guest"}</span>
 
-          <ChevronDown size={16} />
-        </button>
+            <ChevronDown size={16} />
+          </button>
+        </div>
 
         {dropdownOpenLogin && (
-          <div className="absolute right-0 mt-2 w-44 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl shadow-lg z-50">
+          <div className="absolute right-0 z-50 mt-2 w-52 overflow-hidden rounded-sm border border-[var(--color-border)] bg-[var(--color-surface)] shadow-lg">
+            {/* Profile */}
             <button
               onClick={() => navigate("/profile")}
-              className="flex items-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors"
+              className="flex w-full items-center gap-3 px-4 py-3 text-sm transition hover:bg-gray-50 dark:hover:bg-neutral-800"
             >
-              <User size={16} className="mr-2" />
+              <User size={16} />
               Profile
             </button>
 
+            <div className="border-t border-gray-200" />
+
+            {/* Settings */}
+            <button
+              onClick={() => navigate("/settings")}
+              className="flex w-full items-center gap-3 px-4 py-3 text-sm transition hover:bg-gray-50 dark:hover:bg-neutral-800"
+            >
+              <Settings size={16} />
+              Settings
+            </button>
+
+            <div className="border-t border-gray-200" />
+
+            {/* Logout */}
             <button
               onClick={handleLogout}
-              className="flex items-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors text-red-500"
+              className="flex w-full items-center gap-3 px-4 py-3 text-sm text-red-500 transition hover:bg-red-50 dark:hover:bg-red-950/20"
             >
-              <LogOut size={16} className="mr-2" />
+              <LogOut size={16} />
               Logout
             </button>
           </div>

@@ -45,21 +45,18 @@ const columns = [
   {
     key: "mentor",
     label: "Mentor",
-    render: (row) =>
-      row.Users?.find((u) => u.ClassUser?.roleInClass === "Mentor")?.name ||
-      "-",
+    render: (row) => row.mentor?.name || "-",
+    // row.Users?.find((u) => u.ClassUser?.roleInClass === "Mentor")?.name ||"-",
   },
   {
     key: "mentees",
     label: "Total Mentees",
-    render: (row) =>
-      row.Users?.filter((u) => u.ClassUser?.roleInClass === "Mentee").length ||
-      0,
+    render: (row) => row.mentees?.length || 0,
   },
   {
     key: "meetings",
     label: "Meetings",
-    render: (row) => row.Meetings?.length || 0,
+    render: (row) => row.meetings?.length || 0,
   },
   {
     key: "actions",
@@ -125,7 +122,7 @@ const List = () => {
     actions: (
       <div className="flex items-center gap-2">
         <Link
-          to={`/meetings/${row.id}`}
+          to={`/classes/${row.id}`}
           className="flex items-center gap-1 rounded-sm bg-sky-100 px-2 py-1 text-xs font-medium text-sky-700 hover:bg-sky-200"
         >
           <Eye size={14} />
@@ -133,7 +130,7 @@ const List = () => {
         </Link>
 
         <Link
-          to={`/meetings/edit/${row.id}`}
+          to={`/classes/edit/${row.id}`}
           className="flex items-center gap-1 rounded-sm bg-emerald-100 px-2 py-1 text-xs font-medium text-emerald-700 hover:bg-emerald-200"
         >
           <Pencil size={14} />

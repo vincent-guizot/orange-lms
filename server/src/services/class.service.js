@@ -4,11 +4,80 @@ class ClassService {
   static async findAll() {
     return Class.findAll({
       order: [["id", "ASC"]],
+      include: [
+        {
+          model: User,
+          as: "creator",
+          attributes: ["id", "name", "email"],
+        },
+        {
+          model: User,
+          as: "mentor",
+          attributes: ["id", "name", "email"],
+        },
+        {
+          model: User,
+          as: "mentees",
+          attributes: ["id", "name", "email"],
+          through: { attributes: [] },
+        },
+        {
+          model: Meeting,
+          as: "meetings",
+        },
+        {
+          model: Note,
+          as: "notes",
+        },
+        {
+          model: Task,
+          as: "tasks",
+        },
+        {
+          model: Material,
+          as: "materials",
+        },
+      ],
     });
   }
 
   static async findById(id) {
-    return Class.findByPk(id);
+    return Class.findByPk(id, {
+      include: [
+        {
+          model: User,
+          as: "creator",
+          attributes: ["id", "name", "email"],
+        },
+        {
+          model: User,
+          as: "mentor",
+          attributes: ["id", "name", "email"],
+        },
+        {
+          model: User,
+          as: "mentees",
+          attributes: ["id", "name", "email"],
+          through: { attributes: [] },
+        },
+        {
+          model: Meeting,
+          as: "meetings",
+        },
+        {
+          model: Note,
+          as: "notes",
+        },
+        {
+          model: Task,
+          as: "tasks",
+        },
+        {
+          model: Material,
+          as: "materials",
+        },
+      ],
+    });
   }
 
   static async create(data, currentUser) {

@@ -17,6 +17,23 @@ import MeetingService from "@/services/modules/meeting.service";
 
 const columns = [
   {
+    key: "classCode",
+    label: "Class Code",
+    render: (row) => (
+      <div className="space-y-1 max-w-md">
+        <p>
+          <span className="rounded-sm bg-orange-100 px-2 py-1 text-xs font-medium text-orange-700">
+            {row.class?.code || "-"}
+          </span>
+        </p>
+
+        <p className="line-clamp-2 text-xs text-[var(--color-text-muted)]">
+          {row.class?.name || "-"}
+        </p>
+      </div>
+    ),
+  },
+  {
     key: "name",
     label: "Topic",
     render: (row) => (
@@ -29,16 +46,6 @@ const columns = [
           {row.description || "-"}
         </p>
       </div>
-    ),
-  },
-
-  {
-    key: "classCode",
-    label: "Class Code",
-    render: (row) => (
-      <span className="rounded-sm bg-orange-100 px-2 py-1 text-xs font-medium text-orange-700">
-        {row.class?.code || "-"}
-      </span>
     ),
   },
 

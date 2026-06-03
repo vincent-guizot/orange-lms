@@ -1,4 +1,4 @@
-const { Meeting, Class } = require("../models");
+const { Meeting, Class, User, Task, Note, Material } = require("../models");
 
 class MeetingService {
   static async findAllByClass(ClassId) {
@@ -8,6 +8,11 @@ class MeetingService {
         {
           model: Class,
           as: "class",
+        },
+        {
+          model: User,
+          as: "creator",
+          attributes: ["id", "name", "email"],
         },
       ],
     });
@@ -20,6 +25,11 @@ class MeetingService {
           model: Class,
           as: "class",
         },
+        {
+          model: User,
+          as: "creator",
+          attributes: ["id", "name", "email"],
+        },
       ],
     });
   }
@@ -30,6 +40,23 @@ class MeetingService {
         {
           model: Class,
           as: "class",
+        },
+        {
+          model: User,
+          as: "creator",
+          attributes: ["id", "name", "email"],
+        },
+        {
+          model: Task,
+          as: "tasks",
+        },
+        {
+          model: Note,
+          as: "notes",
+        },
+        {
+          model: Material,
+          as: "materials",
         },
       ],
     });

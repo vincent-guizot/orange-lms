@@ -121,7 +121,7 @@ const Dashboard = () => {
   }));
 
   return (
-    <div className="p-6 space-y-6 bg-[var(--color-background)] min-h-screen">
+    <div className="p-3 space-y-6 bg-[var(--color-background)] min-h-screen">
       {/* Header */}
       <div>
         <h1 className="text-3xl font-bold text-[var(--color-text)]">
@@ -134,7 +134,7 @@ const Dashboard = () => {
       </div>
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2">
+      <div className="grid grid-cols-3 md:grid-cols-6 xl:grid-cols-6 gap-2">
         {summaryData.map((item) => (
           <div
             key={item.title}

@@ -14,6 +14,8 @@ import {
 } from "@/hooks";
 
 import NoteService from "@/services/modules/note.service";
+import PopUp from "../../components/ui/PopUp";
+import NoteDetail from "./Detail";
 
 const columns = [
   {
@@ -79,6 +81,10 @@ const List = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // PopUp
+  const [selectedNote, setSelectedNote] = useState(null);
+  const [openDetail, setOpenDetail] = useState(false);
+
   const fetchTasks = async () => {
     try {
       const res = await NoteService.getAll();
@@ -128,14 +134,16 @@ const List = () => {
 
     actions: (
       <div className="flex items-center gap-2">
-        <Link
-          to={`/notes/${row.id}`}
+        <button
+          onClick={() => {
+            setSelectedNote(row);
+            setOpenDetail(true);
+          }}
           className="flex items-center gap-1 rounded-sm bg-sky-100 px-2 py-1 text-xs font-medium text-sky-700 hover:bg-sky-200"
         >
           <Eye size={14} />
           Details
-        </Link>
-
+        </button>
         <Link
           to={`/notes/edit/${row.id}`}
           className="flex items-center gap-1 rounded-sm bg-emerald-100 px-2 py-1 text-xs font-medium text-emerald-700 hover:bg-emerald-200"
@@ -246,6 +254,13 @@ const List = () => {
           Next
         </button>
       </div>
+      <PopUp
+        open={openDetail}
+        onClose={() => setOpenDetail(false)}
+        title={selectedNote?.name}
+      >
+        <NoteDetail note={selectedNote} />
+      </PopUp>
     </div>
   );
 };

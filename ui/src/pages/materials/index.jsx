@@ -14,6 +14,8 @@ import {
 } from "@/hooks";
 
 import MaterialService from "@/services/modules/material.service";
+import PopUp from "../../components/ui/PopUp";
+import MaterialDetail from "./Detail";
 
 const columns = [
   {
@@ -89,6 +91,10 @@ const List = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // PopUp
+  const [selectedMaterial, setSelectedMaterial] = useState(null);
+  const [openDetail, setOpenDetail] = useState(false);
+
   const fetchTasks = async () => {
     try {
       const res = await MaterialService.getAll();
@@ -140,13 +146,16 @@ const List = () => {
 
     actions: (
       <div className="flex items-center gap-2">
-        <Link
-          to={`/materials/${row.id}`}
+        <button
+          onClick={() => {
+            setSelectedMaterial(row);
+            setOpenDetail(true);
+          }}
           className="flex items-center gap-1 rounded-sm bg-sky-100 px-2 py-1 text-xs font-medium text-sky-700 hover:bg-sky-200"
         >
           <Eye size={14} />
           Details
-        </Link>
+        </button>
 
         <Link
           to={`/materials/edit/${row.id}`}
@@ -254,6 +263,13 @@ const List = () => {
           Next
         </button>
       </div>
+      <PopUp
+        open={openDetail}
+        onClose={() => setOpenDetail(false)}
+        title={selectedMaterial?.name}
+      >
+        <MaterialDetail material={selectedMaterial} />
+      </PopUp>
     </div>
   );
 };

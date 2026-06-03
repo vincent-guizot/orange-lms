@@ -14,6 +14,8 @@ import {
 } from "@/hooks";
 
 import TaskService from "@/services/modules/task.service";
+import PopUp from "../../components/ui/PopUp";
+import TaskDetail from "./Detail";
 
 const columns = [
   {
@@ -108,6 +110,10 @@ const List = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // PopUp
+  const [selectedTask, setSelectedTask] = useState(null);
+  const [openDetail, setOpenDetail] = useState(false);
+
   const fetchTasks = async () => {
     try {
       const res = await TaskService.getAll();
@@ -159,13 +165,16 @@ const List = () => {
 
     actions: (
       <div className="flex items-center gap-2">
-        <Link
-          to={`/tasks/${row.id}`}
+        <button
+          onClick={() => {
+            setSelectedTask(row);
+            setOpenDetail(true);
+          }}
           className="flex items-center gap-1 rounded-sm bg-sky-100 px-2 py-1 text-xs font-medium text-sky-700 hover:bg-sky-200"
         >
           <Eye size={14} />
           Details
-        </Link>
+        </button>
 
         <Link
           to={`/tasks/edit/${row.id}`}
@@ -277,6 +286,13 @@ const List = () => {
           Next
         </button>
       </div>
+      <PopUp
+        open={openDetail}
+        onClose={() => setOpenDetail(false)}
+        title={selectedTask?.name}
+      >
+        <TaskDetail task={selectedTask} />
+      </PopUp>
     </div>
   );
 };
