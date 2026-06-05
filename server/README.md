@@ -59,7 +59,300 @@ The system supports multiple user roles:
 
 ---
 
-## Tech Stack
+# Table of Contents
+
+- Overview
+- Features
+- System Roles
+- Technology Stack
+- Architecture
+- Database Modules
+- API Workflow
+- Project Structure
+- Installation
+- Environment Variables
+- Database Migration
+- Database Seeder
+- Running the Application
+- Current Status
+- Roadmap
+
+---
+
+# Overview
+
+Orange LMS is designed to help educational institutions, bootcamps, training centers, and online learning platforms manage their learning activities efficiently.
+
+The backend follows a layered architecture:
+
+```txt
+Routes
+→ Controllers
+→ Services
+→ Models
+```
+
+This architecture separates concerns and improves maintainability, scalability, and testability.
+
+---
+
+# Features
+
+## Authentication & Authorization
+
+- JWT Authentication
+- Password Hashing (bcrypt)
+- Role-Based Access Control (RBAC)
+- Protected API Routes
+- Permission-Based Resource Access
+
+---
+
+## User Management
+
+### Users
+
+- Create User
+- Update User
+- Delete User
+- Get User Details
+
+### Profiles
+
+- User Profile Information
+- Personal Information
+- Contact Information
+- Background Information
+
+### Mentor Management
+
+- Create Mentor
+- Update Mentor
+- Delete Mentor
+- View Mentor Details
+
+### Mentee Management
+
+- Create Mentee
+- Update Mentee
+- Delete Mentee
+- View Mentee Details
+
+---
+
+## Learning Management
+
+### Classes
+
+- Create Class
+- Update Class
+- Delete Class
+- Assign Mentor
+- Manage Class Status
+
+### Class Participants
+
+Manage relationships between:
+
+```txt
+Classes ↔ Users
+```
+
+Including:
+
+- Mentor Assignment
+- Mentee Enrollment
+- Role Tracking
+
+---
+
+### Meetings
+
+Manage learning sessions:
+
+- Create Meeting
+- Update Meeting
+- Delete Meeting
+- View Meeting Details
+
+---
+
+### Learning Resources
+
+#### Tasks
+
+- Create Task
+- Update Task
+- Delete Task
+- Publish Task
+
+#### Notes
+
+- Create Note
+- Update Note
+- Delete Note
+
+#### Materials
+
+- Upload Learning Materials
+- Store Resource Information
+- Organize Learning Assets
+
+---
+
+## Submission Management
+
+### Task Submission
+
+Mentees can:
+
+- Submit Assignments
+- Update Submission
+- Track Submission Status
+
+Mentors can:
+
+- Review Submissions
+- Assess Performance
+
+---
+
+# Assessment Engine (V3)
+
+---
+
+## Attendance
+
+Track participant attendance:
+
+- Present
+- Absent
+- Late
+- Excused
+
+Features:
+
+- Attendance History
+- Attendance Tracking
+- Attendance Statistics Ready
+
+---
+
+## Task Criteria
+
+Create assessment rubrics:
+
+Examples:
+
+- Code Quality
+- Logic
+- Architecture
+- Performance
+- UI/UX
+
+Each criterion contains:
+
+- Title
+- Percentage
+- Description
+
+---
+
+## Assessment Result
+
+Store final assessment results:
+
+- Final Score
+- Mentor Feedback
+- Graded By
+- Graded At
+
+---
+
+## Submission Criteria Score
+
+Store detailed scoring for each criterion:
+
+Example:
+
+```txt
+Code Quality      → 38.5
+Architecture      → 25
+Logic             → 29
+```
+
+---
+
+## History Class
+
+Archive completed classes.
+
+Features:
+
+- Archive Class
+- Restore Class
+- Preserve Participant History
+- Preserve Mentor History
+- Preserve Mentee History
+- Preserve Role In Class
+
+Archive process automatically reads participants from ClassUsers.
+
+---
+
+# System Roles
+
+Orange LMS supports four roles:
+
+## Owner
+
+Highest level permission.
+
+Can:
+
+- Manage all resources
+- Delete sensitive data
+- Restore archived resources
+
+---
+
+## Admin
+
+Can:
+
+- Manage classes
+- Manage meetings
+- Manage users
+- Manage assessments
+
+---
+
+## Mentor
+
+Can:
+
+- Manage learning resources
+- Create tasks
+- Grade submissions
+- Create assessment criteria
+- Track attendance
+
+---
+
+## Mentee
+
+Can:
+
+- Join classes
+- View learning resources
+- Submit assignments
+- View grades
+
+---
+
+# Technology Stack
+
+## Backend
 
 ### Backend
 
@@ -69,6 +362,9 @@ The system supports multiple user roles:
 ### Database
 
 - PostgreSQL
+
+## ORM
+
 - Sequelize ORM
 
 ### Security
