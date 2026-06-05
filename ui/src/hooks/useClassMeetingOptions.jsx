@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import ClassService from "@/services/modules/class.service";
 
-const useClassMeetingOptions = (values, setValues, baseSchema) => {
+const useClassMeetingOptions = (
+  values,
+  setValues,
+  baseSchema,
+  isEdit = false,
+) => {
   const [schema, setSchema] = useState(baseSchema);
 
   useEffect(() => {
@@ -55,10 +60,12 @@ const useClassMeetingOptions = (values, setValues, baseSchema) => {
           ),
         );
 
-        setValues((prev) => ({
-          ...prev,
-          MeetingId: "",
-        }));
+        if (!isEdit) {
+          setValues((prev) => ({
+            ...prev,
+            MeetingId: "",
+          }));
+        }
       } catch (error) {
         console.error(error);
       }
