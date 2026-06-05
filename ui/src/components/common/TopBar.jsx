@@ -18,7 +18,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { useThemeStore } from "@/features/theme/theme.store";
+import { useThemeStore } from "@/app/store/theme";
 import { logout } from "@/app/store/slices/authSlice";
 
 import { can } from "@/helpers/can";
