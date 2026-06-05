@@ -14,7 +14,7 @@ import {
 } from "@/hooks";
 
 import NoteService from "@/services/modules/note.service";
-import PopUp from "../../components/ui/PopUp";
+import PopUp from "../../components/ui/popup/PopUp";
 import NoteDetail from "./Detail";
 import { useSelector } from "react-redux";
 import { can } from "@/helpers";
@@ -314,7 +314,7 @@ const List = () => {
         onClose={() => setOpenDetail(false)}
         title={selectedNote?.name}
       >
-        <NoteDetail note={selectedNote} />
+        <NoteDetail note={selectedNote} role={role} />
       </PopUp>
     </div>
   );

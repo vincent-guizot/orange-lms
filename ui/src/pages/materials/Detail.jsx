@@ -7,11 +7,13 @@ import {
   BookOpen,
   Users,
   Archive,
+  Pencil,
 } from "lucide-react";
 
-import { formatDate } from "@/helpers";
+import { formatDate, can } from "@/helpers";
+import { Link } from "react-router-dom";
 
-const MaterialDetail = ({ material, onEdit, onDelete }) => {
+const MaterialDetail = ({ material, role, onEdit, onDelete }) => {
   if (!material) return null;
 
   return (
@@ -45,21 +47,25 @@ const MaterialDetail = ({ material, onEdit, onDelete }) => {
             </div>
 
             <div className="mt-5 flex w-full gap-2">
-              <button
-                onClick={() => onEdit?.(material)}
-                className="flex flex-1 items-center justify-center gap-2 rounded-sm bg-blue-100 px-3 py-2 text-sm font-medium text-blue-700 hover:bg-blue-200"
-              >
-                <Edit2 size={16} />
-                Edit
-              </button>
+              {can(role, "material", "update") && (
+                <Link
+                  to={`/materials/edit/${material.id}`}
+                  className="flex items-center gap-1 rounded-sm bg-emerald-100 px-2 py-1 text-xs font-medium text-emerald-700 hover:bg-emerald-200"
+                >
+                  <Pencil size={14} />
+                  Edit
+                </Link>
+              )}
 
-              <button
-                onClick={() => onDelete?.(material)}
-                className="flex flex-1 items-center justify-center gap-2 rounded-sm bg-red-100 px-3 py-2 text-sm font-medium text-red-700 hover:bg-red-200"
-              >
-                <Trash2 size={16} />
-                Delete
-              </button>
+              {can(role, "material", "delete") && (
+                <button
+                  onClick={() => handleRemove(material.id)}
+                  className="flex items-center gap-1 rounded-sm px-2 py-1 text-xs font-medium text-[var(--color-text-muted)] hover:bg-rose-50 hover:text-rose-600"
+                >
+                  <Trash2 size={14} />
+                  Remove
+                </button>
+              )}
             </div>
           </div>
         </div>

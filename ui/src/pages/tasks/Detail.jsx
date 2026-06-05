@@ -6,15 +6,15 @@ import {
   Award,
   BookOpen,
   Users,
-  FileText,
+  CheckSquare,
   Pencil,
 } from "lucide-react";
 
 import { formatDate, can } from "@/helpers";
 import { Link } from "react-router-dom";
 
-const NoteDetail = ({ note, role, onEdit, onDelete }) => {
-  if (!note) return null;
+const Detail = ({ task, role, onEdit, onDelete }) => {
+  if (!task) return null;
 
   return (
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-4">
@@ -26,28 +26,42 @@ const NoteDetail = ({ note, role, onEdit, onDelete }) => {
               <Award size={40} className="text-orange-600" />
             </div>
 
-            <h2 className="mt-4 text-center text-lg font-bold">{note.name}</h2>
+            <h2 className="mt-4 text-center text-lg font-bold">{task.name}</h2>
 
             <span
               className={`mt-3 rounded-sm px-3 py-1 text-xs font-medium ${
-                note.status === "Published"
+                task.status === "Published"
                   ? "bg-green-100 text-green-700"
                   : "bg-gray-100 text-gray-700"
               }`}
-            ></span>
+            >
+              {task.status || "-"}
+            </span>
 
             <div className="mt-5 w-full space-y-4 text-sm">
               <div>
+                <p className="text-xs text-gray-500">Due Date</p>
+
+                <p>{task.dueDate ? formatDate(task.dueDate) : "-"}</p>
+              </div>
+
+              <div>
+                <p className="text-xs text-gray-500">Max Score</p>
+
+                <p>{task.maxScore ?? "-"}</p>
+              </div>
+
+              <div>
                 <p className="text-xs text-gray-500">Created By</p>
 
-                <p>{note.creator?.name || "-"}</p>
+                <p>{task.creator?.name || "-"}</p>
               </div>
             </div>
 
             <div className="mt-5 flex w-full gap-2">
-              {can(role, "note", "update") && (
+              {can(role, "task", "update") && (
                 <Link
-                  to={`/notes/edit/${note.id}`}
+                  to={`/tasks/edit/${task.id}`}
                   className="flex items-center gap-1 rounded-sm bg-emerald-100 px-2 py-1 text-xs font-medium text-emerald-700 hover:bg-emerald-200"
                 >
                   <Pencil size={14} />
@@ -55,9 +69,9 @@ const NoteDetail = ({ note, role, onEdit, onDelete }) => {
                 </Link>
               )}
 
-              {can(role, "note", "delete") && (
+              {can(role, "task", "delete") && (
                 <button
-                  onClick={() => handleRemove(note.id)}
+                  onClick={() => handleRemove(task.id)}
                   className="flex items-center gap-1 rounded-sm px-2 py-1 text-xs font-medium text-[var(--color-text-muted)] hover:bg-rose-50 hover:text-rose-600"
                 >
                   <Trash2 size={14} />
@@ -76,7 +90,7 @@ const NoteDetail = ({ note, role, onEdit, onDelete }) => {
           <h3 className="mb-3 font-semibold">Description</h3>
 
           <p className="text-sm leading-6 text-gray-600">
-            {note.description || "-"}
+            {task.description || "-"}
           </p>
         </div>
 
@@ -89,9 +103,9 @@ const NoteDetail = ({ note, role, onEdit, onDelete }) => {
               <span className="font-medium">Class</span>
             </div>
 
-            <p className="font-semibold">{note.Class?.code || "-"}</p>
+            <p className="font-semibold">{task.Class?.code || "-"}</p>
 
-            <p className="text-sm text-gray-500">{note.Class?.name || "-"}</p>
+            <p className="text-sm text-gray-500">{task.Class?.name || "-"}</p>
           </div>
 
           <div className="rounded-sm border border-gray-200 bg-white p-4">
@@ -102,10 +116,10 @@ const NoteDetail = ({ note, role, onEdit, onDelete }) => {
             </div>
 
             <p className="font-semibold">
-              Meeting #{note.Meeting?.meetingNumber}
+              Meeting #{task.Meeting?.meetingNumber}
             </p>
 
-            <p className="text-sm text-gray-500">{note.Meeting?.name || "-"}</p>
+            <p className="text-sm text-gray-500">{task.Meeting?.name || "-"}</p>
           </div>
 
           <div className="rounded-sm border border-gray-200 bg-white p-4">
@@ -116,20 +130,20 @@ const NoteDetail = ({ note, role, onEdit, onDelete }) => {
             </div>
 
             <p>
-              {note.Meeting?.meetingDate
-                ? formatDate(note.Meeting.meetingDate)
+              {task.Meeting?.meetingDate
+                ? formatDate(task.Meeting.meetingDate)
                 : "-"}
             </p>
           </div>
 
           <div className="rounded-sm border border-gray-200 bg-white p-4">
             <div className="mb-2 flex items-center gap-2">
-              <FileText size={18} className="text-orange-500" />
+              <CheckSquare size={18} className="text-orange-500" />
 
-              <span className="font-medium">Note Created</span>
+              <span className="font-medium">Task Created</span>
             </div>
 
-            <p>{formatDate(note.createdAt) || "-"}</p>
+            <p>{formatDate(task.createdAt) || "-"}</p>
           </div>
         </div>
 
@@ -140,13 +154,13 @@ const NoteDetail = ({ note, role, onEdit, onDelete }) => {
               <h3 className="font-semibold">Attachment</h3>
 
               <p className="mt-1 text-sm text-gray-500">
-                Download note attachment if available
+                Download task attachment if available
               </p>
             </div>
 
-            {note.fileUrl ? (
+            {task.fileUrl ? (
               <a
-                href={note.fileUrl}
+                href={task.fileUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-sm bg-orange-500 px-4 py-2 text-sm font-medium text-white hover:bg-orange-600"
@@ -164,4 +178,4 @@ const NoteDetail = ({ note, role, onEdit, onDelete }) => {
   );
 };
 
-export default NoteDetail;
+export default Detail;

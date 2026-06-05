@@ -14,7 +14,7 @@ import {
 } from "@/hooks";
 
 import TaskService from "@/services/modules/task.service";
-import PopUp from "../../components/ui/PopUp";
+import PopUp from "../../components/ui/popup/PopUp";
 import TaskDetail from "./Detail";
 import { useSelector } from "react-redux";
 import { can } from "@/helpers";
@@ -347,7 +347,7 @@ const List = () => {
         onClose={() => setOpenDetail(false)}
         title={selectedTask?.name}
       >
-        <TaskDetail task={selectedTask} />
+        <TaskDetail task={selectedTask} role={role} />
       </PopUp>
     </div>
   );

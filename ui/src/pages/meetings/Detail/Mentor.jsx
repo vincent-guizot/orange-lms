@@ -3,11 +3,18 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import TabTable from "@/components/ui/tables/TabTable";
-import Popup from "@/components/ui/PopUp";
+import Popup from "@/components/ui/popup/PopUp";
 
 import MeetingService from "@/services/modules/meeting.service";
 
-import { Calendar, CheckSquare, FileText, Archive } from "lucide-react";
+import {
+  Calendar,
+  CheckSquare,
+  FileText,
+  Archive,
+  Send,
+  Trash2,
+} from "lucide-react";
 
 import { formatDate } from "@/helpers";
 
@@ -21,7 +28,7 @@ import TaskService from "@/services/modules/task.service";
 import NoteService from "@/services/modules/note.service";
 import MaterialService from "@/services/modules/material.service";
 
-const tabs = ["Tasks", "Notes", "Materials", "Attendance"];
+const tabs = ["Tasks", "Notes", "Materials", "Attendance", "Submission"];
 
 const Mentor = () => {
   const { id } = useParams();
@@ -55,13 +62,10 @@ const Mentor = () => {
       ),
     );
 
+  // Create
   const handleCreateTask = async (data) => {
     try {
-      await TaskService.create({
-        ...data,
-        ClassId: meeting.ClassId,
-        MeetingId: meeting.id,
-      });
+      await TaskService.createTaskByMeeting(meeting.id, data);
 
       await fetchMeeting();
       setOpenTaskPopup(false);
@@ -72,11 +76,7 @@ const Mentor = () => {
 
   const handleCreateNote = async (data) => {
     try {
-      await NoteService.create({
-        ...data,
-        ClassId: meeting.ClassId,
-        MeetingId: meeting.id,
-      });
+      await NoteService.createNoteByMeeting(meeting.id, data);
 
       await fetchMeeting();
       setOpenNotePopup(false);
@@ -87,14 +87,39 @@ const Mentor = () => {
 
   const handleCreateMaterial = async (data) => {
     try {
-      await MaterialService.create({
-        ...data,
-        ClassId: meeting.ClassId,
-        MeetingId: meeting.id,
-      });
+      await MaterialService.createMaterialByMeeting(meeting.id, data);
 
       await fetchMeeting();
       setOpenMaterialPopup(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // Delete
+  const handleDeleteTask = async (taskId) => {
+    try {
+      await TaskService.delete(taskId);
+
+      await fetchMeeting();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const handleDeleteNote = async (noteId) => {
+    try {
+      await NoteService.delete(noteId);
+
+      await fetchMeeting();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const handleDeleteMaterial = async (materialId) => {
+    try {
+      await MaterialService.delete(materialId);
+
+      await fetchMeeting();
     } catch (error) {
       console.error(error);
     }
@@ -135,69 +160,86 @@ const Mentor = () => {
   }
   return (
     <div className="space-y-5 p-4">
-      <Hero meeting={meeting} />
+      return (
+      <div className="grid gap-5 p-4 lg:grid-cols-12">
+        {/* LEFT */}
+        <div className="space-y-5 lg:col-span-4">
+          <div className="lg:sticky lg:top-5 space-y-5">
+            <Hero meeting={meeting} />
 
-      <Statistics meeting={meeting} />
+            <Statistics meeting={meeting} />
+          </div>
+        </div>
 
-      <TabsHeader activeTab={activeTab} setActiveTab={setActiveTab} />
-      <TabsContent
-        activeTab={activeTab}
-        meeting={meeting}
-        setOpenTaskPopup={setOpenTaskPopup}
-        setOpenNotePopup={setOpenNotePopup}
-        setOpenMaterialPopup={setOpenMaterialPopup}
-      />
+        {/* RIGHT */}
+        <div className="space-y-5 lg:col-span-8">
+          <TabsHeader activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      <Popup
-        open={openTaskPopup}
-        onClose={() => setOpenTaskPopup(false)}
-        title="Create Task"
-      >
-        <Form
-          title=""
-          schema={taskSchema.filter(
-            (field) => !["ClassId", "MeetingId"].includes(field.name),
-          )}
-          values={taskValues}
-          onChange={handleTaskChange}
-          onSubmit={handleCreateTask}
-          submitLabel="Create Task"
-        />
-      </Popup>
+          <TabsContent
+            activeTab={activeTab}
+            meeting={meeting}
+            setOpenTaskPopup={setOpenTaskPopup}
+            setOpenNotePopup={setOpenNotePopup}
+            setOpenMaterialPopup={setOpenMaterialPopup}
+            handleDeleteTask={handleDeleteTask}
+            handleDeleteNote={handleDeleteNote}
+            handleDeleteMaterial={handleDeleteMaterial}
+          />
+        </div>
 
-      <Popup
-        open={openNotePopup}
-        onClose={() => setOpenNotePopup(false)}
-        title="Create Note"
-      >
-        <Form
-          title=""
-          schema={noteSchema.filter(
-            (field) => !["ClassId", "MeetingId"].includes(field.name),
-          )}
-          values={noteValues}
-          onChange={handleNoteChange}
-          onSubmit={handleCreateNote}
-          submitLabel="Create Note"
-        />
-      </Popup>
+        {/* Popups */}
+        <Popup
+          open={openTaskPopup}
+          onClose={() => setOpenTaskPopup(false)}
+          title="Create Task"
+        >
+          <Form
+            title=""
+            schema={taskSchema.filter(
+              (field) => !["ClassId", "MeetingId"].includes(field.name),
+            )}
+            values={taskValues}
+            onChange={handleTaskChange}
+            onSubmit={handleCreateTask}
+            submitLabel="Create Task"
+          />
+        </Popup>
 
-      <Popup
-        open={openMaterialPopup}
-        onClose={() => setOpenMaterialPopup(false)}
-        title="Create Material"
-      >
-        <Form
-          title=""
-          schema={materialSchema.filter(
-            (field) => !["ClassId", "MeetingId"].includes(field.name),
-          )}
-          values={materialValues}
-          onChange={handleMaterialChange}
-          onSubmit={handleCreateMaterial}
-          submitLabel="Create Material"
-        />
-      </Popup>
+        <Popup
+          open={openNotePopup}
+          onClose={() => setOpenNotePopup(false)}
+          title="Create Note"
+        >
+          <Form
+            title=""
+            schema={noteSchema.filter(
+              (field) => !["ClassId", "MeetingId"].includes(field.name),
+            )}
+            values={noteValues}
+            onChange={handleNoteChange}
+            onSubmit={handleCreateNote}
+            submitLabel="Create Note"
+          />
+        </Popup>
+
+        <Popup
+          open={openMaterialPopup}
+          onClose={() => setOpenMaterialPopup(false)}
+          title="Create Material"
+        >
+          <Form
+            title=""
+            schema={materialSchema.filter(
+              (field) => !["ClassId", "MeetingId"].includes(field.name),
+            )}
+            values={materialValues}
+            onChange={handleMaterialChange}
+            onSubmit={handleCreateMaterial}
+            submitLabel="Create Material"
+          />
+        </Popup>
+      </div>
+      );
     </div>
   );
 };
@@ -295,6 +337,7 @@ const TabsHeader = ({ activeTab, setActiveTab }) => {
             Notes: FileText,
             Materials: Archive,
             Attendance: Calendar,
+            Submission: Send,
           };
 
           const Icon = icons[tab];
@@ -324,6 +367,9 @@ const TabsContent = ({
   setOpenTaskPopup,
   setOpenNotePopup,
   setOpenMaterialPopup,
+  handleDeleteTask,
+  handleDeleteNote,
+  handleDeleteMaterial,
 }) => {
   return (
     <div className="rounded-sm border border-gray-200 bg-white p-5">
@@ -365,6 +411,20 @@ const TabsContent = ({
                 label: "Due Date",
                 render: (row) => formatDate(row.dueDate),
               },
+              {
+                key: "actions",
+                label: "Actions",
+                render: (row) => (
+                  <button
+                    type="button"
+                    onClick={() => handleDeleteTask(row.id)}
+                    className="flex items-center gap-1 rounded-sm px-2 py-1 text-xs font-medium text-[var(--color-text-muted)] hover:bg-rose-50 hover:text-rose-600"
+                  >
+                    <Trash2 size={16} />
+                    Remove
+                  </button>
+                ),
+              },
             ]}
           />
         </div>
@@ -398,6 +458,20 @@ const TabsContent = ({
               {
                 key: "description",
                 label: "Description",
+              },
+              {
+                key: "actions",
+                label: "Actions",
+                render: (row) => (
+                  <button
+                    type="button"
+                    onClick={() => handleDeleteNote(row.id)}
+                    className="flex items-center gap-1 rounded-sm px-2 py-1 text-xs font-medium text-[var(--color-text-muted)] hover:bg-rose-50 hover:text-rose-600"
+                  >
+                    <Trash2 size={16} />
+                    Remove
+                  </button>
+                ),
               },
             ]}
           />
@@ -437,6 +511,20 @@ const TabsContent = ({
                 key: "description",
                 label: "Description",
               },
+              {
+                key: "actions",
+                label: "Actions",
+                render: (row) => (
+                  <button
+                    type="button"
+                    onClick={() => handleDeleteMaterial(row.id)}
+                    className="flex items-center gap-1 rounded-sm px-2 py-1 text-xs font-medium text-[var(--color-text-muted)] hover:bg-rose-50 hover:text-rose-600"
+                  >
+                    <Trash2 size={16} />
+                    Remove
+                  </button>
+                ),
+              },
             ]}
           />
         </div>
@@ -445,6 +533,11 @@ const TabsContent = ({
       {activeTab === "Attendance" && (
         <div className="rounded-sm border border-dashed border-gray-300 p-8 text-center text-gray-500">
           Attendance Module Coming Soon
+        </div>
+      )}
+      {activeTab === "Submission" && (
+        <div className="rounded-sm border border-dashed border-gray-300 p-8 text-center text-gray-500">
+          Submission Module Coming Soon
         </div>
       )}
     </div>

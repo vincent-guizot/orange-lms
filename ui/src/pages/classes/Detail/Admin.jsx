@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import TabTable from "@/components/ui/tables/TabTable";
 import useBreadcrumbs from "@/hooks/useBreadcrumbs";
-import PopUp from "@/components/ui/PopUp";
+import PopUp from "@/components/ui/popup/PopUp";
 import ClassService from "@/services/modules/class.service";
 import MenteeService from "@/services/modules/mentee.service";
 

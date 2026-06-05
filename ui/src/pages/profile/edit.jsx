@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import Form from "@/components/ui/forms/Form";
-import Popup from "@/components/ui/PopUp";
+import Popup from "@/components/ui/popup/PopUp";
 
 import UserService from "@/services/modules/user.service";
 import ProfileService from "@/services/modules/profile.service";

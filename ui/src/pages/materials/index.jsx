@@ -15,7 +15,7 @@ import {
 import { can } from "@/helpers";
 
 import MaterialService from "@/services/modules/material.service";
-import PopUp from "../../components/ui/PopUp";
+import PopUp from "../../components/ui/popup/PopUp";
 import { useSelector } from "react-redux";
 import MaterialDetail from "./Detail";
 
@@ -325,7 +325,7 @@ const List = () => {
         onClose={() => setOpenDetail(false)}
         title={selectedMaterial?.name}
       >
-        <MaterialDetail material={selectedMaterial} />
+        <MaterialDetail material={selectedMaterial} role={role} />
       </PopUp>
     </div>
   );

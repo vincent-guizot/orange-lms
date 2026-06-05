@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Form from "@/components/ui/forms/Form";
-import Popup from "@/components/ui/PopUp";
+
+import SuccessPopup from "@/components/ui/popup/SuccessPopup";
+import ErrorPopup from "@/components/ui/popup/ErrorPopup";
 
 import useForm from "@/hooks/useForm";
 
@@ -21,7 +23,9 @@ const Create = () => {
   const [loading, setLoading] = useState(false);
 
   const [error, setError] = useState("");
+
   const [openError, setOpenError] = useState(false);
+  const [openSuccess, setOpenSuccess] = useState(false);
 
   useEffect(() => {
     const fetchClasses = async () => {
@@ -45,12 +49,11 @@ const Create = () => {
         );
       } catch (err) {
         console.error(err);
-        console.log(err.response?.data);
 
         setError(
           err?.response?.data?.message ||
             err?.message ||
-            "Failed to create meeting",
+            "Failed to load classes",
         );
 
         setOpenError(true);
@@ -67,15 +70,13 @@ const Create = () => {
 
       const classId = Number(data.ClassId);
 
-      const payload = {
-        ...data,
-      };
+      const payload = { ...data };
 
       delete payload.ClassId;
 
       await MeetingService.create(classId, payload);
 
-      navigate("/meetings");
+      setOpenSuccess(true);
     } catch (err) {
       console.error(err);
 
@@ -89,6 +90,12 @@ const Create = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleCloseSuccess = () => {
+    setOpenSuccess(false);
+
+    navigate("/meetings");
   };
 
   if (loading) {
@@ -111,27 +118,19 @@ const Create = () => {
         submitLabel="Create Meeting"
       />
 
-      <Popup
+      <SuccessPopup
+        open={openSuccess}
+        onClose={handleCloseSuccess}
+        title="Meeting Created"
+        message="Meeting has been created successfully."
+      />
+
+      <ErrorPopup
         open={openError}
         onClose={() => setOpenError(false)}
         title="Create Meeting Failed"
-        width="max-w-md"
-      >
-        <div className="space-y-4">
-          <div className="rounded-sm border border-red-200 bg-red-50 p-4">
-            <p className="text-sm text-red-600">{error}</p>
-          </div>
-
-          <div className="flex justify-end">
-            <button
-              onClick={() => setOpenError(false)}
-              className="rounded-sm bg-orange-500 px-4 py-2 text-white hover:bg-orange-600"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </Popup>
+        message={error}
+      />
     </>
   );
 };
