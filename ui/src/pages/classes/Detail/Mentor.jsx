@@ -1,13 +1,11 @@
-// src/pages/classes/Detail.jsx
-
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+
 import TabTable from "@/components/ui/tables/TabTable";
-import useBreadcrumbs from "@/hooks/useBreadcrumbs";
+
 import ClassService from "@/services/modules/class.service";
+
 import {
-  Trash2,
-  Edit2,
   Eye,
   Download,
   Calendar,
@@ -16,13 +14,13 @@ import {
   FileText,
   Archive,
 } from "lucide-react";
+
 import { formatDate } from "@/helpers";
 
 const tabs = ["Meetings", "Mentees", "Tasks", "Notes", "Materials"];
 
-const Detail = () => {
+const Mentor = () => {
   const { id } = useParams();
-  const breadcrumbs = useBreadcrumbs([{ label: "Classes", to: "/classes" }]);
 
   const [classData, setClassData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -32,8 +30,8 @@ const Detail = () => {
     const fetchClass = async () => {
       try {
         const res = await ClassService.getById(+id);
+
         setClassData(res.data);
-        console.log(res.data);
       } catch (err) {
         console.error(err);
       } finally {
@@ -54,17 +52,9 @@ const Detail = () => {
 
   return (
     <div className="space-y-4 p-4">
-      {/* Breadcrumb */}
-      <div className="text-sm text-gray-500">
-        {breadcrumbs.map((b) => (
-          <span key={b.to}>{b.label} / </span>
-        ))}
-        <span className="font-medium">{classData.code}</span>
-      </div>
-
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {/* LEFT */}
-        <div className="lg:col-span-1 rounded-sm border border-gray-200 bg-white p-5">
+        <div className="rounded-sm border border-gray-200 bg-white p-5 lg:col-span-1">
           <div className="mb-3 flex flex-wrap gap-2">
             <span className="rounded-sm bg-orange-100 px-2 py-1 text-xs font-medium text-orange-700">
               {classData.code}
@@ -118,19 +108,9 @@ const Detail = () => {
               <p>{classData.endDate ? formatDate(classData.endDate) : "-"}</p>
             </div>
           </div>
-          <div className="mt-6 flex gap-2">
-            <button className="flex flex-1 items-center justify-center gap-2 rounded-sm bg-blue-100 px-3 py-2 text-sm font-medium text-blue-700 hover:bg-blue-200">
-              <Edit2 size={16} />
-              Edit
-            </button>
 
-            <button className="flex flex-1 items-center justify-center gap-2 rounded-sm bg-red-100 px-3 py-2 text-sm font-medium text-red-700 hover:bg-red-200">
-              <Trash2 size={16} />
-              Delete
-            </button>
-          </div>
-          <div className="my-2">
-            <h3 className="text-lg mb-4 font-semibold">Statistics</h3>
+          <div className="my-6">
+            <h3 className="mb-4 text-lg font-semibold">Statistics</h3>
 
             <div className="space-y-3">
               <div className="flex items-center justify-between">
@@ -143,7 +123,7 @@ const Detail = () => {
               <div className="flex items-center justify-between">
                 <span>Mentees</span>
                 <span className="font-bold">
-                  {classData.students?.length || 0}
+                  {classData.mentees?.length || 0}
                 </span>
               </div>
 
@@ -172,8 +152,8 @@ const Detail = () => {
         </div>
 
         {/* RIGHT */}
-        <div className="lg:col-span-2 rounded-sm border border-gray-200 bg-white p-5">
-          <div className="mt-4 rounded-sm border border-gray-200 bg-white px-5">
+        <div className="rounded-sm border border-gray-200 bg-white p-5 lg:col-span-2">
+          <div className="rounded-sm border border-gray-200 bg-white px-5">
             <div className="flex flex-wrap gap-6">
               {tabs.map((tab) => {
                 const icons = {
@@ -206,42 +186,44 @@ const Detail = () => {
 
           {/* Meetings */}
           {activeTab === "Meetings" && (
-            <TabTable
-              data={classData.meetings || []}
-              columns={[
-                {
-                  key: "meetingNumber",
-                  label: "#",
-                },
-                {
-                  key: "name",
-                  label: "Meeting",
-                },
-                {
-                  key: "description",
-                  label: "Description",
-                },
-                {
-                  key: "meetingDate",
-                  label: "Date",
-                  render: (row) =>
-                    row.meetingDate ? formatDate(row.meetingDate) : "-",
-                },
-                {
-                  key: "actions",
-                  label: "Actions",
-                  render: (row) => (
-                    <Link
-                      to={`/meetings/${row.id}`}
-                      className="inline-flex items-center gap-1 rounded-sm bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700 hover:bg-blue-200"
-                    >
-                      <Eye size={14} />
-                      View
-                    </Link>
-                  ),
-                },
-              ]}
-            />
+            <div className="space-y-4">
+              <TabTable
+                data={classData.meetings || []}
+                columns={[
+                  {
+                    key: "meetingNumber",
+                    label: "#",
+                  },
+                  {
+                    key: "name",
+                    label: "Meeting",
+                  },
+                  {
+                    key: "description",
+                    label: "Description",
+                  },
+                  {
+                    key: "meetingDate",
+                    label: "Date",
+                    render: (row) =>
+                      row.meetingDate ? formatDate(row.meetingDate) : "-",
+                  },
+                  {
+                    key: "actions",
+                    label: "Actions",
+                    render: (row) => (
+                      <Link
+                        to={`/meetings/${row.id}`}
+                        className="inline-flex items-center gap-1 rounded-sm bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700 hover:bg-blue-200"
+                      >
+                        <Eye size={14} />
+                        View
+                      </Link>
+                    ),
+                  },
+                ]}
+              />
+            </div>
           )}
 
           {/* Mentees */}
@@ -261,44 +243,18 @@ const Detail = () => {
                   key: "email",
                   label: "Email",
                 },
-              ]}
-            />
-          )}
-
-          {/* Notes */}
-          {activeTab === "Notes" && (
-            <TabTable
-              data={classData.notes || []}
-              columns={[
                 {
-                  key: "id",
-                  label: "ID",
-                },
-                {
-                  key: "name",
-                  label: "Name",
-                },
-                {
-                  key: "description",
-                  label: "Description",
-                },
-                {
-                  key: "fileUrl",
-                  label: "Attachment",
-                  render: (row) =>
-                    row.fileUrl ? (
-                      <a
-                        href={row.fileUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 rounded-sm bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700 hover:bg-blue-200"
-                      >
-                        <Download size={12} />
-                        Download
-                      </a>
-                    ) : (
-                      "-"
-                    ),
+                  key: "actions",
+                  label: "Actions",
+                  render: (row) => (
+                    <Link
+                      to={`/mentees/${row.id}`}
+                      className="inline-flex items-center gap-1 rounded-sm bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700 hover:bg-blue-200"
+                    >
+                      <Eye size={14} />
+                      Details
+                    </Link>
+                  ),
                 },
               ]}
             />
@@ -306,83 +262,126 @@ const Detail = () => {
 
           {/* Tasks */}
           {activeTab === "Tasks" && (
-            <TabTable
-              data={classData.tasks || []}
-              columns={[
-                {
-                  key: "id",
-                  label: "ID",
-                },
-                {
-                  key: "name",
-                  label: "Name",
-                },
-                {
-                  key: "description",
-                  label: "Description",
-                },
-                {
-                  key: "maxScore",
-                  label: "Max Score",
-                },
-                {
-                  key: "dueDate",
-                  label: "Due Date",
-                  render: (row) =>
-                    row.dueDate ? formatDate(row.dueDate) : "-",
-                },
-              ]}
-            />
+            <div className="space-y-4">
+              <TabTable
+                data={classData.tasks || []}
+                columns={[
+                  {
+                    key: "id",
+                    label: "ID",
+                  },
+                  {
+                    key: "name",
+                    label: "Task",
+                  },
+                  {
+                    key: "description",
+                    label: "Description",
+                  },
+                  {
+                    key: "maxScore",
+                    label: "Max Score",
+                  },
+                  {
+                    key: "dueDate",
+                    label: "Due Date",
+                    render: (row) =>
+                      row.dueDate ? formatDate(row.dueDate) : "-",
+                  },
+                ]}
+              />
+            </div>
+          )}
+
+          {/* Notes */}
+          {activeTab === "Notes" && (
+            <div className="space-y-4">
+              <TabTable
+                data={classData.notes || []}
+                columns={[
+                  {
+                    key: "id",
+                    label: "ID",
+                  },
+                  {
+                    key: "name",
+                    label: "Name",
+                  },
+                  {
+                    key: "description",
+                    label: "Description",
+                  },
+                  {
+                    key: "fileUrl",
+                    label: "Attachment",
+                    render: (row) =>
+                      row.fileUrl ? (
+                        <a
+                          href={row.fileUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1 rounded-sm bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700 hover:bg-blue-200"
+                        >
+                          <Download size={12} />
+                          Download
+                        </a>
+                      ) : (
+                        "-"
+                      ),
+                  },
+                ]}
+              />
+            </div>
           )}
 
           {/* Materials */}
           {activeTab === "Materials" && (
-            <TabTable
-              data={classData.materials || []}
-              columns={[
-                {
-                  key: "id",
-                  label: "ID",
-                },
-                {
-                  key: "name",
-                  label: "Name",
-                },
-                {
-                  key: "type",
-                  label: "Type",
-                },
-                {
-                  key: "description",
-                  label: "Description",
-                },
-                {
-                  key: "fileUrl",
-                  label: "Attachment",
-                  render: (row) =>
-                    row.fileUrl ? (
-                      <a
-                        href={row.fileUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 rounded-sm bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700 hover:bg-blue-200"
-                      >
-                        <Download size={12} />
-                        Download
-                      </a>
-                    ) : (
-                      "-"
-                    ),
-                },
-              ]}
-            />
+            <div className="space-y-4">
+              <TabTable
+                data={classData.materials || []}
+                columns={[
+                  {
+                    key: "id",
+                    label: "ID",
+                  },
+                  {
+                    key: "name",
+                    label: "Name",
+                  },
+                  {
+                    key: "type",
+                    label: "Type",
+                  },
+                  {
+                    key: "description",
+                    label: "Description",
+                  },
+                  {
+                    key: "fileUrl",
+                    label: "Attachment",
+                    render: (row) =>
+                      row.fileUrl ? (
+                        <a
+                          href={row.fileUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1 rounded-sm bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700 hover:bg-blue-200"
+                        >
+                          <Download size={12} />
+                          Download
+                        </a>
+                      ) : (
+                        "-"
+                      ),
+                  },
+                ]}
+              />
+            </div>
           )}
         </div>
       </div>
-
-      {/* Tabs */}
     </div>
   );
 };
 
-export default Detail;
+export default Mentor;
