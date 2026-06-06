@@ -18,10 +18,10 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { useThemeStore } from "@/app/store/theme";
+import { useThemeStore } from "@/app/theme";
 import { logout } from "@/app/store/slices/authSlice";
 
-import { can } from "@/helpers/can";
+import { can } from "@/helpers";
 
 const TopBar = () => {
   const navigate = useNavigate();
