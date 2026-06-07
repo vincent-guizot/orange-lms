@@ -24,23 +24,20 @@ import attendanceRoutes from "./modules/attendance.routes";
 import historyClassRoutes from "./modules/historyClass.routes";
 
 import taskCriteriaRoutes from "./modules/taskCriteria.routes";
-import taskSubmissionRoutes from "./modules/taskSubmission.routes";
-import assessmentRoutes from "./modules/assessment.routes";
+import assessmentRoutes from "./modules/assessment.routes.jsx";
 
 import profileRoutes from "./modules/profile.routes";
+import settingRoutes from "./modules/setting.routes";
 
 const router = createBrowserRouter([
   authRoutes,
-
   {
     path: "/",
-
     element: (
       <ProtectedRoute>
         <MainLayout />
       </ProtectedRoute>
     ),
-
     children: [
       {
         index: true,
@@ -51,35 +48,29 @@ const router = createBrowserRouter([
         path: "dashboard",
         element: <Dashboard />,
       },
-
       // V1
       classRoutes,
       meetingRoutes,
       taskRoutes,
       noteRoutes,
       materialRoutes,
-
       mentorRoutes,
       menteeRoutes,
-
       // V3
       attendanceRoutes,
       historyClassRoutes,
-
       taskCriteriaRoutes,
-      taskSubmissionRoutes,
       assessmentRoutes,
-
       // Profile
-      ...profileRoutes,
-
+      profileRoutes,
+      // Setting
+      settingRoutes,
       {
         path: "*",
         element: <NotFound />,
       },
     ],
   },
-
   {
     path: "*",
     element: <Navigate to="/" replace />,
