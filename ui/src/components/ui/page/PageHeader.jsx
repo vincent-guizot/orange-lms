@@ -1,17 +1,8 @@
-const PageHeader = ({ breadcrumbs, title, description }) => {
+import React from "react";
+
+const PageHeader = ({ title, description, actions }) => {
   return (
     <div className="space-y-1">
-      {breadcrumbs?.length > 0 && (
-        <p className="text-xs text-[var(--color-text-muted)]">
-          {breadcrumbs.map((item, index) => (
-            <span key={item.to}>
-              {item.label}
-              {index < breadcrumbs.length - 1 && " / "}
-            </span>
-          ))}
-        </p>
-      )}
-
       <h1 className="text-2xl font-bold text-[var(--color-text)]">{title}</h1>
 
       {description && (
@@ -19,6 +10,8 @@ const PageHeader = ({ breadcrumbs, title, description }) => {
           {description}
         </p>
       )}
+
+      {actions && <div className="pt-2">{actions}</div>}
     </div>
   );
 };
